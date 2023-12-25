@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Beginner C++ Game Programming Series - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Beginner_C++_Game_Programming_Series","wgTitle":"Beginner C++ Game Programming Series","wgCurRevisionId":1443,"wgRevisionId":1443,"wgArticleId":14,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Beginner_C++_Game_Programming_Series","wgRelevantArticleId":14,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":
+!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Beginner_C_Game_Programming_Series skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Beginner C++ Game Programming Series</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Beginner_C++_Game_Programming_Series.html#mw-head">navigation</a>, 					<a href="Beginner_C++_Game_Programming_Series.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The beginner series is meant to teach fundamental C++ programming concepts. It also covers some basic graphics programming theory. Also: making shitty little games. It is suitable even for those with zero programming experience. If this ain't your first rodeo, you can use this page to jump through the lessons, skipping any B.S. you already know.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Beginner_C++_Game_Programming_Series.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Beginner_C++_Game_Programming_Series.html#C.2B.2B_Language_-_Procedural_Basics"><span class="tocnumber">1.1</span> <span class="toctext">C++ Language - Procedural Basics</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Beginner_C++_Game_Programming_Series.html#C.2B.2B_Language_-_Object_Oriented_Basics"><span class="tocnumber">1.2</span> <span class="toctext">C++ Language - Object Oriented Basics</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Beginner_C++_Game_Programming_Series.html#C.2B.2B_Language_-_Standard_Library"><span class="tocnumber">1.3</span> <span class="toctext">C++ Language - Standard Library</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Beginner_C++_Game_Programming_Series.html#Chili_Framework"><span class="tocnumber">1.4</span> <span class="toctext">Chili Framework</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Beginner_C++_Game_Programming_Series.html#Game_Programming_Concepts"><span class="tocnumber">1.5</span> <span class="toctext">Game Programming Concepts</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Beginner_C++_Game_Programming_Series.html#General_Programming_Techniques"><span class="tocnumber">1.6</span> <span class="toctext">General Programming Techniques</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Beginner_C++_Game_Programming_Series.html#Graphics_Concepts"><span class="tocnumber">1.7</span> <span class="toctext">Graphics Concepts</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Beginner_C++_Game_Programming_Series.html#Math_.2F_Physics_Concepts"><span class="tocnumber">1.8</span> <span class="toctext">Math / Physics Concepts</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="Beginner_C++_Game_Programming_Series.html#Other_Skills"><span class="tocnumber">1.9</span> <span class="toctext">Other Skills</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="Beginner_C++_Game_Programming_Series.html#History"><span class="tocnumber">2</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="Beginner_C++_Game_Programming_Series.html#List_of_Tutorials"><span class="tocnumber">3</span> <span class="toctext">List of Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="Beginner_C++_Game_Programming_Series.html#Other_Series"><span class="tocnumber">4</span> <span class="toctext">Other Series</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<h3><span class="mw-headline" id="C.2B.2B_Language_-_Procedural_Basics">C++ Language - Procedural Basics</span></h3>
+<ul><li>Basic <a href="Variable.html" title="Variable">variables</a> (<code>int</code>,<code>bool</code>,<code>float</code>), <code><a href="Const.html" title="Const">const</a></code> specifier, <code>auto</code></li>
+<li>Type casting (c-style (type) cast)</li>
+<li>Basic arithmetic operations (<code>+</code>, <code>-</code>, <code>/</code>, <code>*</code>, <code>%</code>, precedence <code>()</code>, assignment <code>+=</code> etc.,<code>++</code>/<code>--</code> )</li>
+<li>Conditionals (<a href="If_Statement.html" title="If Statement"><code>if</code>...<code>else</code></a>, <code>switch</code>...<code>case</code>)</li>
+<li>Boolean logic operations (<code>||</code>, <code>&amp;&amp;</code>, <code>!</code>)</li>
+<li>Comparisons (<code>&gt;</code>, <code>&lt;</code>, <code>==</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!=</code>)</li>
+<li>Loops (<code>while</code>, <code>for</code>, <code>do</code>...<code>while</code>, range-based for)</li>
+<li>Writing <a href="Function.html" title="Function">functions</a> / function parameters / return values / overloading functions</li>
+<li>References <code>&amp;</code> / pass by reference-vs-pass by value</li>
+<li>Arrays <code>[]</code></li>
+<li><code>struct</code> (and its difference from <code>class</code>)</li>
+<li><code>enum class</code></li>
+<li><code>namespace</code> / <code>using</code></li>
+<li>Forward declaration of classes to break circular <code>#include</code> cycles</li>
+<li>Uniform initialization of classes / structs with <code>{}</code></li></ul>
+<h3><span class="mw-headline" id="C.2B.2B_Language_-_Object_Oriented_Basics">C++ Language - Object Oriented Basics</span></h3>
+<ul><li>Creating objects, calling member functions</li>
+<li>Creating <code>class</code>es, data members, and member functions</li>
+<li><code>public</code> / <code>private</code> member access / encapsulation and data hiding</li>
+<li><code><a href="Const.html" title="Const">const</a></code>/non-mutating member functions</li>
+<li>Writing constructors / initializing embedded objects</li>
+<li>Default (automatic) constructor / <code>= default</code>;</li>
+<li>Delegating constructors</li>
+<li><code>static</code> member variables / <code>static constexpr</code> member variables</li>
+<li>Nested classes</li>
+<li>Forward declaration to break circular dependencies</li>
+<li>Implementing operators for classes</li></ul>
+<h3><span class="mw-headline" id="C.2B.2B_Language_-_Standard_Library">C++ Language - Standard Library</span></h3>
+<ul><li>Rng &lt;random&gt; <code>std::mt19973</code> / uniform_distributions</li>
+<li>Utility functions <code>std::min</code> / <code>std::max</code> / <code>std::swap</code></li>
+<li>Math functions <code>std::abs</code> / <code>std::sqrt</code></li>
+<li>Measuring time <code>&lt;chrono&gt;</code> <code>std::chrono::steady_clock</code> / duration</li>
+<li>Assertions <code>&lt;assert.h&gt;</code></li></ul>
+<h3><span class="mw-headline" id="Chili_Framework">Chili Framework</span></h3>
+<ul><li>Gfx: putpixel/screenwidth/height</li>
+<li>Color: getting/setting RGB color components</li>
+<li>Mouse/kbd: input (polled and event-driven)</li>
+<li>Sound: loading and playing sounds</li></ul>
+<h3><span class="mw-headline" id="Game_Programming_Concepts">Game Programming Concepts</span></h3>
+<ul><li>Game loop / frame based animation</li>
+<li>Grid coordinate systems and mappings</li>
+<li>Variable (measured) time step and fixed time step</li>
+<li>Basic rectangle collision detection and handling</li></ul>
+<h3><span class="mw-headline" id="General_Programming_Techniques">General Programming Techniques</span></h3>
+<ul><li>Recursion</li>
+<li>Managing a partially-filled array</li>
+<li>Mapping a 2D array onto a 1D array</li></ul>
+<h3><span class="mw-headline" id="Graphics_Concepts">Graphics Concepts</span></h3>
+<ul><li>Compiled sprite</li>
+<li>Drawing filled rectangles and filled circles</li>
+<li>Drawing beveled graphics</li>
+<li>Pulsating color animation effect</li></ul>
+<h3><span class="mw-headline" id="Math_.2F_Physics_Concepts">Math / Physics Concepts</span></h3>
+<ul><li>Position / velocity / acceleration</li>
+<li>Rebounding off of a vertical/horizontal surface</li>
+<li>Basic vector math (vector add/sub/scale/length/normalize)</li></ul>
+<h3><span class="mw-headline" id="Other_Skills">Other Skills</span></h3>
+<ul><li>Basic visual studio IDE usage &amp; navigation</li>
+<li>Visual studio debugger</li>
+<li>Git + MSVC</li>
+<li>Basic understanding of compiler, linker, .h/.cpp files, .lib/.obj files</li>
+<li>Using regex find/replace in visual studio</li></ul>
+<h2><span class="mw-headline" id="History">History</span></h2>
+<p>This series is a reboot of Chili's <a rel="nofollow" class="external text" href="http://forum.planetchili.net/viewtopic.php?f=3&amp;t=1792">original beginner series</a> launched back in 2012 (ah, the good old days). The way that Direct3D applications are built and the tools used have changed over the last 5 or so years, and the reboot updates the tutorials to reflect those changes. It also corrects some mistakes that were made, and is reworked to shorten the journey to hardware 3D graphics programming and to introduce object-oriented programming at an earlier stage.
+</p>
+<h2><span class="mw-headline" id="List_of_Tutorials">List of Tutorials</span></h2>
+<table style="border:1px solid grey;border-collapse:collapse;width=100%;">
+
+<tr style="border:1px solid grey;background-color:#DDF;color:black;font-weight:bold;text-align:center;">
+<td style="width:10%;border:1px solid grey;">Tutorial Number
+</td>
+<td style="width:60%;border:1px solid grey;">Title
+</td>
+<td style="width:16%;border:1px solid grey;">Release Date
+</td>
+<td style="width:14%;border:1px solid grey;">Runtime
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">0
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_0.html" title="Beginner C++ Game Programming Tutorial 0">Beginner C++ Game Programming [Intro/Setup]</a>
+</td>
+<td style="border:1px solid grey;">July 30, 2016
+</td>
+<td style="border:1px solid grey;">16:03
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This tutorial introduces the <strong class="selflink">Beginner C++ Game Programming Series</strong> and walks you through the setup required to follow along with Chili. It also explains who the series is intended for, the goals and outline of the series, and tips on how to succeed, but you can skip all that bullshit if you have crippling ADD. For a detailed list of what is covered in Beginner, see <a href="Beginner_C++_Game_Programming_Series.html#Topics_Covered" title="Beginner C++ Game Programming Series">this page</a>.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">1
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_1.html" title="Beginner C++ Game Programming Tutorial 1">Beginner C++ Game Programming [Function Calls/Syntax]</a>
+</td>
+<td style="border:1px solid grey;">August 1, 2016
+</td>
+<td style="border:1px solid grey;">17:35
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This tutorial mainly deals with how to call a <a href="Function.html" title="Function">function</a> in C++ and basic syntax rules. We also talk about pixels, intellisense and other dumb bullshit.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">2
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_2.html" title="Beginner C++ Game Programming Tutorial 2">Beginner C++ Game Programming [Variables/Operators]</a>
+</td>
+<td style="border:1px solid grey;">August 5, 2016
+</td>
+<td style="border:1px solid grey;">18:49
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This tutorial is all about making sweet ass boxes (<a href="Variable.html" title="Variable">variables</a>) to jam your hot numbers into and using <a href="Operator.html" title="Operator">operators</a> (addition and subtraction) to add and subtract shit.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">3
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_3.html" title="Beginner C++ Game Programming Tutorial 3">Beginner C++ Game Programming [if Statement/bool]</a>
+</td>
+<td style="border:1px solid grey;">August 9, 2016
+</td>
+<td style="border:1px solid grey;">26:11
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We learn how to control the flow of execution using <a href="If_Statement.html" title="If Statement"><code>if</code> statements</a>, we learn about a new <a href="Variable.html" title="Variable">variable</a> type called <a href="Variable.html#bool" title="Variable"><code>bool</code></a>, and we learn how to use the <a href="Chili_Framework.html" title="Chili Framework">Chili Framework</a> to get <a href="Keyboard_(Chili_Framework).html" title="Keyboard (Chili Framework)">keyboard</a> input. All this, plus the dankest memes from 2007.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">4
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_4.html" title="Beginner C++ Game Programming Tutorial 4">Beginner C++ Game Programming [Animation/Member Variables]</a>
+</td>
+<td style="border:1px solid grey;">August 14, 2016
+</td>
+<td style="border:1px solid grey;">16:13
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this tutorial we explore the idea of animation in computer graphics and we make the reticle move freely around the screen. Along the way we learn about classes and objects, how to add member variables to objects/<code>class</code>es, about .h (header) and .cpp (source) files, and about the short harsh lives of local variables (scope).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">5
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_5.html" title="Beginner C++ Game Programming Tutorial 5">Beginner C++ Game Programming [Comparison/Logical Operators]</a>
+</td>
+<td style="border:1px solid grey;">August 20, 2016
+</td>
+<td style="border:1px solid grey;">20:28
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Comparison and Boolean logic operators. Operators galore! Make <code>if</code> statements great again! Let the <code>int</code> dick measuring contests begin! Also, collision detection between rectangles, which is useful for stuff.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">6
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_6.html" title="Beginner C++ Game Programming Tutorial 6">Beginner C++ Game Programming [Creating Functions]</a>
+</td>
+<td style="border:1px solid grey;">August 27, 2016
+</td>
+<td style="border:1px solid grey;">19:14
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> How to make member functions. That is all.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">7
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_7.html" title="Beginner C++ Game Programming Tutorial 7">Beginner C++ Game Programming [Debugging]</a>
+</td>
+<td style="border:1px solid grey;">September 2, 2016
+</td>
+<td style="border:1px solid grey;">17:59
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Mr. DeBugger is a real sir.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">8
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_8.html" title="Beginner C++ Game Programming Tutorial 8">Beginner C++ Game Programming [Poo Game/RNG]</a>
+</td>
+<td style="border:1px solid grey;">September 10, 2016
+</td>
+<td style="border:1px solid grey;">27:56
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We make our first game. So goddamn sweet. Not shitty at all.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">9
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_9.html" title="Beginner C++ Game Programming Tutorial 9">Beginner C++ Game Programming [Creating Classes/static constexpr]</a>
+</td>
+<td style="border:1px solid grey;">September 17, 2016
+</td>
+<td style="border:1px solid grey;">20:11
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we make our first class and Chili teaches us about the birds and the bees and the static constexpr.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">10
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_10.html" title="Beginner C++ Game Programming Tutorial 10">Beginner C++ Game Programming [Loops]</a>
+</td>
+<td style="border:1px solid grey;">October 4, 2016
+</td>
+<td style="border:1px solid grey;">20:55
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we learn how to loop our shit. Fuckoff copy and paste. Die in a gasoline fire (just kidding, don't leave me baby!)
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">11
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_11.html" title="Beginner C++ Game Programming Tutorial 11">Beginner C++ Game Programming [References/const Correctness]</a>
+</td>
+<td style="border:1px solid grey;">October 20, 2016
+</td>
+<td style="border:1px solid grey;">35:39
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> References are sweet because they let us control our shit from far away. Remember the days when we had to actually get up to change the channel on the TV? Remember TV? Fuck that shit! Also, const correctness is for big dick gangstas that don't give any fucks.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">12
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_12.html" title="Beginner C++ Game Programming Tutorial 12">Beginner C++ Game Programming [Constructors/Encapsulation]</a>
+</td>
+<td style="border:1px solid grey;">October 29, 2016
+</td>
+<td style="border:1px solid grey;">30:55
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Here we learn about the concept of encapsulation (ask your mom where she keeps the Vicodin!), which is the main principle behind object oriented programming (so listen the fuck up eh?). We also learn how to construct shit, and how to make our shit private.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">13
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_13.html" title="Beginner C++ Game Programming Tutorial 13">Beginner C++ Game Programming [Arrays]</a>
+</td>
+<td style="border:1px solid grey;">November 11, 2016
+</td>
+<td style="border:1px solid grey;">34:41
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this lesson we learn about the bomb-ass data structure known as the array, the granddaddy of them all. We also learn about boring shit like the automatically-generated default constructor (BOOOOORIIIIING! NEEEEEERRRD!).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">14
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_14.html" title="Beginner C++ Game Programming Tutorial 14">Beginner C++ Game Programming [Snake Game]</a>
+</td>
+<td style="border:1px solid grey;">November 26, 2016
+</td>
+<td style="border:1px solid grey;">36:22+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This is a two-part tutorial in which we tackle a game with a little more substance--the Snake Game. Grids and arrays galore. Majestic.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">15
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_15.html" title="Beginner C++ Game Programming Tutorial 15">Beginner C++ Game Programming [Git in Visual Studio]</a>
+</td>
+<td style="border:1px solid grey;">December 11, 2016
+</td>
+<td style="border:1px solid grey;">37:25
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we learn how to use Git source control so that we can suck less at programming.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">16
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_16.html" title="Beginner C++ Game Programming Tutorial 16">Beginner C++ Game Programming [float/type casting]</a>
+</td>
+<td style="border:1px solid grey;">December 20, 2016
+</td>
+<td style="border:1px solid grey;">30:30
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we learn how to <code>float</code> our boat, and how to get type cast.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">17
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_17.html" title="Beginner C++ Game Programming Tutorial 17">Beginner C++ Game Programming [chrono timestep/using namespace]</a>
+</td>
+<td style="border:1px solid grey;">December 25, 2016
+</td>
+<td style="border:1px solid grey;">29:11
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we do the timestep thing in the Poo game. That means we measure (with <code>std::chrono::steady_clock</code>) the time taken for each frame, and then step the game's simulation by that amount. We also learn about the <code>using</code> keyword.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">18
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_18.html" title="Beginner C++ Game Programming Tutorial 18">Beginner C++ Game Programming [Compiler Confessions]</a>
+</td>
+<td style="border:1px solid grey;">January 8, 2017
+</td>
+<td style="border:1px solid grey;">28:35
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we dig down in the dirty, juicy secrets of the C++ toolchain (the preprocessor, <a href="Compiler.html" title="Compiler">compiler</a>, and linker).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">19
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_19.html" title="Beginner C++ Game Programming Tutorial 19">Beginner C++ Game Programming [2D Vectors]</a>
+</td>
+<td style="border:1px solid grey;">January 14, 2017
+</td>
+<td style="border:1px solid grey;">36:09
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Welcome to the fantastic erotic world of mathematical vectors. Everything is different now. Every operator is overloaded.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">20
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_20.html" title="Beginner C++ Game Programming Tutorial 20">Beginner C++ Game Programming [Fart-Annoyed]</a>
+</td>
+<td style="border:1px solid grey;">January 28, 2017
+</td>
+<td style="border:1px solid grey;">28:18+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This is a three-part tutorial in which we play with our balls. Or something. Anyways, we'll finally put all that vector bullshit to good work doing some physics-y type shit.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">21
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_21.html" title="Beginner C++ Game Programming Tutorial 21">Beginner C++ Game Programming [2D Arrays/Circular Dependency]</a>
+</td>
+<td style="border:1px solid grey;">February 11, 2017
+</td>
+<td style="border:1px solid grey;">27:22
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> 2D arrays are awesome because they fuckin' let us organize or data and shit. Board games like chess, strategy games like Civilization, roguelikes, RTS games, X-Com... it's all grids baby. Also, time to learn how to circular depend our shit with forward declaration (you should still avoid circ. dep. when possible tho).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">22
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_22.html" title="Beginner C++ Game Programming Tutorial 22">Beginner C++ Game Programming [enum/switch/case]</a>
+</td>
+<td style="border:1px solid grey;">February 19, 2017
+</td>
+<td style="border:1px solid grey;">21:42
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We learn how to use <code>enum</code> to get rid of all the magic number bullshit for representing a number of options or states, and we learn how to use <code>switch</code>/<code>case</code> as an alternative to long <code>if</code> ... <code>else</code> chains. I also give the sermon on the mount (c:).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">23
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_23.html" title="Beginner C++ Game Programming Tutorial 23">Beginner C++ Game Programming [Memesweeper]</a>
+</td>
+<td style="border:1px solid grey;">February 26, 2017
+</td>
+<td style="border:1px solid grey;">38:10+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Remember that movie, Field of Dreams starring Kevin Costner? No? Well neither do I, but this is a lot like that, minus the baseball, the Kevin Costner, the corn, and a lot of other stuff. But it has memes, and they will kill you.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">24
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Beginner_C++_Game_Programming_Tutorial_24.html" title="Beginner C++ Game Programming Tutorial 24">Beginner C++ Game Programming [Recursion]</a>
+</td>
+<td style="border:1px solid grey;">March 11, 2017
+</td>
+<td style="border:1px solid grey;">26:54
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Don't fool around with this stuff. Last week a programmer was found dead in the shower here. Apparently the instructions on the shampoo bottle read: Lather. Rinse. Repeat.
+</td></tr></table>
+<h2><span class="mw-headline" id="Other_Series">Other Series</span></h2>
+<ul><li><a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222144
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.026 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 176/1000000
+Preprocessor generated node count: 356/1000000
+Post‐expand include size: 4814/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:14-0!*!0!!en!*!* and timestamp 20231224222144 and revision id 1443
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;oldid=1443">https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;oldid=1443</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Beginner+C%2B%2B+Game+Programming+Series" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Beginner_C++_Game_Programming_Series.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Beginner_C%2B%2B_Game_Programming_Series&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Beginner_C++_Game_Programming_Series.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Beginner_C++_Game_Programming_Series.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Beginner_C++_Game_Programming_Series.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Beginner_C%2B%2B_Game_Programming_Series" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Beginner_C%2B%2B_Game_Programming_Series" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;oldid=1443" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Series&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 17 June 2018, at 22:55.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":37});
+} );</script>
+	</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Advanced C++ Programming Tutorial 5 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Advanced_C++_Programming_Tutorial_5","wgTitle":"Advanced C++ Programming Tutorial 5","wgCurRevisionId":3192,"wgRevisionId":3192,"wgArticleId":109,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Advanced_C++_Programming_Tutorial_5","wgRelevantArticleId":109,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1
+,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Advanced_C_Programming_Tutorial_5 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Advanced C++ Programming Tutorial 5</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Advanced_C++_Programming_Tutorial_5.html#mw-head">navigation</a>, 					<a href="Advanced_C++_Programming_Tutorial_5.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Hot take: the Matrix is a mediocre film at best. It's a pretty great way to encode transformations though, so let's matrix it up!
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Advanced_C++_Programming_Tutorial_5.html#Topics"><span class="tocnumber">1</span> <span class="toctext">Topics</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Advanced_C++_Programming_Tutorial_5.html#Part_1"><span class="tocnumber">1.1</span> <span class="toctext">Part 1</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Advanced_C++_Programming_Tutorial_5.html#Part_2"><span class="tocnumber">1.2</span> <span class="toctext">Part 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Advanced_C++_Programming_Tutorial_5.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Advanced_C++_Programming_Tutorial_5.html#Tutorial_5.1"><span class="tocnumber">2.1</span> <span class="toctext">Tutorial 5.1</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Advanced_C++_Programming_Tutorial_5.html#Tutorial_5.2"><span class="tocnumber">2.2</span> <span class="toctext">Tutorial 5.2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Advanced_C++_Programming_Tutorial_5.html#Links"><span class="tocnumber">3</span> <span class="toctext">Links</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Advanced_C++_Programming_Tutorial_5.html#Homework"><span class="tocnumber">4</span> <span class="toctext">Homework</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Advanced_C++_Programming_Tutorial_5.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics">Topics</span></h2>
+<h3><span class="mw-headline" id="Part_1">Part 1</span></h3>
+<ul><li> Matrix form</li>
+<li> Matrix by vector multiplication</li>
+<li> Matrix encoding of scaling, rotation, and flipping</li>
+<li> Matrix multiplication</li>
+<li> Concatenating matrix transforms</li></ul>
+<h3><span class="mw-headline" id="Part_2">Part 2</span></h3>
+<ul><li> Augmented 3x3 matrix for encoding translations</li>
+<li> Matrix multiplication order matters!</li>
+<li> Porting pipeline to use matrix transforms</li>
+<li> Bug hunting!</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<h3><span class="mw-headline" id="Tutorial_5.1"><a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc">Tutorial 5.1</a></span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Matrices: what are they, what are they good for? <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=0m44s">0:44</a></li>
+<li> Basic Matrix operations: Matrix by Vector multiplication <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=3m05s">3:05</a></li>
+<li> Creating a templated <code>_Mat2&lt;T&gt;</code> Matrix class <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=7m16s">7:16</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Matrix data stored as 2D array <code>T arr[2][2]</code></li></ul></dd></dl>
+</div>
+<ul><li> Implementing the Matrix by Vector multiplication method <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=9m21s">9:21</a></li>
+<li> Testing in <code>game.cpp</code> <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=13m00s">13:00</a></li>
+<li> Implementing basic transformations in Matrix form as static functions <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=15m16s">15:16</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Scaling &amp; Identity Matrices <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=17m13s">17:13</a></li>
+<li> Flipping the y-axis <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=18m01s">18:01</a></li>
+<li> Rotation <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=18m56s">18:56</a></li></ul></dd></dl>
+</div>
+<ul><li> Testing in <code>game.cpp</code> <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=21m25s">21:25</a></li>
+<li> Basic matrix operations: Matrix multiplication <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=23m06s">23:06</a></li>
+<li> Implementing &amp; testing the Matrix multiplication method <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=25m52s">25:52</a></li>
+<li> Recap: concatenating transformations by multiplying transformation matrices <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=30m10s">30:10</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> This is the beauty of matrix operations: one single concatenated matrix holds all the transformation information</li>
+<li> Concatenating matrices cuts down the number of vector operations needed at runtime</li></ul></dd></dl>
+</div>
+<ul><li> What about translation? <a rel="nofollow" class="external text" href="https://youtu.be/iNCx0yIeCNc?t=31m20s">31:20</a></li></ul>
+</div>
+<h3><span class="mw-headline" id="Tutorial_5.2"><a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA">Tutorial 5.2</a></span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Translation: why is it a complicated transformation? <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=0m14s=">0:14</a></li>
+<li> Trick: augment the matrix (add an extra dimension) <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=3m11s">3:11</a></li>
+<li> Coding this into the framweork <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=6m54s">6:54</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Implementing a <code>Mat3</code> class for (3x3) matrices <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=6m54s">6:54</a></li>
+<li> Implementing a <code>Vec3</code> class for (3x1) vectors <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=8m51s">8:51</a></li>
+<li> Test run <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=10m48s">10:48</a></li></ul></dd></dl>
+</div>
+<ul><li> The order of applying transformations and its relation to Matrix multiplication (concatenation) <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=12m09s">12:09</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> The order in which you concatenate matrices matters: ABC&#160;!= CBA </li>
+<li> The sequence of applying transformations reads from right to left in Matrix multiplication</li></ul>
+<dl><dd> T = CBA means transformation A is applied first, then B, then C</dd></dl>
+<ul><li> Demo of this principle in debug mode <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=14m19s">14:19</a></li></ul></dd></dl>
+</div>
+<ul><li> Matrix augmentation is not just a hack, it falls in the domain of Projective Geometry <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=15m29s">15:29</a></li>
+<li> Fix up the Starfield rendering pipeline <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=16m31s">16:31</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Design decision: keep working with <code>Vec2</code>, this requires conversion operators to and from <code>Vec3</code></li>
+<li> Refactoring the <code>DrawClosedPolygon</code> function in the <code>Graphics</code> class <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=18m03s">18:03</a></li>
+<li> Refactoring the <code>Drawable</code> class <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=19m15s">19:15</a></li>
+<li> Refactoring the <code>Entity</code> class <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=23m22s">23:22</a></li>
+<li> Refactoring the <code>CoordinateTransformer</code> class <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=23m22s">24:00</a></li></ul></dd></dl>
+</div>
+<ul><li> Debugging session: the wrong order of transformations can mess you up <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=24m51s">24:51</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Be careful with Matrix multiplication operators: using the overloaded <code>operator*=()</code> is risky:</li></ul>
+<dl><dd> <code>M *= A</code> yields M=MA, but we need M=AM</dd></dl></dd></dl>
+</div>
+<ul><li> Recap &amp; key takeaways: math is doable, mind your order of concatenation <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=32m12s">32:12</a></li>
+<li> Tutorial Roadmap from here on out <a rel="nofollow" class="external text" href="https://youtu.be/CS4HQdQnbaA?t=34m27s">34:27</a></li></ul>
+</div>
+<h2><span class="mw-headline" id="Links">Links</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/advmath">GitHub Repo (advmath)</a></li>
+<li> Note that the code for this tutorial can be found on the <span style="color:lime">&lt;starfield&gt; branch</span> of the repo <span style="color:red">not in &lt;master&gt;</span></li></ul>
+<h2><span class="mw-headline" id="Homework">Homework</span></h2>
+<p>None! (or check out 3D Fundamentals you lazy fucks!)
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Advanced_C++_Programming_Tutorial_6.html" title="Advanced C++ Programming Tutorial 6">Next in series (Tutorial 6)</a></li>
+<li> <a href="Advanced_C++_Programming_Series.html" title="Advanced C++ Programming Series">Advanced C++ Programming Series</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.patreon.com/planetchili">Planet Chili Patreon</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222539
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 48/1000000
+Preprocessor generated node count: 66/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:109-0!*!0!!en!*!* and timestamp 20231224222539 and revision id 3192
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;oldid=3192">https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;oldid=3192</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Advanced+C%2B%2B+Programming+Tutorial+5" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Advanced_C++_Programming_Tutorial_5.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Advanced_C%2B%2B_Programming_Tutorial_5&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Advanced_C++_Programming_Tutorial_5.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Advanced_C++_Programming_Tutorial_5.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Advanced_C++_Programming_Tutorial_5.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Advanced_C%2B%2B_Programming_Tutorial_5" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Advanced_C%2B%2B_Programming_Tutorial_5" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;oldid=3192" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Advanced_C%2B%2B_Programming_Tutorial_5&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 April 2020, at 16:06.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":42});
+} );</script>
+	</body>
+</html>

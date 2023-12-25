@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>3D Fundamentals Tutorial 1 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"3D_Fundamentals_Tutorial_1","wgTitle":"3D Fundamentals Tutorial 1","wgCurRevisionId":3203,"wgRevisionId":3203,"wgArticleId":39,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"3D_Fundamentals_Tutorial_1","wgRelevantArticleId":39,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,
+"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-3D_Fundamentals_Tutorial_1 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">3D Fundamentals Tutorial 1</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="3D_Fundamentals_Tutorial_1.html#mw-head">navigation</a>, 					<a href="3D_Fundamentals_Tutorial_1.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This video gives a quick tour of the framework we're going to be using to explore the concepts of realtime 3D graphics. The intended audience is mainly people coming to the 3D Fundamentals series without experience in my other tutorials.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="3D_Fundamentals_Tutorial_1.html#Disclaimer"><span class="tocnumber">1</span> <span class="toctext">Disclaimer</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="3D_Fundamentals_Tutorial_1.html#Framework"><span class="tocnumber">2</span> <span class="toctext">Framework</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="3D_Fundamentals_Tutorial_1.html#Video"><span class="tocnumber">3</span> <span class="toctext">Video</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="3D_Fundamentals_Tutorial_1.html#Downloads"><span class="tocnumber">4</span> <span class="toctext">Downloads</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="3D_Fundamentals_Tutorial_1.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Disclaimer">Disclaimer</span></h2>
+<p>This video is not meant to explain all of the inner mechanisms of framework or the APIs used. I know a lot of people are literally shitting themselves with impatience over that, but trust me, <b>the time is not yet ripe and nubile</b>. You won't be able to properly understand the Direct3D API without first understanding 3D theory, and while I could explain the WinAPI stuff at this point, it would just detract from the focus of this series.
+</p><p>Now if you are curious, you can check out a video from the old Intermediate series that explains the WinAPI and Direct3D initialization (albeit, D3D9, not D3D11). But trust me, if you think that learning this one thing is going to change everything, you will be sorely disappointed. There is no one key that will unlock all the doors of awesome. You gotta build it up, one block at a time. And right now, the most important thing is to understand the theory of 3D graphics.
+</p>
+<h2><span class="mw-headline" id="Framework">Framework</span></h2>
+<p>The reference for the framework can be found <a href="Chili_Framework.html" title="Chili Framework">here</a>. Note that this reference is for the framework as it is in the Beginner series, and thus it lacks information on certain classes like the vector and matrix classes and the surface class.
+</p>
+<h2><span class="mw-headline" id="Video">Video</span></h2>
+<p>The tutorial video is on YouTube <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA">here</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Getting the framework code (clone from GitHub) <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=0m43s">0:43</a></li>
+<li> <code>Graphics</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=2m00s">2:00</a></li>
+<li> <code>Surface</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=4m54s">4:54</a></li>
+<li> <code>Color</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=7m16s">7:16</a></li>
+<li> <code>MainWindow</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=8m14s">8:14</a></li>
+<li> <code>Keyboard</code> and <code>Mouse</code> classes <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=9m57s">9:57</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Two ways of accessing inputs:</li></ul>
+<dl><dd>- Queue of events (you can pull events off the queue in the order in which they occured</dd>
+<dd>- Check current state of input devices</dd></dl></dd></dl>
+</div>
+<ul><li> <code>Main.cpp</code> entry point <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=11m30s">11:30</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> This is where the core game loop runs:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>try
+{
+    Game theGame( wnd );
+    while( wnd.ProcessMessage() )
+    {
+        theGame.Go();
+    }
+}</pre></div></dd></dl></dd></dl>
+</div>
+<ul><li> <code>Game</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=12m52s">12:52</a></li>
+<li> Utility classes <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=14m00s">14:00</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> <code>Rect</code> class for rectangles <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=14m00s">14:00</a></li>
+<li> <code>Vec2</code> class for 2D vectors <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=14m31s">14:31</a></li>
+<li> <code>Mat2</code> class for (2x2) matrices <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=15m18s">15:18</a></li>
+<li> <code>ChiliException</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=15m44s">15:44</a></li>
+<li> <code>ChiliMath</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=17m29s">17:29</a></li>
+<li> <code>ChiliWin</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=17m41s">17:41</a></li>
+<li> <code>DXErr</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=18m19s">18:19</a></li>
+<li> <code>GDIPlusManager</code> class <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=18m38s">18:38</a></li>
+<li> <code>Resources</code> <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=19m58s">19:58</a></li>
+<li> <code>Shaders</code> <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=20m09s">20:09</a></li></ul></dd></dl>
+</div>
+<ul><li> Demo (rotating star) <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=20m37s">20:37</a></li>
+<li> A note on Matrix layout (row vector * matrix multiplication) <a rel="nofollow" class="external text" href="https://youtu.be/O7dKCaWzvzA?t=25m50s">25:50</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> The framework follows the DX layout (OpenGL uses matrix * column vector multiplication)</li>
+<li> Important for the order of applying transformation matrices</li>
+<li> v<sup>T</sup> * A * B * C = C<sup>T</sup> * B<sup>T</sup> * A<sup>T</sup> * v</li></ul></dd></dl>
+</div>
+</div>
+<h2><span class="mw-headline" id="Downloads">Downloads</span></h2>
+<p>The GitHub repository for the tutorial code is <a rel="nofollow" class="external text" href="https://github.com/planetchili/3D_Fundamentals">here</a>.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.patreon.com/planetchili">Planet Chili Patreon</a></li>
+<li> <a href="3D_Fundamentals_Tutorial_2.html" title="3D Fundamentals Tutorial 2">Next in series (Tutorial 2)</a></li>
+<li> <a href="3D_Fundamentals_Series.html" title="3D Fundamentals Series">3D Fundamentals Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222422
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.038 seconds
+Preprocessor visited node count: 34/1000000
+Preprocessor generated node count: 56/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:39-0!*!0!!en!*!* and timestamp 20231224222422 and revision id 3203
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;oldid=3203">https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;oldid=3203</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=3D+Fundamentals+Tutorial+1" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="3D_Fundamentals_Tutorial_1.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:3D_Fundamentals_Tutorial_1&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="3D_Fundamentals_Tutorial_1.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="3D_Fundamentals_Tutorial_1.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="3D_Fundamentals_Tutorial_1.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/3D_Fundamentals_Tutorial_1" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/3D_Fundamentals_Tutorial_1" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;oldid=3203" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_1&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 22 April 2020, at 03:17.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":46});
+} );</script>
+	</body>
+</html>

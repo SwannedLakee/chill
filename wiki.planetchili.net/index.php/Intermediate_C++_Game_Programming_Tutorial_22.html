@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 22 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_22","wgTitle":"Intermediate C++ Game Programming Tutorial 22","wgCurRevisionId":2723,"wgRevisionId":2723,"wgArticleId":94,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_22","wgRelevantArticleId":94,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{
+"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_22 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 22</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_22.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_22.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>In this video we learn how to use C++ exceptions to take our error handling to the next level. There is a lot of fear and ignorance surrounding exceptions among "C++ Programmers", and Chili's goal here is to elevate you guys above the shit-tier level to coders who can actually use this feature to its full extent. The second part of this tutorial will give concrete, practical examples of using exceptions in an actual game scenario.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#Extra_Discussion"><span class="tocnumber">3</span> <span class="toctext">Extra Discussion</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#Source_Code"><span class="tocnumber">4</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> Basic exception <code>try</code>ing <code>throw</code>ing and <code>catch</code>ing</li>
+<li> Exceptions 'bubbling up'</li>
+<li> Rethrowing with <code>throw</code></li>
+<li> <code>catch(...)</code></li>
+<li> <code>std::exception</code> and its derivatives</li>
+<li> Polymorphism in exception handling</li>
+<li> Exceptions and destructors</li>
+<li> <code>noexcept</code> and move constuctors vs. standard containers</li>
+<li> Throw by value, catch by <code>const</code> reference</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI">Tutorial 22 Part 1</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Intro: exceptions are the main way of handling errors in C++ <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=0m10s">0:10</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Examples of its usage in the Framework, a good practice for working with any API</li>
+<li> Everytime a Direct 3D Function is called, the return value is checked for error codes and handled</li></ul></li></ul>
+</div>
+<ul><li> Comparing error handling with and without exceptions <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=1m40s">1:40</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Conventional error handling requires checking function return errors for every function throughout the entire hierarchy of the code base</li>
+<li> With exceptioins the advantages are:</li></ul>
+<dl><dd>- you can catch an error anywhere in the code base (they "bubble up", or propagate up to a higher level function)</dd>
+<dd>- you can seperate your normal logic (code) from your error handling, without having to pollute your return values with error codes.</dd>
+<dd>- if you don't handle the error at some point, your program will be halted (uncaught exception).</dd></dl></li></ul>
+</div>
+<ul><li> Example code to demonstrate <code>try</code>, <code>throw</code>, <code>catch</code> of a <code>std::runtime_error("...")</code> <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=3m53s">3:53</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The <code>catch</code> function is only executed if an exception has been thrown</li>
+<li> Illustration of how exceptions can propagate out of functions</li>
+<li> You can decide the level at which you want to catch an exception <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=6m04s">6:04</a></li>
+<li> Catch and rethrow <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=6m40s">6:40</a></li>
+<li> You can <code>throw</code> anything you want: an object, an Integer, string, pointer, etc.</li>
+<li> You van overload the <code>catch</code> functions based on the type of information thrown</li></ul></li></ul>
+</div>
+<ul><li> Use <code>catch(...)</code> to catch any uncaught excepions <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=8m55s">8:55</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> In this case, you don't get any exception object or value that you can output</li>
+<li> Rethrowing still works</li></ul></li></ul>
+</div>
+<ul><li> Good practice: only throw exception objects that inherit from the <code>std::exception</code> class <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=9m51s">9:51</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> STL offers a range of pre-defined exception objects, with two basic types that inherit from <code>std::exception</code>:</li></ul>
+<dl><dd>- <code>std::logic_error</code>: due to faulty logic within the program</dd>
+<dd>- <code>std::runtime_error</code>: due to events beyond the scope of the program (such as file access errors)</dd></dl></li></ul>
+</div>
+<ul><li> <code>std::exception</code> and its derivatives <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=10m49s">10:49</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The inherentance hierarchy of <code>std::exception</code> is very useful </li>
+<li> The polymorphism lets you choose the level of detail in error handling, so that you can filter for specific errors</li>
+<li> You can use parent types to catch general exceptions</li>
+<li> An exception will be caught (/dispatched) to its most derived (most specific) type, when catch functions are overloaded for different types of exceptions</li>
+<li> You can create your own error classes that inherit from the existing one for customized and finer-grained error handling</li></ul></li></ul>
+</div>
+<ul><li> Unwinding the stack: what happens to objects when throwing out of scope <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=13m39s">13:39</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> If you throw an exception, the code is going to jump out of the current function to wherever it is being caught</li>
+<li> Upon jumping out of scope, the destructors of all objects in scope will be called. This is called "unwinding the stack"</li>
+<li> However, any objects created on the heap will not be destroyed, resulting in a memory leak</li>
+<li> This is avoided by using unique (smart) pointers and allocate memory with <code>std::make_unique&lt;&gt;()</code> instead of using raw pointers and <code>new</code></li>
+<li> More generally, if you use RAII types (such as <code>std::vector&lt;&gt;</code>, <code>std::string</code> etc.), you will have no issues with memory leaks</li></ul></li></ul>
+</div>
+<ul><li> Exceptions and destructors <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=17m17s">17:17</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Never have destructors throw exceptioins, this will mess up execution&#160;::bigly::</li>
+<li> If you call any functions that can throw exceptions in a destructor, make sure you always catch them</li></ul></li></ul>
+</div>
+<ul><li> Move semantics and containers <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=18m34s">18:34</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Move operations don't work well if an exception is thrown</li>
+<li> If a move constructor of a class can throw an exception, the STL classes will avoid it and default to the copy constructor</li>
+<li> You can enable move operations in these cases by making the move constructor <code>noexcept</code>, which explicitly tells the compiler that there will be no exception thrown</li>
+<li> Be mindful of when you mark your functions noexcept. You basically enter into a contract with whomever is using your code that the function will never throw exceptions. If you would ever want to change this, you risk nasty errors because the codebase may rely on your function being <code>noexcept</code>.</li></ul></li></ul>
+</div>
+<ul><li> Best practices <a rel="nofollow" class="external text" href="https://youtu.be/DMdyz0lrFBI?t=21m56s">21:56</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Always throw your exceptions by value and catch them by a constant reference</li>
+<li> Never use exceptions as a form of flow control (jumping through your code), this is a terrible idea. Exceptions should only be thrown when something bad happens</li>
+<li> Use exceptions for things that are out of your control as a programmer (think file / hardware access errors, network errors), otherwise use asserts </li>
+<li> Asserts are for checking errors that you can avoid as a programmer, but you want to test for during development. Sanity checks. They should not be necessary when you ship a product.</li></ul></li></ul>
+</div>
+</div>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA">Tutorial 22 Part 2</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Exceptions, applied in practice <a href="RPG_Project_Twin.html" title="RPG Project Twin">RPG Project Twin</a> in the Chili Framework <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=0m10s">0:10</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> A custom class <code>ChiliException</code> is defined (not recommended, rather inherit from <code>std::exception</code>) that holds message, filename and line number information and virtual functions for information getters defined in derived classes</li>
+<li> An inner class <code>Graphics::Exception</code> is defined that inherits from <code>ChiliException</code> and adds a data member of type <code>HRESULT&gt;</code> (used in DirectX)</li>
+<li> The Windows API doesn't use exceptions, so individual tests for every function using <code>FAILED</code> calls are used to throw exceptions. Macros such as <code>CHILI_GFX_EXCEPTION()</code> are used to generate the exceptions</li>
+<li> In <code>Main.cpp</code>, Chili uses a <code>try{ }</code> inside another <code>try{ }</code>. The first is used to test if the creation of a <code>MainWindow</code> object succeeds, the second to throw exceptions using <code>wnd.ShowMessageBox()</code> of that <code>MainWindow</code> class</li></ul></li></ul>
+</div>
+<ul><li> The use of macros to generate exceptions <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=4m22s">4:22</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> A macro <code>CHILI_GFX_EXCEPTION()</code> is implemented that expands to a constructor for <code>Graphics::Exception()</code>, that also takes two pre-processor defined macros (defined by the compiler):</li></ul>
+<dl><dd>- <code>_CRT_WIDE(__FILE__)</code>, for the filename</dd>
+<dd>- <code>__LINE__</code>, for the line number in the code</dd></dl>
+<ul><li> You need to use a macro for this to get the line number of each function call at the different throw points (instead of the line number of the function definition)</li></ul></li></ul>
+</div>
+<ul><li> The use of the <code>HRESULT</code> function  <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=5m42s">5:42</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>&gt;HRESULT hr</code> is used to perform a lookup  <code>DXGetErrosString(hr)</code> of the error name string</li></ul></li></ul>
+</div>
+<ul><li> Working with streams (<code>std::ifstream file</code> and exceptions in the <code>Sound</code> class <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=7m05s">7:05</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> For example: file reading to load sounds</li>
+<li> Steams don't work with exceptions by default, you have to check the error flags to throw based on that</li>
+<li> <code>file.exceptions(std::ifstream::failbit | std::ifstream::badbit);</code> turns on the excceptions for the failure and bad flags</li></ul></li></ul>
+</div>
+<ul><li> Recovering from an exception <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=9m33s">9:33</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> For example: loading resources (like sound). By using a <code>soft_fail</code> flag, an empty sound gets added to the matrix of sounds so that the program can continue. In case of a hard fail the exception gets rethrown and stops the program.</li>
+<li> Chili uses <code>#ifndef NDEBUG throw e; #endif</code> to always throw when in debug mode</li></ul></li></ul>
+</div>
+<ul><li> Recap of main take-aways <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=11m32s">11:32</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> DO inherit from <code>std::exception</code></li>
+<li> DO use exceptions for errors that happan that are out of programmer's control</li>
+<li> DO NOT use exceptions for sanity checks (use assert)</li>
+<li> DO throw by value</li>
+<li> DO catch by const ref&amp;</li>
+<li> DO use smart RAII types like smart pointers ALL THE TIME</li>
+<li> DO NOT throw exceptions from a destructor</li>
+<li> DO NOT throw exceptions from a move constructor if you want the move optimization in a <code>std::vector</code> etc.</li>
+<li> DO mark functions as <code>noexcept</code> if you are confident that they will NEVER want to throw an exception, either now, or later on in development</li>
+<li> DO not mark functions <code>noexcept</code> just because they happen not to throw right now - they might in the future so think carefully before going down the noexcept path</li>
+<li> DO NOT use exceptions for flow control</li></ul></li></ul>
+</div>
+<ul><li> Homework assignment <a rel="nofollow" class="external text" href="https://youtu.be/_6G5yDgoWiA?t=14m06s">14:06</a></li></ul>
+</div>
+<h2><span class="mw-headline" id="Extra_Discussion">Extra Discussion</span></h2>
+<p>I had an interesting exchange with a viewer, and made a bit of a writeup here: <a rel="nofollow" class="external text" href="http://forum.planetchili.net/viewtopic.php?f=3&amp;t=4305">essay time</a>.
+</p>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/Sprite">Sprite Github Repository (for <code>Surface</code> code)</a></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_23.html" title="Intermediate C++ Game Programming Tutorial 23">Next in series (Tutorial 23)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225012515
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 39/1000000
+Preprocessor generated node count: 64/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:94-0!*!0!!en!*!* and timestamp 20231225012515 and revision id 2723
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;oldid=2723">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;oldid=2723</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+22" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_22.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_22.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_22.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_22" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_22" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;oldid=2723" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_22&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 25 November 2019, at 05:59.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":2655});
+} );</script>
+	</body>
+</html>

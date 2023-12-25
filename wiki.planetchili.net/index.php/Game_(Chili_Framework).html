@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Game (Chili Framework) - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Game_(Chili_Framework)","wgTitle":"Game (Chili Framework)","wgCurRevisionId":471,"wgRevisionId":471,"wgArticleId":10,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Game_(Chili_Framework)","wgRelevantArticleId":10,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Game_Chili_Framework skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Game (Chili Framework)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Game_(Chili_Framework).html#mw-head">navigation</a>, 					<a href="Game_(Chili_Framework).html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The <code>Game</code> class is where you put the code to make the game do the things. The predefined member <a href="Function.html" title="Function">functions</a> <code>UpdateModel()</code> and <code>ComposeFrame()</code> are where you put your game logic and your rendering code, respectively. <code>Game</code> is composed of the <code>Graphics</code> object used for drawing and keeps a reference to the <code>MainWindow</code> object to interface with the Windows system (which includes the keyboard and mouse inputs).
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Game_(Chili_Framework).html#How_to_Do_the_Thing"><span class="tocnumber">1</span> <span class="toctext">How to Do the Thing</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Game_(Chili_Framework).html#Members"><span class="tocnumber">2</span> <span class="toctext">Members</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Game_(Chili_Framework).html#ComposeFrame"><span class="tocnumber">2.1</span> <span class="toctext">ComposeFrame</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Game_(Chili_Framework).html#UpdateModel"><span class="tocnumber">2.2</span> <span class="toctext">UpdateModel</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Game_(Chili_Framework).html#Game_.28constructor.29"><span class="tocnumber">2.3</span> <span class="toctext">Game (constructor)</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Game_(Chili_Framework).html#Game_.28destructor.29"><span class="tocnumber">2.4</span> <span class="toctext">Game (destructor)</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Game_(Chili_Framework).html#Go"><span class="tocnumber">2.5</span> <span class="toctext">Go</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Game_(Chili_Framework).html#Member_variables"><span class="tocnumber">2.6</span> <span class="toctext">Member variables</span></a>
+<ul>
+<li class="toclevel-3 tocsection-9"><a href="Game_(Chili_Framework).html#gfx"><span class="tocnumber">2.6.1</span> <span class="toctext">gfx</span></a></li>
+<li class="toclevel-3 tocsection-10"><a href="Game_(Chili_Framework).html#wnd"><span class="tocnumber">2.6.2</span> <span class="toctext">wnd</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="Game_(Chili_Framework).html#See_also"><span class="tocnumber">3</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="How_to_Do_the_Thing">How to Do the Thing</span></h2>
+<p>The <code>Game</code> class is meant to be modified by the programmer (that's you dawg). I'm not talking some crazy bagel head shit here, I'm talking about pure C++ crack codecaine (hook it in my veins!!). Slam some drawing code into <code>ComposeFrame()</code> and watch it ejaculate ropey strands of pixels onto your screen. Add some member variables to the class definition (in the <code>Game.h</code> file) to keep track of game state between frames. Add some private functions to <code>Game</code> to break up complex procedures into simple ones, or to allow code that appears in multiple places to unified to a single function.
+</p>
+<h2><span class="mw-headline" id="Members">Members</span></h2>
+<h3><span class="mw-headline" id="ComposeFrame">ComposeFrame</span></h3>
+<p><code>void Game::ComposeFrame()</code><br />
+</p><p>This is where you draw what is happening in the game's world on the screen so that the player will know what the fuck is going on. Try to avoid putting game logic here, and Chili will try to avoid putting his Möbius dildo up your butt.
+</p>
+<h3><span class="mw-headline" id="UpdateModel">UpdateModel</span></h3>
+<p><code>void Game::UpdateModel()</code><br />
+</p><p>This is where you put the code for updating the game's internal simulated state. Read inputs, move shit, spawn shit, kill shit, it's all good. Just don't put any drawing code here or Chili will fuck you with his Möbius dildo. When you get a little more advanced, you'll want to measure the time between frames so you can step the game simulation forward at proportional rate. 
+</p>
+<h3><span class="mw-headline" id="Game_.28constructor.29">Game (constructor)</span></h3>
+<p><code>Game::Game( class MainWindow&amp; wnd )</code><br />
+</p><p>Gets called when the <code>Game</code> object is created and creates the <code>Graphics</code> object. Put your initialization code here and it gets executed once at the start of the program. Good deal.
+</p>
+<h3><span class="mw-headline" id="Game_.28destructor.29">Game (destructor)</span></h3>
+<p><code>Game::~Game()</code><br />
+</p><p>Gets called when the <code>Game</code> object is destroyed and destroys the <code>Graphics</code> object. Put your final dying statements here and they get executed once at the end of the program.
+</p>
+<h3><span class="mw-headline" id="Go">Go</span></h3>
+<p><code>void Game::Go()</code><br />
+</p><p><code>Go()</code> is called from the Windows message loop, and it causes the <code>Game</code> object to simulate and render a single frame of the game. The body of <code>Go()</code> calls <code>UpdateModel()</code>, clears the framebuffer, calls <code>ComposeFrame()</code>, and presents the frame to the user. Generally speaking, <i>ne touche pas</i>.
+</p>
+<h3><span class="mw-headline" id="Member_variables">Member variables</span></h3>
+<h4><span class="mw-headline" id="gfx">gfx</span></h4>
+<p><code>Graphics Game::gfx</code><br />
+</p><p>The <code>Graphics</code> object is embedded in <code>Game</code>. Use it to make pretty drawings. <i>My name is Simon and I like to do drawings. - Simon</i>
+</p>
+<h4><span class="mw-headline" id="wnd">wnd</span></h4>
+<p><code>MainWindow&amp; Game::gfx</code><br />
+</p><p><code>Game</code> maintains a reference to the <code>MainWindow</code> object so that you can get keyboard and mouse input (the <code>Keyboard</code> and <code>Mouse</code> objects are embedded in <code>MainWindow</code>) and so that you can access certain Windows functionality (like checking if the window is minimized or displaying a message box).
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> The <a href="Chili_Framework.html" title="Chili Framework">Chili Framework</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224224008
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.004 seconds
+Real time usage: 0.082 seconds
+Preprocessor visited node count: 50/1000000
+Preprocessor generated node count: 62/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:10-0!*!0!!en!*!* and timestamp 20231224224008 and revision id 471
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;oldid=471">https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;oldid=471</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Game+%28Chili+Framework%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Game_(Chili_Framework).html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Game_(Chili_Framework)&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Game_(Chili_Framework).html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Game_(Chili_Framework).html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Game_(Chili_Framework).html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Game_(Chili_Framework)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Game_(Chili_Framework)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;oldid=471" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Game_(Chili_Framework)&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 August 2016, at 13:20.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1961});
+} );</script>
+	</body>
+</html>

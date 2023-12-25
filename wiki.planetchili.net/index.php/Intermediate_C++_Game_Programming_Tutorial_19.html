@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 19 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_19","wgTitle":"Intermediate C++ Game Programming Tutorial 19","wgCurRevisionId":2442,"wgRevisionId":2442,"wgArticleId":89,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_19","wgRelevantArticleId":89,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{
+"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_19 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 19</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_19.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_19.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>In this video Chili teaches us how to figure out what our polymorphic pointers are actually <i>pointing</i> to (aka "type discovery"). Just note that although we can do this, it is generally a weaksauce way to go about things. Virtual functions are 1000% more hype than type discovery bullshit. Oh yeah, we also finally see all the C++ style casts united.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#Source_Code"><span class="tocnumber">3</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> <code>dynamic_cast&lt;T*&gt;</code> and <code>dynamic_cast&lt;T&amp;&gt;</code></li>
+<li> <code>const_cast</code></li>
+<li> Overview of all C++ style casts</li>
+<li> RTTI with <code>typeid()</code></li>
+<li> The <code>type_info</code> class</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co">Tutorial 19</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Using <code>dynamic_cast&lt;DerivedType&gt;(pBaseType)</code> to determine to what derived type a pointer to a polymorphic base type is actually pointing <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=54s">0:54</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> A dynamic cast can be used on pointers and on references</li>
+<li> To cast (from and to) a pointer, use <br /><code>if( DerivedClass* ptr_temp = dynamic_cast&lt;DerivedClass*&gt;(ptr_to_baseClassObject) )</code><br />(note 1: if the cast fails, it will return a nullptr of the DerivedClass type)<br />(note 2: nullptr is #defined to 0 and thus evaluates to false inside an if statement)</li>
+<li> To cast (from and to) a reference, you can use <br /><code>DerivedClass&amp; val_temp = dynamic_cast&lt;DerivedClass&amp;&gt;(baseClassObject)</code><br />(but that will throw an exception when the cast fails so it cannot be used inside an if statement)</li>
+<li> A dynamic cast can be a costly operation (depends on the inheritance tree, nature of the cast, compiler)</li>
+<li> Dynamic cast only works for types that have at least one virtual function (the operation needs information from the vtable)</li></ul></li></ul>
+</div>
+<ul><li> Using <code>static_cast&lt;&gt;()</code> to convert pointers within an inheritance hierarchy <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=6m20s">6:20</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Suppose: you have a polymorphic <code>DerivedClass</code> that has a nonvirtual member function <code>Foo()</code></li>
+<li> You have a pointer <code>BaseClass* ptr = new DerivedClass</code> to the polymorphic base class that you know points to the derived class (the "dynamic type")</li>
+<li> To call the derived class' member function, you can use a static cast to DerivedClass pointer <br /><code>static_cast&lt;DerivedClass*&gt;(ptr)-&gt;Foo();</code></li>
+<li> ... or a static cast to DerivedClass reference <br /><code>static_cast&lt;DerivedClass&amp;&gt;(*ptr).Foo();</code></li></ul></li></ul>
+</div>
+<ul><li> Using <code>const_cast&lt;&gt;()</code> to remove a const from a reference or pointer (yes, you read that right) <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=7m27s">7:27</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Example of a responsible use case: to overload a [member function that reads from/writes to an array] with a [const version of that function that can only read and returns the value as a const reference]</li>
+<li> You need that overloaded function if you have a const reference to the object and you want to call the member function</li>
+<li> Example case inside the <code>TileMap</code> class of the Snek game: the body of the overloaded getter function reads<br /><code>return const_cast&lt;TileMap*&gt;(this)-&gt;_At(pos);</code><br />in which you remove the const from the pointer to the self object</li></ul></li></ul>
+</div>
+<ul><li> Overview of different types of casts <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=9m30s">9:30</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>static_cast&lt;&gt;()</code>
+<ul><li> converts types (int-&gt;float etc.)</li>
+<li> casts pointers/references within an inheritance hierarchy (no checking of the validity of the cast!)</li></ul></li>
+<li> <code>dynamic_cast&lt;&gt;()</code>
+<ul><li> casts pointers/references within an inheritance hierarchy (dynamic check!)</li>
+<li> requires that the type have at least one virtual function</li>
+<li>  if check fails, nullptr for ptr* cast, throw exception for ref&amp; cast</li></ul></li>
+<li> <code>reinterpret_cast&lt;&gt;()</code>
+<ul><li> reinterpret pointers/references as pointing to some other type (no check, no limit!) (only really safe for char*)</li>
+<li> reinterpret pointer as an integral value</li></ul></li>
+<li> <code>const_cast&lt;&gt;()</code>
+<ul><li> remove constness</li></ul></li>
+<li> <code>(...)...</code> c-style cast (int) etc.
+<ul><li> can do all of the above, even if you don't mean to<br /></li>
+<li><code>const Base* pBase = &amp;obj;</code> <br /></li>
+<li>...<br /></li>
+<li><code>Derived* pDerived = (Derived*)pBase;</code></li>
+<li> casted away the constness by accident!</li></ul></li></ul></li></ul>
+</div>
+<ul><li> Using RTTI (Runtime Type Information) <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=13m01s">13:01</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> To use RTTI, #include <code>&lt;typeinfo&gt;</code> and use operator <code>typeid()</code> to obtain the type id of any dynamic type</li>
+<li> Use case: check if two objects are of the same derived class: <code>if( typeid(f1) == typeid(f2) )</code></li>
+<li> <code>typeid()</code> returns an object of type <code>std::type_info</code></li></ul></li></ul>
+</div>
+<ul><li> The <code>type_info</code> class <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=15m05s">15:05</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Get the type name of an object by calling <code>typeid(obj).name()</code></li>
+<li> You can't use typeid in switch statements, but you can use them in a map container class to get similar functionality</li>
+<li> typeid does have an overhead, like dynamic_cast, so avoid its use in super performance critical applications</li></ul></li></ul>
+</div>
+<ul><li> Main take-away <a rel="nofollow" class="external text" href="https://youtu.be/g-NGBFCn3co?t=16m40s">16:40</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> You can discover a dynamic type at runtime and act on that, but it is much more elegant to avoid this and use dynamic dispatch (smart design of virtual functions that dispatch to the correct implementation) to do this for you</li>
+<li> Use virtual functions to their full effect. Only as a last resort, try to discover the underlying type and act on it</li></ul></li></ul>
+</div>
+</div>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/Inheritance">Inheritance Github Repository</a><br /></li></ul>
+<p>Note that the code for this video is in a different branch called "<span style="color:red">casting</span>". You will not find it in the master branch.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_20.html" title="Intermediate C++ Game Programming Tutorial 20">Next in series (Tutorial 20)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222209
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.009 seconds
+Preprocessor visited node count: 38/1000000
+Preprocessor generated node count: 66/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:89-0!*!0!!en!*!* and timestamp 20231224222209 and revision id 2442
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;oldid=2442">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;oldid=2442</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+19" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_19.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_19.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_19.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_19" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_19" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;oldid=2442" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_19&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 16 October 2019, at 21:53.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1688});
+} );</script>
+	</body>
+</html>

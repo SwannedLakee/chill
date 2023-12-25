@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>References - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"References","wgTitle":"References","wgCurRevisionId":1456,"wgRevisionId":1456,"wgArticleId":107,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"References","wgRelevantArticleId":107,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-References skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">References</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="References.html#mw-head">navigation</a>, 					<a href="References.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>References are a way to access one variable with two names. References are useful when we want to pass a variable to a function and make changes to it inside that function.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="References.html#Using_References"><span class="tocnumber">1</span> <span class="toctext">Using References</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="References.html#Passing_by_Reference"><span class="tocnumber">1.1</span> <span class="toctext">Passing by Reference</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="References.html#What.27s_really_going_on_here_tho"><span class="tocnumber">2</span> <span class="toctext">What's really going on here tho</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="References.html#Planet_Chili_Tutorial_Video"><span class="tocnumber">3</span> <span class="toctext">Planet Chili Tutorial Video</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="References.html#Other_Tutorials"><span class="tocnumber">4</span> <span class="toctext">Other Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="References.html#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Using_References">Using References</span></h2>
+<p>To understand why we need references let's look at an example: 
+</p><p>If we wanted to move our player to the right, one of the ways we could do it is: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// We have x position for our player on screen;
+int posX = 50;
+MoveRight(posX); // Should set posX to 51
+DisplayValue(posX); // Should display 51 on Screen
+
+
+// We create a function to move our player 1 unit in x direction
+void MoveRight(int x)
+{
+// Add 1 to the value 
+    x = x + 1;
+}
+// Takes in a variable and Displays its value on the screen
+DisplayValue(int x)
+{
+    // Do some stuff to display the variable on screen
+}</pre></div>
+<p>After running this code you would expect 51 to be displayed on screen.
+But when you run this code what would actually be displayed is: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>//output
+50</pre></div>
+<p>This happens because when you pass posX to the MoveRight function, it creates a copy of posX  and does all the operations on that copy:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// x position of player on screen
+int posX = 50;
+MoveRight(posX);  // Here a copy of posX is created and passed into the MoveRight function
+DispayValue(posX); // Since a copy of posX was incremented and the actual variable is untouched we get an output of 50; 
+
+void MoveRight(int x)
+{
+     // Add 1 to the value
+    x = x + 1;    // The copy of posX is incremented by 1
+}</pre></div>
+<h3><span class="mw-headline" id="Passing_by_Reference">Passing by Reference</span></h3>
+<p>Now, to move our player we want actual value of posX to change and not of a copy, so we need to grab c++ by the collar and tell it "listen to me, I do NOT want you to create a copy of my variable but change the original variable instead". If we change our MoveRight function to:
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Add an &amp; after int - This tells c++ not to copy the value of whatever variable is passed in but to use 'x' as an alias for that variable
+void MoveRight(int&amp; x)
+{
+    // x is an alias for posX
+    x = x + 1;
+}</pre></div>
+<p>Now if we were to run the same code: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre> 
+int posX = 50;
+MoveRight(posX);  // Now the address of posX is passed onto x and it becomes an alias for posX 
+DispayValue(posX); // Here we get an output of 51
+
+// Add an &amp; after int - This tells c++ not to copy the value of whatever variable is passed in but to use 'x' as an alias for that variable
+void MoveRight(int&amp; x)
+{
+    // x is an alias for posX
+    x = x + 1;
+}</pre></div>
+<p>Here by using the <code>&amp;</code> sign when declaring the function, we instruct c++ not to copy the variable passed but use x as another name for posX. So whatever changes you make to x will be reflected on posX. This is also called passing by reference.
+</p>
+<h2><span class="mw-headline" id="What.27s_really_going_on_here_tho">What's really going on here tho</span></h2>
+<p>We know that we can create multiple variables, you can also think of variables as boxes where you can store data. But where are those boxes actually stored? In your computers memory. And how does your computer find that box when it needs to access the value&#160;? It does it just like a postman finds your house when you get a letter i.e. by looking up your address. 
+</p><p><br />
+Similarly, each of these boxes (variables) have addresses just like houses on a street would. So when you add the '&amp;' sign like we did in the example above, you are telling c++&#160;: Every time someone passes a variable into this function, take the address of that variable and refer to data at that address using the newly declared variable (x in our case). 
+</p><p><br />
+Passing by reference is also faster than passing by value as you are not creating copies of the variable every time you call the function. 
+</p>
+<h2><span class="mw-headline" id="Planet_Chili_Tutorial_Video">Planet Chili Tutorial Video</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Tutorial_10.html" title="Beginner C++ Game Programming Tutorial 10">Beginner C++ Game Programming Tutorial 10</a></li></ul>
+<h2><span class="mw-headline" id="Other_Tutorials">Other Tutorials</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.tutorialspoint.com/cplusplus/cpp_references.htm">Tutorials Point</a></li>
+<li> <a rel="nofollow" class="external text" href="https://www.cprogramming.com/tutorial/references.html">References and Efficieny</a></li>
+<li> <a rel="nofollow" class="external text" href="http://www.cplusplus.com/doc/tutorial/pointers/">References and Pointers</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Series.html#Topics_Covered" title="Beginner C++ Game Programming Series">List of Beginner C++ Topics</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222435
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 68/1000000
+Preprocessor generated node count: 128/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:107-0!*!0!!en!*!* and timestamp 20231224222435 and revision id 1456
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=References&amp;oldid=1456">https://wiki.planetchili.net/index.php?title=References&amp;oldid=1456</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=References" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="References.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:References&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="References.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="References.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=References&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=References&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="References.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/References" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/References" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=References&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=References&amp;oldid=1456" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=References&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 6 July 2018, at 20:04.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":2878});
+} );</script>
+	</body>
+</html>

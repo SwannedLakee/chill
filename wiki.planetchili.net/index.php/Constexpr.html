@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Constexpr - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Constexpr","wgTitle":"Constexpr","wgCurRevisionId":1512,"wgRevisionId":1512,"wgArticleId":112,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Constexpr","wgRelevantArticleId":112,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Constexpr skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Constexpr</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Constexpr.html#mw-head">navigation</a>, 					<a href="Constexpr.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p><code>constexpr</code> is a keyword applied to variables and functions. It's basically the same as the <code>[<a rel="nofollow" class="external text" href="http://wiki.planetchili.net/index.php?title=Const">const</a>]</code> keyword but enforces an additional rule that "The value of this const will be available at compile time" 
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Constexpr.html#Difference_between_const_.26_constexpr"><span class="tocnumber">1</span> <span class="toctext">Difference between const &amp; constexpr</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Constexpr.html#Basics"><span class="tocnumber">1.1</span> <span class="toctext">Basics</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="Constexpr.html#Advanced"><span class="tocnumber">2</span> <span class="toctext">Advanced</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Constexpr.html#Pointers"><span class="tocnumber">2.1</span> <span class="toctext">Pointers</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Constexpr.html#Functions"><span class="tocnumber">2.2</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Constexpr.html#Constexpr_Classes"><span class="tocnumber">2.3</span> <span class="toctext">Constexpr Classes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Constexpr.html#Planet_Chili_Tutorial_Video"><span class="tocnumber">3</span> <span class="toctext">Planet Chili Tutorial Video</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Constexpr.html#Other_Tutorials"><span class="tocnumber">4</span> <span class="toctext">Other Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Constexpr.html#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Difference_between_const_.26_constexpr">Difference between const &amp; constexpr</span></h2>
+<h3><span class="mw-headline" id="Basics">Basics</span></h3>
+<p>In C++ there can be 2 types of constants: 
+</p>
+<ol style="list-style-type: decimal;">
+<li><p>Whose value is known at compile time.</p>
+</li></ol>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>const int x = 50;
+const int z = x + 1;</pre></div>
+<p>During compile time, the compiler knows the value of x and z would be 50 and 51 respectively. And the values won’t change throughout the lifetime of the program. So it goes “I’ll just substitute all the references to x and z with 50 and 51, instead of looking up what the values of x and z every time during runtime”.
+</p><p>This allows 50 and 51 to be used as literals (hardcoded values) with all their advantages and at the same time not clutter our code with random numbers that are hard to interpret the meaning of.
+</p>
+<ol start="2" style="list-style-type: decimal;">
+<li><p>Whose value is not known at compile time.</p>
+</li></ol>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>const int y = GenRandomNumber();</pre></div>
+<p>In this case the value of y would be impossible to determine at compile time as a we don’t know what random number would be generated at runtime.
+</p><p>NOTE: the variable is still a constant, once a random number is assigned to it the value cannot change.
+</p><p>When the compiler comes across scenario #1 it marks x an z as constant expressions i.e. their value can be evaluated at compile time and in scenario #2 marks y as being a constant but not a constant expression as it can only be evaluated during runtime.
+</p><p>This can be a bit confusing in certain contexts e.g.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>int anArray[x]; // Compiles successfully 
+int anotherArray[y]; // Fails compilation</pre></div>
+<p>Certain operations require compile-time knowledge of a variable, in this case, anotherArray declaration would throw an error even though y is a const just like x. This is because the value of y cannot be computed until the function GenRandomNum() is run.
+</p><p>Due to this confusion, it is hard to evaluate what constants will be available during compile time, and which won’t like in our example above. As your code base gets bigger this can spiral out of control, as multiple people are working on the same code base.
+</p><p>This is where the keyword <code>constexpr</code> comes in as it tells the compiler that the value of this variable should be deduced at compile time to allow for scenarios such as the one above. If y was declared as <code> constexpr int y = GetRandomNumber()</code> the compiler would throw an error that the value cannot be evaluated at compile time. It clarifies the intended use of the variable.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>constexpr int y = GetRandomNumber(); // error
+constexpr int y = 69; // Compiles fine</pre></div>
+<h2><span class="mw-headline" id="Advanced">Advanced</span></h2>
+<h3><span class="mw-headline" id="Pointers">Pointers</span></h3>
+<p><code>constexpr</code> Pointers are implicitly const, i.e you cannot change where the pointer points to but you can change the data at the memory address. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>static constexpr int x = 5
+static constexpr int y = 10;
+constexpr int* integer = &amp;x; // Equivalent to 'int* const integer = &amp;x' but evaluated at compile time
+
+integer = &amp;y // Error, cannot retarget the pointer
+*integer = 15 // Valid, value of x is changed to 15</pre></div>
+<p>To ensure the pointer is evaluated at compile time, cannot be retargeted and is not able to change its target a <code>const</code> keyword can be added after <code>constexpr</code>
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>static constexpr int x = 5;
+static constexpr int y = 10;
+constexpr const int* integer = &amp;x; // Equivalent to 'const int* const integer = &amp;x' but guaranteed to be evaluated at compile time.
+
+integer = &amp;y;  // Error, Cannot Retarget the pointer
+*integer = 15; // Error, the value at the pointed address cannot be modified.</pre></div>
+<h3><span class="mw-headline" id="Functions">Functions</span></h3>
+<p>Functions can also be evaluated at compile time by using the keyword <code>constexpr</code> which means "should be usable in a constant expression when given constant expressions as arguments." 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>constexpr double square(double x) {return x * x;}</pre></div> 
+<p>If the arguments to a function is a constexpr the function returns a constexpr.
+</p><p>To declare a function as a constexpr, the function cannot contain: 
+</p>
+<ol><li> ASM definition {<code>movl $7,&#160;%eax</code>}</li>
+<li> A <code>goto</code> statement </li>
+<li> A statement with a label other than case and default {<code>label: take that compiler</code>}</li>
+<li> A try-block {<code>try {std::cout &lt;&lt; "My dick stinks" &lt;&lt; std:endl; }</code>}</li>
+<li> Variable definition of non-literal type {<code>MyCustomClass anObject</code>}</li>
+<li> Static variable </li>
+<li> Uninitialized variable </li></ol>
+<p>Why do you care? Constexpr function are a good way to write cleaner code as compared to using macros everywhere, improve performance (but rarely used for this purpose)
+</p>
+<h3><span class="mw-headline" id="Constexpr_Classes">Constexpr Classes</span></h3>
+<p>Simple user-defined classes can also be used as constant expressions. 
+</p><p>To make a class a <code>constexpr</code> class it needs to have a <code>constexpr</code> constructor with an empty body and all member functions should be initialized by constant expressions. 
+</p><p>Declaring a constructor as <code>constexpr</code> turns your class into "User Defined Literals" i.e. you class can now be used as a literal
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Planet_Chili_Tutorial_Video">Planet Chili Tutorial Video</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Tutorial_9.html" title="Beginner C++ Game Programming Tutorial 9">Beginner C++ Game Programming Tutorial 9</a></li></ul>
+<h2><span class="mw-headline" id="Other_Tutorials">Other Tutorials</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="https://hackernoon.com/a-tour-of-c-17-if-constexpr-3ea62f62ff65">https://hackernoon.com/a-tour-of-c-17-if-constexpr-3ea62f62ff65</a></li></ul>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.geeksforgeeks.org/understanding-constexper-specifier-in-c/">https://www.geeksforgeeks.org/understanding-constexper-specifier-in-c/</a></li></ul>
+<ul><li> <a rel="nofollow" class="external free" href="https://en.cppreference.com/w/cpp/language/constexpr">https://en.cppreference.com/w/cpp/language/constexpr</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Series.html#Topics_Covered" title="Beginner C++ Game Programming Series">List of Beginner C++ Topics</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222431
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 100/1000000
+Preprocessor generated node count: 184/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:112-0!*!0!!en!*!* and timestamp 20231224222431 and revision id 1512
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;oldid=1512">https://wiki.planetchili.net/index.php?title=Constexpr&amp;oldid=1512</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Constexpr" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Constexpr.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Constexpr&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Constexpr.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Constexpr.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Constexpr.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Constexpr" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Constexpr" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;oldid=1512" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Constexpr&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 November 2018, at 20:06.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":70});
+} );</script>
+	</body>
+</html>

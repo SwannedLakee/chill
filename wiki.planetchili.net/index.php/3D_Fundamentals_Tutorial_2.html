@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>3D Fundamentals Tutorial 2 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"3D_Fundamentals_Tutorial_2","wgTitle":"3D Fundamentals Tutorial 2","wgCurRevisionId":3213,"wgRevisionId":3213,"wgArticleId":41,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"3D_Fundamentals_Tutorial_2","wgRelevantArticleId":41,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":
+!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-3D_Fundamentals_Tutorial_2 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">3D Fundamentals Tutorial 2</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="3D_Fundamentals_Tutorial_2.html#mw-head">navigation</a>, 					<a href="3D_Fundamentals_Tutorial_2.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>In this video we lay the groundwork needed to represent and transform positions and 3D space, we define the relationship between our 3D space and the screen coordinates, and we setup a data structure to hold our test cube geometry.
+</p>
+<h2><span class="mw-headline" id="Video">Video</span></h2>
+<p>The tutorial video is on YouTube <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8">here</a>.
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Fix an error in <code>Mat2.h</code> (multiplication of vectors with matrices) <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=0m16s">0:16</a></li>
+<li> Introducing 3D space <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=1m57s">1:57</a></li>
+<li> Implementing the <code>Vec3</code> class <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=3m19s">3:19</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Inherits from <code>Vec2</code> (z-component added) </li>
+<li> Overload all operators for 3D</li>
+<li> Advantage of inheritence here: enables passing <code>Vec3</code>s into functions that accept <code>Vecc2&amp;</code> references</li></ul></dd></dl>
+</div>
+<ul><li> Calculating the length of a 3D vector (i.e., in R3) <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=4m57s">4:57</a></li>
+<li> The <code>Mat3</code> 3D Matrix class <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=5m57s">5:57</a></li>
+<li> Choosing a coordinate system <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=7m37s">7:37</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> We choose a Left Handed coordinate system</li>
+<li> And start with defining World Space (=object space for now) and Screen Space</li></ul></dd></dl>
+</div>
+<ul><li> Setting up a World Space (Chili likes to call it Pube Space) <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=10m08s">10:08</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> We set the Origin (0,0,0) of world space in the middle of the screen</li></ul>
+<dl><dd>- This makes for better (easier) scaling</dd></dl>
+<ul><li> We will use NDC (Normalized Device Coordinates)</li></ul>
+<dl><dd>- Meaning: we don't use pixel values, but normalized values relative to screen size </dd>
+<dd>- (e.g. x=1.0 means far right end of screen, x=-1.0 for far left end of screen</dd>
+<dd>- Main advantage: become independent from screen size</dd>
+<dd>- Note: Direct 3D and OpenGL use NDC</dd></dl>
+<ul><li> We will use the Pre-Clip 3D space definition: z=1.0 indicates half cube depth</li></ul></dd></dl>
+</div>
+<ul><li> Transforming vertices from Pube Space to Screen Space <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=14m01s">14:01</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Introducing the <code>PubeScreenTransformer</code> class</li></ul></dd></dl>
+</div>
+<ul><li> Testing: drawing a cube <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=17m07s">17:07</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> <code>Cube</code> class created as a data structure to hold the vertices</li></ul></dd></dl>
+</div>
+<ul><li> Representing lines: vertex container + vector of indices <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=18m34s">18:34</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> This strategy avoids having to transform vertices multiple times</li>
+<li> Same concept as IndexBuffer used in Direct3D to draw primitives <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=20m40s">20:40</a></li>
+<li> Make the <code>Cube</code> class return a <code>IndexedLineList</code> struct</li></ul></dd></dl>
+</div>
+<ul><li> Code for drawing: transform the vertices and iterate through the index buffer <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=21m50s">21:50</a></li>
+<li> Limitations observed: not square and not 3D. Why? <a rel="nofollow" class="external text" href="https://youtu.be/HV1ZGyiY5C8?t=23m22s">23:22</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Screen size is not square, we'll use a quick fix for now</li>
+<li> We still lack 3D visual cues because we don't account for the z-component yet (we're still in Orthographic Projection)</li></ul></dd></dl>
+</div>
+</div>
+<h2><span class="mw-headline" id="Downloads">Downloads</span></h2>
+<p>The GitHub repository for the tutorial code is <a rel="nofollow" class="external text" href="https://github.com/planetchili/3D_Fundamentals">here</a>.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.patreon.com/planetchili">Planet Chili Patreon</a></li>
+<li> <a href="3D_Fundamentals_Tutorial_3.html" title="3D Fundamentals Tutorial 3">Next in series (Tutorial 3)</a></li>
+<li> <a href="3D_Fundamentals_Series.html" title="3D Fundamentals Series">3D Fundamentals Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225125350
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.073 seconds
+Real time usage: 0.280 seconds
+Preprocessor visited node count: 20/1000000
+Preprocessor generated node count: 34/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:41-0!*!0!!*!*!* and timestamp 20231225125350 and revision id 3213
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;oldid=3213">https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;oldid=3213</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=3D+Fundamentals+Tutorial+2" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="3D_Fundamentals_Tutorial_2.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:3D_Fundamentals_Tutorial_2&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="3D_Fundamentals_Tutorial_2.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="3D_Fundamentals_Tutorial_2.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="3D_Fundamentals_Tutorial_2.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/3D_Fundamentals_Tutorial_2" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/3D_Fundamentals_Tutorial_2" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;oldid=3213" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=3D_Fundamentals_Tutorial_2&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 24 April 2020, at 06:12.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":36});
+} );</script>
+	</body>
+</html>

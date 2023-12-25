@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 23 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_23","wgTitle":"Intermediate C++ Game Programming Tutorial 23","wgCurRevisionId":3238,"wgRevisionId":3238,"wgArticleId":95,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_23","wgRelevantArticleId":95,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_23 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 23</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_23.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_23.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Bit twiddling is a lot of bullshit that is usually avoided when possible because it leads to ass code. Still, it is necessary in various situations, so you gotta learn this shit, and now is as good a time as any I guess.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#Homework"><span class="tocnumber">3</span> <span class="toctext">Homework</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> Bitwise AND (&amp;), OR (|), and shift left/right (&gt;&gt; and &lt;&lt;)</li>
+<li> Unary bitwise NOT/complement (~) and bitwise XOR (^)</li>
+<li> Masking with &amp; and combining with |</li>
+<li> Packing and unpacking smaller data in larger types</li>
+<li> Bit flags</li>
+<li> Bitwise arithmetic optimizations</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk">Tutorial 23</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Converting integers to their binary representations <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=0m25s">0:25</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Introducing <code>std::string ToBin(unsigned int n, int min_digits=0);</code></li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>std::string ToBin( unsigned int n, int min_digits = 0)
+{
+	std::string bin_str;
+	for ( int count = 0; n!=0 || count &lt; min_digits; n>>=1,count++ )
+	{
+		bin_str.push_back( bool( n &amp; 0b1 ) ? '1' : '0' );
+	}
+	std::reverse( bin_str.begin(),bin_str.end() );
+	return bin_str;
+}</pre></div></dd></dl></dd></dl>
+</div>
+<ul><li> Bitwise operators AND (<code>&amp;</code>), OR (<code>|</code>) <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=1m50s">1:50</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Biswise AND (<code>&amp;</code>): 1010 &amp; 1100 = 1000, also called a mask</li>
+<li> Biswise OR (<code>|</code>): 1010 | 1100 = 1110, also called a mash</li></ul></dd></dl>
+</div>
+<ul><li> Shifting operations left (<code>&lt;&lt;</code>), right (<code>&gt;&gt;</code>) <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=5m10s">5:10</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Shift left (<code>&lt;&lt;</code>): 0011 &lt;&lt; 1 = 0110, shifts binary zeros in from the right side into the lower order bit position</li>
+<li> Shift right (<code>&gt;&gt;</code>): 0110 &gt;&gt; 2 = 0001, shifts binary zeros in from the left side into the highter order bit position</li>
+<li> Except for negative integers: <code>(-1)&gt;&gt;n</code>: ...1111&gt;&gt;2 = ...1111, shifts binary ones in from the left</li></ul></dd></dl>
+</div>
+<ul><li> Packing and unpacking data, masking with <code>&amp;</code> and mashing/combining with <code>|</code> <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=7m07s">7:07</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Example: combining four 8-bit numbers into one 32-bit number by using <code>&lt;&lt;</code> and <code>|</code></li>
+<li> Example: unpacking a 32-bit number to an 8 bit sequence by using <code>&amp;</code> and <code>&gt;&gt;</code></li></ul></dd></dl>
+</div>
+<ul><li> Example use case: The <code>Color</code> class in the Framework <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=12m20s">12:20</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> XRGB 8-bit values are packed into a 32-bit word using <code>(x&lt;&lt;24u) | (r&lt;&lt;16u) | (g&lt;&lt;8u) | b)</code></li></ul></dd></dl>
+</div>
+<ul><li> Packing flag values into a single integer parameter <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=14m29s">14:29</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Used in libraries such as the Windows API, DirectX, in STL</li>
+<li> Each value is represented by a single bit set in their binary representation</li>
+<li> For example: <code>enum Options { option1 = 0b01, option2 = 0b10 };</code></li>
+<li> Check for options with Bitwise AND: if you have an <code>int options</code>, check the option flag using <code>if( options &amp; option1 )</code></li>
+<li> Combine options with Bitwise OR: make an <code>int options = option1 | option3;</code></li></ul></dd></dl>
+</div>
+<ul><li> Advanced Bitwise operators NOT (<code>~</code>), XOR (<code>^</code>) <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=16m48s">16:48</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Bitwise NOT (<code>~a</code>): unary operation that flips all the bits of <code>a</code></li></ul>
+<dl><dd>- Use case: switch off an option: <code>options &amp;= ~option1;</code></dd></dl>
+<ul><li> Bitwise XOR (<code>^</code>): binary operation sets each bit position to 1 only if the bits at that position of the two operands are different </li></ul>
+<dl><dd>- Use case: a "configurable flipper". <code>a^0b11110000</code> will flip the 4 left bits of <code>a</code> and leave the 4 right bits the same</dd>
+<dd>- Toggle an option: <code>options ^= option1;</code></dd></dl></dd></dl>
+</div>
+<ul><li> Don't use Bitwise AND in logical operations like <code>if ( a &amp; b )</code> <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=19m49s">19:49</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> <code>bool(x)</code> evaluates to false if x==0, otherwise to true</li>
+<li> <code>bool( 0b01 &amp;&amp; 0b10 )</code> is true, whereas <code>bool( 0b01 &amp; 0b10 )</code> is false</li>
+<li> Only reason why you would want to use <code>&amp;</code> in logical operations is to avoid short circuiting evaluations with <code>&amp;&amp;</code> or <code>||</code></li></ul>
+<dl><dd>- Short circuiting stops evaluating a comparison when the first argument is evaluated</dd>
+<dd>- For instance: <code>if ( false &amp;&amp; ... )</code> will not evaluate anything after <code>&amp;&amp;</code> because it is irrelevant</dd>
+<dd>- To be safe when you do this, use <code>if ( bool(a) &amp; bool(b) )</code></dd></dl></dd></dl>
+</div>
+<ul><li> Bitwise arithmetic optimizations <a rel="nofollow" class="external text" href="https://youtu.be/WPMwq0qM8Kk?t=22m30s">22:30</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> <code>x &gt;&gt; n</code> divides x by 2^n (as in: 2 to the power of n)</li>
+<li> <code>x &lt;&lt; n</code> multiplies x by 2^n (as in: 2 to the power of n)</li>
+<li> <code>x&#160;% 16</code> is equal to <code>x &amp; 15</code> or <code>x &amp; 0xF</code></li>
+<li> Note: no need to apply this in your code, the compiler will do this anyway when it optimizes</li></ul></dd></dl>
+</div>
+</div>
+<h2><span class="mw-headline" id="Homework">Homework</span></h2>
+<ul><li> Figure out how the binary string formatter routine works</li>
+<li> Figure out why <code>x&#160;% 16</code> compiles to <code>x &amp; 0xF</code></li></ul>
+<p>The solution for the problems will not have its own video. Feel free to come on the discord and compare your answers with others, or to ask specific questions if you are having trouble understanding.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_24.html" title="Intermediate C++ Game Programming Tutorial 24">Next in series (Tutorial 24)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222730
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.007 seconds
+Real time usage: 0.013 seconds
+Preprocessor visited node count: 35/1000000
+Preprocessor generated node count: 62/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:95-0!*!0!!en!*!* and timestamp 20231224222730 and revision id 3238
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;oldid=3238">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;oldid=3238</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+23" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_23.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_23.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_23.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_23" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_23" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;oldid=3238" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_23&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 5 May 2020, at 06:19.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1359});
+} );</script>
+	</body>
+</html>

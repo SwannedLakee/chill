@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Std::variant - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Std::variant","wgTitle":"Std::variant","wgCurRevisionId":1501,"wgRevisionId":1501,"wgArticleId":116,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Std::variant","wgRelevantArticleId":116,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":
+!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Std_variant skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Std::variant</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="./Std::variant.html#mw-head">navigation</a>, 					<a href="./Std::variant.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><h2><span class="mw-headline" id="What_is_std::variant.3F">What is <code>std::variant</code>?</span></h2>
+<p>In C++17, std::variant was introduced and is basically a strongly typed <code>union</code>.  It allows you to specify a list of states that the <code>std::variant</code> can be in.  These states are actually types, such as <code>int, float, double, MyClass</code>.  It can only be in one state at a time, so if you assign it an <code>int</code> on one line, then assign it a <code>float</code> on another, the int is no long able to be retrieved.  
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="How_to_use_std::variant">How to use <code>std::variant</code></span></h2>
+<p>Std::variant has kind of a black-box approach in dealing with access to the data stored.  While this does allow for some optimizations to be made in the form of compile time knowledge for the compiler, it makes it non-trivial for the user to access.  Luckily, there are options, from safe but requires a bit of boiler-plate to not so safe but trivial.  Look at the examples below.
+</p><p>First, the safe way.  There are a few versions that pretty much do the same thing.  Since the compiler knows the type stored in an <code>std::variant</code>, you can use the <code>std::visit</code> function to have the compiler choose which function to handle the variant.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;variant>  // for std::variant, std::visit and an overload of std::get that works with std::variant
+#include &lt;iostream> // for std::cout
+
+void PrintNumber( const int _number )
+{
+     std::cout &lt;&lt; _number &lt;&lt; '\n';
+}
+void PrintNumber( const float _number )
+{
+     std::cout &lt;&lt; _number &lt;&lt; '\n';
+}
+void PrintNumber( const double _number )
+{
+     std::cout &lt;&lt; _number &lt;&lt; '\n';
+}
+
+int main( int ArgsC, char* ArgV[] )
+{
+     std::variant&lt;int, float, double> number;
+
+     number = 42;  // number is now considered an int
+     std::visit( &amp;PrintNumber, number );  // The PrintNumber( int ) overload should be called
+     
+     number = 3.14159f;  // number is now considered a float
+     std::visit( &amp;PrintNumber, number );  // The PrintNumber( float ) overload should be called
+
+     number = 2.5  // number is now considered a double
+     std::visit( &amp;PrintNumber, number );  // The PrintNumber( double ) overload should be called
+
+     return 0;
+}</pre></div>
+<p>Version two using a function object as the 'visitor'.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;variant>  // for std::variant, std::visit and an overload of std::get that works with std::variant
+#include &lt;iostream> // for std::cout
+
+struct PrintNumber
+{
+     void operator()( const int _number )
+     {
+          std::cout &lt;&lt; _number &lt;&lt; '\n';
+     }
+     void operator()( const float _number )
+     {
+          std::cout &lt;&lt; _number &lt;&lt; '\n';
+     }
+     void operator()( const double _number )
+     {
+          std::cout &lt;&lt; _number &lt;&lt; '\n';
+     }
+};
+
+int main( int ArgsC, char* ArgV[] )
+{
+     std::variant&lt;int, float, double> number;
+
+     number = 42;  // number is now considered an int
+     std::visit( PrintNumber(), number );  // The PrintNumber::operator()( int ) overload should be called
+     
+     number = 3.14159f;  // number is now considered a float
+     std::visit( PrintNumber(), number );  // The PrintNumber::operator()( float ) overload should be called
+
+     number = 2.5  // number is now considered a double
+     std::visit( PrintNumber(), number );  // The PrintNumber::operator()( double ) overload should be called
+
+     return 0;
+}</pre></div>
+<p>Version 3 using lambdas for the 'visitor'
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;variant>  // for std::variant, std::visit and an overload of std::get that works with std::variant
+#include &lt;iostream> // for std::cout
+
+int main( int ArgsC, char* ArgV[] )
+{
+     auto PrintNumber = []( auto _number )
+          {
+               using type = std::decay_t&lt;decltype( _number )>;
+               if constexpr( std::is_same_v&lt;type, int> )
+               {
+                    std::cout &lt;&lt; _number &lt;&lt; '\n';
+               }
+               else if constexpr( std::is_same_v&lt;type, float> )
+               {
+                    std::cout &lt;&lt; _number &lt;&lt; '\n';
+               }
+               else if constexpr( std::is_same_v&lt;type, double> )
+               {
+                    std::cout &lt;&lt; _number &lt;&lt; '\n';
+               }
+          };
+
+     std::variant&lt;int, float, double> number;
+     
+     number = 42;  // number is now considered an int
+     std::visit( PrintNumber, number );  // The if constexpr( std::is_same_v&lt;type, int> ) branch should be used
+     
+     number = 3.14159f;  // number is now considered a float
+     std::visit( PrintNumber, number );  // The else if constexpr( std::is_same_v&lt;type, float> ) branch should be used
+
+     number = 2.5  // number is now considered a double
+     std::visit( PrintNumber, number );  // The else if constexpr( std::is_same_v&lt;type, double> ) branch should be used
+
+     return 0;
+}</pre></div>
+<p>Do note that for each type in the variant, you must have a case handling the 'visit' or you'll get a compile time error, and it is nowhere near helpful in determining what case you missed, but not impossible.  
+</p><p>Next is a safe way, but can be less efficient depending on your accuracy in knowing the type being stored.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;variant>  // for std::variant, std::visit and an overload of std::get that works with std::variant
+#include &lt;iostream> // for std::cout
+
+void PrintNumber( std::variant&lt;int, float, double>&amp; _number )
+{
+     if( const int* myInt = std::get_if&lt;int>( &amp;_number ); myInt != nullptr )
+     {
+          std::cout &lt;&lt; *myInt &lt;&lt; '\n';
+     }
+     else if( const float* myFloat = std::get_if&lt;float>( &amp;_number ); myFloat != nullptr )
+     {
+          std::cout &lt;&lt; *myFloat &lt;&lt; '\n';
+     }
+     else if( const double* myDouble = std::get_if&lt;double>( &amp;_number ); myDouble != nullptr )
+     {
+          std::cout &lt;&lt; *myDouble &lt;&lt; '\n';
+     }
+}
+
+int main( int ArgsC, char* ArgV[] )
+{
+     std::variant&lt;int, float, double> number;
+     
+     number = 42;  // number is now considered an int
+     PrintNumber( number );
+
+     number = 3.14159f;  // number is now considered a float
+     PrintNumber( number );
+
+     number = 2.5  // number is now considered a double
+     PrintNumber( number );
+
+     return 0;
+}</pre></div>
+<p>Unlike <code>std::tuple</code>, variants cannot hold multiples of the same type.  Each type in the template parameter list must be unique.
+</p><p>Finally, the unsafe way.
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;variant>  // for std::variant, std::visit and an overload of std::get that works with std::variant
+#include &lt;iostream> // for std::cout
+
+int main( int ArgsC, char* ArgV[] )
+{
+     std::variant&lt;int, float, double> number;
+     
+     number = 42;  // number is now considered an int
+     int&amp; myInt = std::get&lt;int>( number );
+     myInt = 69;
+     std::cout &lt;&lt; myInt &lt;&lt; '\n';
+
+     number = 3.14159f;  // number is now considered a float
+     float&amp; myFloat = std::get&lt;float>( number );
+     myFloat = 0.707f
+     std::cout &lt;&lt; myFloat &lt;&lt; '\n';
+
+     number = 2.5  // number is now considered a double
+     double&amp; myDouble = std::get&lt;double>( number );
+     myDouble = 419.999999999
+     std::cout &lt;&lt; myDouble &lt;&lt; '\n';
+
+     return 0;
+}</pre></div>
+<p>This example, made it safe by using the retrieved type directly after assignment, but after that, the user may not know what state the variant is in and calling <code>std::get</code> on the wrong type will throw a <code>std::bad_variant_access</code> exception.  The above method of assigning the value, then retrieving a reference to the underlying type allows you to modify the state of the object from within without having to setup visitors just for initialization.
+</p><p><br />
+</p>
+<h2><span class="mw-headline" id="Requirements_for_std::variant">Requirements for <code>std::variant</code></span></h2>
+<ul><li> The list of types must be unique, a variant cannot be declared with two ints and a float</li>
+<li> The types in a variant must be default constructable or the use of <code>std::monostate</code> can be set as the first type in the parameter list</li></ul>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>     std::variant&lt;std::monostate, MyComplexClass, MyComplexClass1> data;</pre></div>
+<ul><li> Types in <code>std::variant</code> parameter list, must not be forward declared types.  The compiler must be able to determine whether or not the types in the list are default constructable before instantiating a variant of those types.</li>
+<li> The list may not contain reference types: int&amp;, const MyCompolexClass&amp;</li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225075243
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.045 seconds
+Real time usage: 0.485 seconds
+Preprocessor visited node count: 59/1000000
+Preprocessor generated node count: 136/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:116-0!*!*!!*!*!* and timestamp 20231225075243 and revision id 1501
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;oldid=1501">https://wiki.planetchili.net/index.php?title=Std::variant&amp;oldid=1501</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Std%3A%3Avariant" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="./Std::variant.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Std::variant&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="./Std::variant.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="./Std::variant.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="./Std::variant.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Std::variant" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Std::variant" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;oldid=1501" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Std::variant&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 18 October 2018, at 04:28.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":4218});
+} );</script>
+	</body>
+</html>

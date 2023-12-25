@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Beginner C++ Game Programming Tutorial 14 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Beginner_C++_Game_Programming_Tutorial_14","wgTitle":"Beginner C++ Game Programming Tutorial 14","wgCurRevisionId":3328,"wgRevisionId":3328,"wgArticleId":45,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Beginner_C++_Game_Programming_Tutorial_14","wgRelevantArticleId":45,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1
+,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Beginner_C_Game_Programming_Tutorial_14 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Beginner C++ Game Programming Tutorial 14</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Beginner_C++_Game_Programming_Tutorial_14.html#mw-head">navigation</a>, 					<a href="Beginner_C++_Game_Programming_Tutorial_14.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>This is a two-part tutorial in which we tackle a game with a little more substance--the Snake Game. Grids and arrays galore. Majestic.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Super_Important_NOTE.28S.29"><span class="tocnumber">1</span> <span class="toctext">Super Important NOTE(S)</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Main_Concepts_Taught"><span class="tocnumber">2</span> <span class="toctext">Main Concepts Taught</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Other_New.28ish.29_Things"><span class="tocnumber">3</span> <span class="toctext">Other New(ish) Things</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Aggregate_Initialization_.7B.7D"><span class="tocnumber">3.1</span> <span class="toctext">Aggregate Initialization {}</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Compiler-Generated_Copy_Constructor_and_Copy_Assignment_operator"><span class="tocnumber">3.2</span> <span class="toctext">Compiler-Generated Copy Constructor and Copy Assignment operator</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Video_Timestamp_Index"><span class="tocnumber">4</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Homework"><span class="tocnumber">5</span> <span class="toctext">Homework</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#Downloads"><span class="tocnumber">6</span> <span class="toctext">Downloads</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Beginner_C++_Game_Programming_Tutorial_14.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Super_Important_NOTE.28S.29">Super Important NOTE(S)</span></h2>
+<p>The Snek game is a little more complicated than the Poo game. Don't get butthurt and give up if you can't make it work. Just make sure you understand the Main Concepts Taught listed below. <span style="color:pink">You can always move on to the next tutorials and come back to the Snek game later when you've got a little more experience under your belt.</span> And as usual, if you're lost or just have some lingering questions, the forum is a great place to go for help. Here is a forum discussion about the Snek game code: <a rel="nofollow" class="external text" href="https://www.planetchili.net/forum/viewtopic.php?f=3&amp;t=3838">Snek Talk</a>. Feel free to chime in and add info or ask questions! You can also @mention me on the <a rel="nofollow" class="external text" href="https://www.planetchili.net/discord">Discord</a> and maybe we can talk in real time (timezone diffs might make this hard thoough).
+</p><p>If you are going to attempt to finish the game off by yourself at the end of T14a (good on you mate), there is something you should be aware of. The function <code>Snake::Grow()</code> does not set the position of the "new" segment when it grows the snake. So you <b>absolutely must</b> call <code>Snake::MoveBy(...)</code> <i><b>before</b></i> you draw the snake. If you attempt to draw the snake after growing, but without moving first, the last segment will have an invalid <code>loc</code>, and trying to draw it in that state will most likely crash the program.
+</p><p>Also, there is a bug in the <code>Snake::Grow()</code> function at the end of 14a. See if you can figure out what it is, and how to fix it...&#160;:)
+</p>
+<h2><span class="mw-headline" id="Main_Concepts_Taught">Main Concepts Taught</span></h2>
+<ul><li> Managing used/unused sections of an array</li>
+<li> <code>struct</code> vs <code>class</code></li>
+<li> Inner (nested) <code>class</code>es</li>
+<li> <code>operator</code> overloading</li>
+<li> Special functions: copy constructor and copy assignment (briefly)</li>
+<li> The <code>%</code> (modulus) operator (in the solution video)</li>
+<li> The <code>std::max()</code> function (in the solution video)</li></ul>
+<h2><span class="mw-headline" id="Other_New.28ish.29_Things">Other New(ish) Things</span></h2>
+<p>There was a bunch of other newish bullshit that Chili used, some of which he didn't go into much depth on. For those of you who give a shit, here is some extra info.
+</p>
+<h4><span class="mw-headline" id="Aggregate_Initialization_.7B.7D">Aggregate Initialization <code>{}</code></span></h4>
+<p>With the <code>struct Location</code> (and later, <code>class</code>), we didn't define any constructors, so all we had was the default do-nothing constructor that is generated by the compiler. In order to initialize a <code>Location</code> at one point in the video, Chili used something like <code>Location loc = {69,69};</code>. This is allowed, but the data type being initialized must satisfy certain conditions. Namely, it must have only <code>public</code> data members and it must have no constructors defined. For the full details on the requirements, see <a rel="nofollow" class="external text" href="http://en.cppreference.com/w/cpp/language/aggregate_initialization">this page</a>. The brace <code>{}</code> initialization can be used for <code>class</code>es etc. that have constructors as well, but then the parameters have to conform to the constructor(s) and it will just call the applicable constructor.
+</p>
+<h4><span class="mw-headline" id="Compiler-Generated_Copy_Constructor_and_Copy_Assignment_operator">Compiler-Generated Copy Constructor and Copy Assignment <code>operator</code></span></h4>
+<p>In the tutorial, we assign <code>Location</code> objects to one another, and we construct a <code>Location</code> by copying an existing one. These operations actually call member functions that are defined for the <code>class</code> (or <code>struct</code>), and if you do not supply these member functions, the compiler will generate them by default (as is the case in this tutorial).
+</p>
+<ul><li> <code>ClassName::ClassName( const ClassName&amp; )</code></li></ul>
+<p>This is the default copy constructor, and its behavior is to, in turn, copy construct each of the members of the object under construction using the corresponding member in the object being passed in.
+</p>
+<ul><li> <code>ClassName&amp; ClassName::operator=( const ClassName&amp; )</code></li></ul>
+<p>This is the  default copy assignment operator, and its behavior is to, in turn, copy assign each of the members of the object under assignment using the corresponding member in the object being passed in. It also returns a reference to the object under assignment.
+</p>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/KTyemy82Zqk">Tutorial 14a</a>
+</p><p><a rel="nofollow" class="external text" href="https://youtu.be/DoO_NEksf3c">Tutorial 14b</a>
+</p>
+<h2><span class="mw-headline" id="Homework">Homework</span></h2>
+<p>The homework is to add some polish to the Snek Game. The following features are suggested and will be covered in the solution video.
+</p>
+<ul><li> Adjustable board position</li>
+<li> Border drawn around board</li>
+<li> Padding between board tiles</li>
+<li> Display title screen</li>
+<li> Give the Snek a pattern of colors for its segments</li>
+<li> Make it so the Snek speeds up over time</li></ul>
+<p>In addition, it is suggested that you extend the Snek game by adding some new mechanics to spice things up. One suggestion is making randomly spawning obstacles that accrue on the game board. Note that this extra challenge will not be covered in the solution video. If you are attempting it (or some other feature) and need some help, you can seek help on the <a href="Planet_Chili_Forums.html" title="Planet Chili Forums">forum</a> or the <a rel="nofollow" class="external text" href="http://www.planetchili.net">Discord</a>.
+</p><p>The solution video is <a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=aE9fGMRRe6U">here</a>.
+</p>
+<h2><span class="mw-headline" id="Downloads">Downloads</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.planetchili.net/downloads/T14-Snek-Start.zip">Snek Starting Solution</a></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/snek">GitHub Repo Containing Finished Snek Game</a></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.patreon.com/planetchili">Planet Chili Patreon</a></li>
+<li> <a href="Beginner_C++_Game_Programming_Tutorial_15.html" title="Beginner C++ Game Programming Tutorial 15">Next in series (Tutorial 15)</a></li>
+<li> <a href="Beginner_C++_Game_Programming_Series.html" title="Beginner C++ Game Programming Series">Beginner C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225032830
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.041 seconds
+Real time usage: 0.163 seconds
+Preprocessor visited node count: 36/1000000
+Preprocessor generated node count: 42/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:45-0!*!0!!en!*!* and timestamp 20231225032829 and revision id 3328
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;oldid=3328">https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;oldid=3328</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Beginner+C%2B%2B+Game+Programming+Tutorial+14" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Beginner_C++_Game_Programming_Tutorial_14.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Beginner_C++_Game_Programming_Tutorial_14.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Beginner_C++_Game_Programming_Tutorial_14.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Beginner_C++_Game_Programming_Tutorial_14.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Beginner_C%2B%2B_Game_Programming_Tutorial_14" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Beginner_C%2B%2B_Game_Programming_Tutorial_14" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;oldid=3328" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Beginner_C%2B%2B_Game_Programming_Tutorial_14&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 5 May 2022, at 13:23.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":44});
+} );</script>
+	</body>
+</html>

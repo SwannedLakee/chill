@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 25 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_25","wgTitle":"Intermediate C++ Game Programming Tutorial 25","wgCurRevisionId":3123,"wgRevisionId":3123,"wgArticleId":97,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_25","wgRelevantArticleId":97,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_25 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 25</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_25.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_25.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Function pointers allow you to store and change what function is to be called dynamically at runtime. Combine that with containers to have collections of actions/behaviors that can be selected from, and then jam in the power <code>std::function</code> to allow you to wrap up pretty much any kind of callable thing and bring them together in one container. Groovy.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Bonus_Video"><span class="tocnumber">1.1</span> <span class="toctext">Bonus Video</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Tutorial_25_-_Function_Pointers"><span class="tocnumber">2.1</span> <span class="toctext">Tutorial 25 - Function Pointers</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Tutorial_25_-_Bonus"><span class="tocnumber">2.2</span> <span class="toctext">Tutorial 25 - Bonus</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Tutorial_25_-_Solution"><span class="tocnumber">2.3</span> <span class="toctext">Tutorial 25 - Solution</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#Homework_Assignment"><span class="tocnumber">3</span> <span class="toctext">Homework Assignment</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> Function pointers</li>
+<li> Functionoids</li>
+<li> <code>std::function</code></li></ul>
+<h3><span class="mw-headline" id="Bonus_Video">Bonus Video</span></h3>
+<ul><li> Pointers to member functions</li>
+<li> std::bind</li>
+<li> std::mem_fn</li>
+<li> std::reference_wrapper (a little)</li>
+<li> Pointer to static member function (it's the same as for normal funcy bois)</li>
+<li> You can use normal func pointers for lambdas if they do not capture anything</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<h3><span class="mw-headline" id="Tutorial_25_-_Function_Pointers"><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=S2ZEEkquGy4">Tutorial 25 - Function Pointers</a></span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> How to switch on a string? (execute some code based on the string passed to the switch): using Functionoids <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=15s">0:15</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> One way to do this is with a map to polymorphic functors</li>
+<li> The Functionoid Pattern (objects that encapsulate function pointers) looks like this: </li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;iostream>
+#include &lt;memory>
+#include &lt;unordered_map>
+#include &lt;string>
+
+struct CaseFunction
+{
+    virtual void operator()() const = 0;
+};
+struct SixtyNine : public CaseFunction
+{
+    void operator()() const override;
+    {
+         std::cout &lt;&lt; "The S number\n";
+    }
+};
+
+int main()
+{
+    std::unordered_map&lt;std::string,std::unique_ptr&lt;CaseFunction>> sw;
+    sw["sixty-nine"] = std::make_unique&lt;SixtyNine>();
+    (*sw["sixty-nine"])();
+    return 0;
+}</pre></div></dd></dl>
+<ul><li> But Chili is not a fan of this: </li></ul>
+<dl><dd>- awkward syntax to invoke the switch, </dd>
+<dd>- need to revert to unique pointer protection</dd>
+<dd>- forced to put data on the heap</dd>
+<dd>- need to code derived classes for new functors</dd>
+<dd>- function definitions are seperated from the point in the code where we map them</dd>
+<dd>+ On the plus side: provides good type safety</dd></dl></dd></dl>
+</div>
+<ul><li> Introducing Function Pointers <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=5m13s">5:13</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Idea is similar to pointing to data (stores the address of the data in memory</li></ul>
+<dl><dd>- Pointer to function stores the address to the first instruction of a function in memory</dd>
+<dd>- Functions are just a collection of instruction bytes in memory. If you jump to the memory address of the first instruction, you essentially execute the function</dd></dl>
+<ul><li> Declaring a function pointer: <code>int(*pFunc)(int);</code>. pFunc can now point to any function that takes an int and returns an int, and is invoked with <code>()</code></li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>int Double( int x )
+{
+    return x * 2;
+}
+
+int main()
+{
+    int ( *pFunc )(int);
+    pFunc = &amp;Double;
+    // Note: the 'Address Of' operator &amp; is optional, [ pFunc = Double; ] also works
+    std::cout &lt;&lt; pFunc( 2 ) &lt;&lt; std::endl;
+}</pre></div></dd></dl>
+<ul><li> Now you can point to different functions and invoke them through one single pointer dynamically (at runtime)</li></ul></dd></dl>
+</div>
+<ul><li> Using Function Pointers with a map <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=7m27s">7:27</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>void SixtyNine()
+{
+    std::cout &lt;&lt; "The S number\n";
+}
+
+int main()
+{
+    std::unordered_map&lt;std::string,void(*)()> sw;
+    sw["s9"] = SixtyNine;
+    sw["s9"]();
+}</pre></div></dd></dl>
+<ul><li> Chili's opinion of this solution:</li></ul>
+<dl><dd>+ Nicer switch semantics</dd>
+<dd>- But with less type safety, <code>sw</code> maps to any function with this signature</dd>
+<dd>- While this is a good solution, you still need to declare a new function for every case in the switch</dd>
+<dd>- Function definitions are still seperate from where we actually map the cases to the strings</dd></dl></dd></dl>
+</div>
+<ul><li> Alternative route: use <code>std::function&lt;&gt;</code> in order to map to lambda functions <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=9m33a">9:33</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Problem is, every lambda function is its own seperate type, and we have to give a single type for all values in the map</li>
+<li> In order to get this to work, we need to <code>#include &lt;functional&gt;</code> so that we can use the type <code>std::function</code></li>
+<li> <code>std::function&lt;&gt;</code> is a wrapper around "all callable things" and bring them all under one single polymorphic interface. They hold callables with a specific signature</li>
+<li> In our example, you use it like so: <code>std::function&lt;void()&gt;</code>, where <code>void()</code> is the actual type of the function (in this case, functions that take no parameters and return void)</li>
+<li> It's like the function pointer syntax <code>void(*)()</code> (which is a pointer to a function), but without the <code>(*)</code></li>
+<li> Now we can assign lambdas to the switch that maps to that function type</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>...
+#include &lt;functional>
+
+int main()
+{
+    std::unordered_map&lt;std::string,std::function&lt;void()>> sw;
+    sw["sixty-nine"] = []()
+    {
+        std::cout &lt;&lt; "The S value";
+    }
+    sw["sixty-nine"]();
+}</pre></div></dd></dl>
+<ul><li> Finally, Chili is happy:</li></ul>
+<dl><dd>+ We have our function definition in the same place where we map it</dd>
+<dd>+ We don't need seperate function definitions</dd>
+<dd>+ <code>std::function</code> is the way forward! </dd></dl>
+<ul><li> It allows us to bring different lambda functors (that all have different types) into the same container.</li>
+<li> Note that we can also pass the other function definitions to the map through <code>std::function</code> (the functionoid and function pointer definitions)</li></ul></dd></dl>
+</div>
+<ul><li> Example: making a single string switch class <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=13m01s">13:01</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Implementation of the StringSwitch class:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#pragma once
+#include &lt;functional>
+#include &lt;unordered_map>
+#include &lt;string>
+#include &lt;iostream>
+
+class StringSwitch
+{
+public:
+    std::function&lt;void()>&amp; Case(const std::string&amp; str)
+    {
+        return map[str];
+    }
+    std::function&lt;void()>&amp; Default()
+    {
+         return def;
+    }
+    void operator[](const std::string&amp; str) const
+    {
+        auto it = map.find(str);
+        if (it == map.end())
+        {
+            def();
+        }
+        else
+        {
+            it->second();
+        }
+    }
+private:
+	std::unordered_map&lt;std::string, std::function&lt;void()>> map;
+	std::function&lt;void()> def = [](){};
+};</pre></div></dd></dl>
+<ul><li> Note that you can do useful things that you couldn't do with a normal switch:</li></ul>
+<dl><dd>- It's an object, so you can pass it around to different functions</dd>
+<dd>- You can access variables outside of the switch (by capturing values, [] in the lambda definition)</dd>
+<dd>- You can have switches that take multiple parameters (() in the lambda definition)</dd>
+<dd>- Your switches can return values</dd></dl></dd></dl>
+</div>
+<ul><li> Homework assignment: time to face the music <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=19m18s">20:06</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><dl><dd>1 Dependency on box2D: install VCPKG and use that to install box2D on your system <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=21m36s">21:36</a></dd>
+<dd>2 Have the simulation destroy boxes when two boxes of the same color hit each other (collision event handling)</dd>
+<dd>3 Create a pattern matching system using an unordered map <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=22m47s">22:47</a></dd>
+<dd>4 Implement a box splitting effect (into 4, maintaining properties) upon collision <a rel="nofollow" class="external text" href="https://youtu.be/S2ZEEkquGy4?t=23m55s">23:55</a></dd></dl></dd></dl>
+</div>
+</div>
+<h3><span class="mw-headline" id="Tutorial_25_-_Bonus"><a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc">Tutorial 25 - Bonus</a></span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Pointers to a member function of a class/struct <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=7s">0:07</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> To define a pointer to a member function, use <code>int(Foo::*pFooFunc)(int)</code> (example signature for a member function that takes an int and returns an int)</li>
+<li> To point to an actual member function, use <code>pFooFunc = &amp;Foo::SomeMemberFunction;</code></li></ul>
+<dl><dd>-(Note: 'Address of' operator <code>&amp;</code> is required here)</dd></dl>
+<ul><li> To call it, you can use it on a class instance foo <code>(foo.*pFooFunc)(3);</code></li>
+<li> If you have a pointer to a class instance <code>Foo* pF = &amp;foo;</code>, the syntax to invoke through the function pointer is: <code>(pF-&gt;*pFooFunc)(3);</code></li>
+<li> This syntax is obviously not preferable, just good to know it exists</li></ul></dd></dl>
+</div>
+<ul><li> Defining <code>std::function</code> to hold a pointer to a member function <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=3m30s">3:30</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> When you wrap a member function in <code>std::function</code>, the instance becomes the first parameter of the function</li>
+<li> The syntax: <code>std::function&lt;int(Foo,int)&gt; func = &amp;Foo::SomeMemberFunction;</code></li></ul>
+<dl><dd>- (Note, you could also take a Foo object by reference <code>std::function&lt;int(Foo&amp;,int)&gt;...</code></dd></dl>
+<ul><li> And to call: <code>func(foo,2);</code></li></ul></dd></dl>
+</div>
+<ul><li> <code>std::bind</code> from the Utilities library adapts function signatures &lt;functional&gt;<a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=5m57s">5:57</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Works as a sort of adaptor for functions; it allows you to bind values to input parameters</li>
+<li> For instance say you have some free function <code>int Foo(int x)</code></li>
+<li> <code>std::bind(Foo,69)</code> defines a new function that calls <code>Foo</code> with the value 69. That new function will now take zero parameters: it essentially changes the signature</li>
+<li> Useful if you want to map functors that have more input parameters than your map definition; we can adapt a function that normally would not fit in our function containers so that it fits</li>
+<li> Here's how you apply this principle to "reduce" a function that takes mulutiple parameters:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>#include &lt;functional>
+
+int Thing(int x, int y)
+{
+    return 2*x + y;
+}
+
+int main()
+{
+    std::function&lt;int(int)> f;
+    f = std::bind( Thing, std::placeholders::_1 , 5 );
+    f(10); // returns: 25
+}</pre></div></dd>
+<dd>- the placeholder ensures that the first parameter of f is forwarded to the first parameter of Thing</dd>
+<dd>- we have "bound", or "adapted" Thing into the function pointer object</dd></dl></dd></dl>
+</div>
+<ul><li> Reference wrappers <code>std::reference_wrapper</code> <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=10m20s">10:20</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Note that if you include a variable in the <code>std::bind</code> statement and you want it passed by reference, you need to use <code>std::bind( SomeFunc,std::ref(x) );</code></li></ul></dd></dl>
+</div>
+<ul><li> <code>mem_fn</code> creates a function object out of a pointer to a member <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=12m12s">12:12</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Convenience function, lets you rewrite something like:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>std::function&lt;int(Foo&amp;,int)> f = &amp;Foo::DoublePlus;</pre></div></dd></dl>
+<ul><li> into:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>auto f = std::mem_fn( &amp;Foo::DoublePlus );</pre></div></dd></dl></dd></dl>
+</div>
+<ul><li> Lambda functions can bind much more elegantly <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=12m36s">12:36</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Binding <code>Thing</code> in the example 2 code boxes above with a lambda:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    auto g = [](int x) { return Thing(x,5); };
+    g(10); // returns 25</pre></div></dd></dl>
+<ul><li> Or, to bind a call to a member function of an objeect of class Foo with a Lambda (myfoo is an instance):</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    std::function&lt;void()> f;
+    f = [&amp;myfoo](){myfoo.DoublePlus(69);};
+    f();</pre></div></dd></dl>
+<ul><li> You don't stricly need to bind a lambda through <code>std::function</code>, you could also assign a lambda to a normal function pointer (with matching signature), but then you cannot use capture variables</li></ul></dd></dl>
+</div>
+<ul><li> Operator function objects <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=14m55s">14:55</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Useful when dealing with algorithms instead of writing your own custom predicates</li>
+<li> Examples: <code>equal_to</code>, <code>modulus</code>, etc.</li></ul></dd></dl>
+</div>
+<ul><li> Making a function pointer to a static member function <a rel="nofollow" class="external text" href="https://youtu.be/4EZVTNHmojc?t=16m30s">16:30</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> This is easier to do than in case of normal member functions, because static member functions do not operate to any specific instance of a class</li>
+<li> So, say you have a static member function <code>static int DoStatic( int y )</code> inside you Foo class:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>    int(*pStaticFunc)(int) = &amp;Foo::DoStatic; // &amp; is optional here
+    std::cout &lt;&lt; pStaticFunc(2); // same as:
+    std::cout &lt;&lt; (*pStaticFunc)(2);</pre></div></dd></dl></dd></dl>
+</div>
+</div>
+<h3><span class="mw-headline" id="Tutorial_25_-_Solution"><a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0">Tutorial 25 - Solution</a></span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> A look at <code>world.step( dt,8,3 );</code> in <code>Game::UpdateModel()</code> <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=28m39s">28:39</a></li>
+<li> Solution to 1st part: destroy boxes of same color when they collide <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=33m50s">33:50</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Interesting code snippet:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Remove dying boxes
+boxPtrs.erase(
+    std::remove_if( boxPtrs.begin(),boxPtrs.end(),std::mem_fn(&amp;Box::HasToDie) ),
+    boxPtrs.end();
+);</pre></div></dd></dl>
+<ul><li> Does the same as:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Remove dying boxes
+boxPtrs.erase(
+    std::remove_if( boxPtrs.begin(),boxPtrs.end(),[](auto&amp; b){return b->HasToDie();}),
+    boxPtrs.end();
+);</pre></div></dd></dl></dd></dl>
+</div>
+<ul><li> Solution to 2nd part: pattern matching <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=42m20s">42:20</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Interesting code snippet:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Use std::bind to swap the order of the parameters of a function
+// (f is of type std::function&lt;void(T,T)>)
+std::bind(f,std::placeholder::_2,std::placeholder::_1);</pre></div></dd></dl>
+<ul><li> Does the same as:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>[](const T&amp; a,const T&amp; b) {f(b,a);};   [[CHECK are these const refs? !!]]</pre></div></dd></dl></dd></dl>
+</div>
+<ul><li> The Spawn function of the <code>Box</code> class <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=53m00s">53:00</a></li>
+<li> Solution to 3rd part: add box tagging pattern <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=58m46s">58:46</a></li>
+<li> Solution to 3rd part: add box splitting pattern <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=59m39s">59:39</a></li>
+<li> Solution to 3rd part: add box splitting pattern <a rel="nofollow" class="external text" href="https://youtu.be/Vh2JW5MHJX0?t=1h10m06s">1:10:06</a></li>
+<li> WORK-IN-PROGRESS</li></ul>
+</div>
+<h2><span class="mw-headline" id="Homework_Assignment">Homework Assignment</span></h2>
+<p>This homework might wreck your butthole a little, but hopefully not too badly. Anyways, you get the code from the repo, you try and get it to build. The project requires Box2D, but the repo doesn't have it included so you're gonna need to wrangle it yourself. The easiest way to accomplish this is to pull in dependencies into your system with vcpkg. Some of you are probably going to run into some speed bumps at this point getting vcpkg to work on your system, but I recommend powering through and not giving the fuck up, because vcpkg is immensely useful for adding amazing libraries to your projects easily. If you search YouTube, you'll find a video of me showing how to install vcpkg and use it to grab SFML, so that might be a good starting point.
+</p><p>After you get that shit working, the party has just started. Then you need to figure out how the codebase actually works. Use all the tools at your disposal (debugger, Google, Box2D documentation, etc.), and don't get bogged down in unimportant distractions (you don't need to know how the triangle rendering pipeline works to understand the general simulation system, for example).
+</p><p>The actual tasks are, as laid out in the video:
+</p>
+<ol><li> Implement destruction of boxes when two boxes with the same color trait hit each other</li>
+<li> Implement a box splitting mechanic</li>
+<li> Implement a pattern matching collision event manager based on std::unordered_map (this is the main task that ties into Intermediate 25)</li>
+<li> Use the pattern matching system together with box splitting and other effects to define simulation with various action that occur based on what colors of boxes collide with each other.</li></ol>
+<p>Chili will hook you up with a solution video that A) explains the starting codebase in some detail and B) goes over the process of implementing all the the above.
+</p><p>The repo: <a rel="nofollow" class="external text" href="https://github.com/planetchili/boxyboi">GitHub</a>
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li>
+<li> Chili <a rel="nofollow" class="external text" href="https://youtu.be/lj9niRFCVGc">grabbing a package using vcpkg</a> (note, SFML is not relevant for this tutorial, it's Box2D you want to grab)</li>
+<li> Chili <a rel="nofollow" class="external text" href="https://youtu.be/XywXJD8khHg">grabbing a package using NuGet</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222150
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.027 seconds
+Real time usage: 0.051 seconds
+Preprocessor visited node count: 188/1000000
+Preprocessor generated node count: 380/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:97-0!*!0!!en!*!* and timestamp 20231224222150 and revision id 3123
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;oldid=3123">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;oldid=3123</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+25" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_25.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_25.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_25.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_25" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_25" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;oldid=3123" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_25&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 9 March 2020, at 07:07.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1532});
+} );</script>
+	</body>
+</html>

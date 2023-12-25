@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 24 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_24","wgTitle":"Intermediate C++ Game Programming Tutorial 24","wgCurRevisionId":2960,"wgRevisionId":2960,"wgArticleId":96,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_24","wgRelevantArticleId":96,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],
+"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_24 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 24</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_24.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_24.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Associative containers are super useful, both as a convenient fast way to create dictionary or mapping for real-world problems like managing game resources, and as a data structure to help solve more abstract algorithmic computer science problems. And hash tables are fast as balls.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Part_1:_ordered_associative_containers"><span class="tocnumber">1.1</span> <span class="toctext">Part 1: ordered associative containers</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Part_2:_unordered_associative_containers"><span class="tocnumber">1.2</span> <span class="toctext">Part 2: unordered associative containers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Tutorial_24.1:_The_ordered_associative_containers"><span class="tocnumber">2.1</span> <span class="toctext">Tutorial 24.1: The ordered associative containers</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Tutorial_24.2:_The_unordered_associative_containers"><span class="tocnumber">2.2</span> <span class="toctext">Tutorial 24.2: The unordered associative containers</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-7"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Homework_Assignment"><span class="tocnumber">3</span> <span class="toctext">Homework Assignment</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#Supplementary_Link"><span class="tocnumber">4</span> <span class="toctext">Supplementary Link</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<h3><span class="mw-headline" id="Part_1:_ordered_associative_containers">Part 1: ordered associative containers</span></h3>
+<ul><li> <code>std::map</code> container interface</li>
+<li> Binary tree data structure</li>
+<li> <code>std::map</code> key requirements (comparison)</li>
+<li> <code>std::map</code> gotchas (<code>std::remove_if</code> and <code>const</code> keys)</li>
+<li> <code>std::set</code></li>
+<li> <code>std::multimap</code> and <code>std::multiset</code></li></ul>
+<h3><span class="mw-headline" id="Part_2:_unordered_associative_containers">Part 2: unordered associative containers</span></h3>
+<ul><li> Hash table performance vs. binary tree performance</li>
+<li> Hash table data structure</li>
+<li> <code>std::unordered_map</code> key requirements</li>
+<li> Hash combining</li>
+<li> <code>std::unordered_map</code> bucket interface and hashing policy</li>
+<li> When to choose <code>std::map</code> over <code>std::unordered_map</code></li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<h3><span class="mw-headline" id="Tutorial_24.1:_The_ordered_associative_containers"><a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o">Tutorial 24.1</a>: The ordered associative containers</span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> The <code>std::map&lt;KeyType,ValueType&gt;</code> class <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=0m46s">0:46</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Maps consist of keys to lookup (associated) values</li>
+<li> <code>map.insert( {key,value} )</code> to insert (key,value) pairs</li>
+<li> <code>map[key]</code> returns a reference to the ValueType for a KeyType</li></ul></li></ul>
+</div>
+<ul><li> A Binary Tree data structure is used to manage the order of map elements <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=2m46s">2:46</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>std::map</code> performs lookup in O(log(n)), it uses a Binary tree data structure</li>
+<li> Key properties of a Binary Tree (BT):</li></ul>
+<dl><dd>- Nodes can have at most 2 children (hence: binary)</dd>
+<dd>- Each left child is smaller and each right child is larger than its parent</dd>
+<dd>- Insertion is done by navigating the tree along a route Left for smaller, Right for larger such that the order property always holds </dd></dl>
+<ul><li> The big advantage of the BT properties is that retrieval is very fast</li>
+<li> The beauty of <code>std::map</code> is that we don't have to implement any of this; it's all there in the STL <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=7m00s">7:00</a></li>
+<li> The STL implementation is further optimized, e.g. it uses a red-black tree for BT rebalancing</li></ul></li></ul>
+</div>
+<ul><li> A look at the <code>std::map</code> cppreference.com documentation: insert, lookup &amp; find <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=7m35s">7:35</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>map.insert()</code> takes a pair type <code>std::pair&lt;KeyType,ValueType&gt;</code>, the Map's elements</li>
+<li> C++ can deduce the pair Type, so <code>map.insert({keyX,valueXYZ});</code> with curly braces will do the job</li>
+<li> An even better way to insert is through <code>map.emplace()</code> operation; it will construct the pair in-place.</li>
+<li> For lookup, you can use square braces, <code>map[x]</code> will return a reference to the corresponding value</li>
+<li> Note: a lookup with a new key value will create that element in the map with the default constructed ValueType value</li>
+<li> <code>insert</code> or <code>emplace</code> with a key that already exists will NOT override the existing value: <code>std::map::emplace</code> returns a <code>std::pair&lt;iterator,bool&gt;</code> where the bool inidicates whether an insertion took place</li>
+<li> <code>map.find("xyz")</code> returns an iterator to the element if it exitst, and an iterator to <code>map.end()</code> if it doesn't exist (useful to check if a key already exists)</li>
+<li> <code>std::map</code> comes with iterators and because it is a sorted map, when you iterate over its elements with <code>for (auto&amp; el&#160;: map)</code>, it will be in order (of the keys)</li></ul></li></ul>
+</div>
+<ul><li> Requirements on KeyType <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=14m30s">14:30</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The KeyType has to be comparable. The third template parameter is a functor for KeyType Comparison that defaults to <code>std::less&lt;KeyType&gt;</code></li>
+<li> So by default keys have to implement the "less than" comparison operator or provide your own comparison functor when defining the map</li></ul></li></ul>
+</div>
+<ul><li> <code>std::map</code> cppreference.com documentation continued: erase <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=15m28s">15:28</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>std::map::erase</code> offers three basic ways to erase elements:</li></ul>
+<dl><dd>- With an iterator; returns an iterator following the last removed element</dd>
+<dd>- With an iterator range, idem</dd>
+<dd>- By key through <code>map.erase(const KeyType&amp; key)</code>; this operation returns the number of elements erased (in <code>size_type</code>)</dd></dl></li></ul>
+</div>
+<ul><li> Two important things to know when working with associative containers <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=16m04s">16:04</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <code>std::remove_if</code> does not work with associative containers (will come with C++20). </li></ul>
+<dl><dd>- You have to iterate over the elements with <code>for( auto i = map.begin(); i&#160;!= map.end();)</code></dd>
+<dd>- And apply <code>i = map.erase(i);</code> in the body of your <code>if</code> logic, and <code>++i</code> in the <code>else</code> block.</dd></dl>
+<ul><li> Keys are <code>const</code>. You're not allowed to modify the keys <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=18m38s">18:38</a></li></ul>
+<dl><dd>- Makes sense: the keys define the structure of the binary tree. </dd>
+<dd>- If you modify the key you invalidate this structure (it would require a deletion and insertion to do it properly)</dd></dl></li></ul>
+</div>
+<ul><li> The <code>std::set&lt;KeyType&gt;</code> class <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=20m00s">20:00</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> With a set, you only have keys, and a unique entry for each unique key</li>
+<li> Use case: ensure that there are no duplicates in a set</li></ul></li></ul>
+</div>
+<ul><li> The <code>std::multimap</code> and <code>std::multiset</code> classes <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=21m28s">21:28</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Map has unique keys, with multimap you can insert multiple elements with the same key</li>
+<li> This enables operations like <code>std::multimap::equal_range</code> that returns a pair of iterators (begin and end) of the range where these elements have that same key</li>
+<li> <code>std::multimap::count</code> will return the number of elements with  specific key</li></ul></li></ul>
+</div>
+<ul><li> Practical example of a multimap use case <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=22m30s">22:30</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Implementation example of a custom Comparison functor for the <code>Vei2</code> class (2D coordinate vector).</li></ul>
+<dl><dd>- Chili's choice for ordering (used in the body of the functor): </dd>
+<dd>- <code>return (lhs.x == rhs.x)&#160;? lhs.y &lt; rhs.y&#160;: lhs.x &lt; rhs.x;</code></dd></dl>
+<ul><li> Example of how to find and print multiple elements in a multimap using <code>equal_range()</code></li></ul></li></ul>
+</div>
+<ul><li> Lookup in multimaps <a rel="nofollow" class="external text" href="https://youtu.be/JlPsCoCO99o?t=25m21s">25:21</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Note: the multimap class does not have an index operator <code>[]</code> </li>
+<li> When you do a lookup on a multimap, you should use <code>equal_range()</code></li>
+<li> The problem with <code>find()</code> on a multimap, is that if there are several elements with key in the ccontainer, any of them may be returned</li></ul></li></ul>
+</div>
+</div>
+<h3><span class="mw-headline" id="Tutorial_24.2:_The_unordered_associative_containers"><a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I">Tutorial 24.2</a>: The unordered associative containers</span></h3>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Main difference between ordered/unordered: performance <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=0m14s">0:14</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Implication: if you iterative over an unordered container, keys will appear in (seemingly) random order</li>
+<li> Releasing the ordering requirement makes it possible to use a hash table with performance advantages: O(1) contant time insertion and lookup</li></ul></dd></dl>
+</div>
+<ul><li> Using an unordered map <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=1m38s">1:38</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> The interface is pretty much the same as its ordered counterpart</li>
+<li> Include <code>&lt;unordered_map&gt;</code>, declare using <code>std::unordered_map&lt;KeyType,ValueType&gt;</code></li>
+<li> You can initialize your map object with an initializer list if you wanted to using <code>({ {..,..},{..,..},... })</code> inside your declaration</li></ul></dd></dl>
+</div>
+<ul><li> The Hash Table data structure <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=3m20s">3:20</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> A hash table allows you to get the quick access to values, comparable to array access using the index, but with efficient memory usage</li>
+<li> Buckets are used to group keys; this is done by mapping keys to buckets using a hash function (a.k.a. hashing)</li>
+<li> Multiple keys can map to the same bucket in a hash table ("collision"). We use a linked list to store multiple {key,value} pairs in a bucket</li>
+<li> Two ways to minimize hash collisions: i) more buckets, ii) smart hash function that distributes key values uniformly across your bucket space</li>
+<li> Hashing a a two step process <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=9m26s">9:26</a>: </li></ul>
+<dl><dd>- A hash function takes in the KeyType input (typically a string or int) and outputs a size_t</dd>
+<dd>- the size_t output is reduced/ditributed to the size of the hash table (number of buckets)</dd></dl>
+<ul><li> The Standard Library provides general hashing functions for all the standard types</li>
+<li> For general use of unordered maps, we don't have to worry about the technical details of how the hash table works, the STL provides this</li></ul></dd></dl>
+</div>
+<ul><li> Requirements for the KeyType of an <code>unordered_map</code> / a hash table <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=11m56s">11:56</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> There needs to be a working hash function defined for the KeyType</li>
+<li> There need to be comparison and equality functor definitions for the KeyType</li></ul></dd></dl>
+</div>
+<ul><li> Example: map from <code>Vec2</code> class (2D coordinates) to a string <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=12m46s">12:46</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> In order to make this work, you need to define a hash function and the comparators for <code>Vei2</code></li>
+<li> You can implement a comparison/equality functor as a <code>struct</code> that defines a <code>operator()</code> member function, templated on <code>T</code></li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>struct EqVec2
+{
+    template &lt;typename T>
+    bool operator()( const T&amp; lhs,const T&amp; rhs ) const
+    {
+        return (lhs.x == rhs.x) &amp;&amp; (lhs.y == rhs.y);
+    }
+};</pre></div></dd></dl>
+<ul><li> Defining a custom hashing function is an art, it requires knowledge of cryptography, abstract algebra, discrete math, etc.</li>
+<li> Luckily, we don't need this; you can revert to the standard hashing functions for the basic types that make up any custom type</li></ul></dd></dl>
+</div>
+<ul><li> Hash combining <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=14m25s">14:25</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Combining hashes from basic types to create a hash over your custom object </li>
+<li> A simple google search will give you good examples of how to combine hash values in C++</li>
+<li> You can implement a hashing functor as a <code>struct</code> that defines a member function, templated on <code>T</code>, the basic type of the <code>Vec2</code> coordinates:</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>struct HashVec2
+{
+    template &lt;typename T>
+    size_t operator()( const _Vec2&lt;T>&amp; vec ) const
+    {
+        std::hash&lt;T> hasher;
+        auto hashx = hasher ( vec.x );
+        auto hashy = hasher ( vec.y );
+        hashx ^= hashy + 0x9e3779b9 + (hashx &lt;&lt; 6) + (hashx >> 2);
+        return hashx;
+    }
+};</pre></div></dd></dl>
+<ul><li> You pass this functors when defining the map: <code>std::unordered_map&lt;Vei2,std::string,HashVec2&gt; map;</code> <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=17m15s">17:15</a>. </li>
+<li> Note that the comparison functor is not needed: we can revert back to the equality operator already defined in the <code>Vec2</code> class definition</li></ul></dd></dl>
+</div>
+<ul><li> Template Specialization <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=18m43s">18:43</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Unordered map uses <code>std::hash</code> by default. You can inject Template Specialization for <code>std::hash</code> into the <code>std</code> Namespace for your own custom types only</li></ul>
+<dl><dd><div class="mw-highlight mw-content-ltr" dir="ltr"><pre>namespace std
+{
+    template &lt;> struct hash&lt;Vei2>
+    {
+        size_t operator()( cont Vei2&amp; vec ) const
+        {...}
+    };
+}</pre></div></dd></dl>
+<ul><li> Now you don't need to pass <code>HashVec2</code> in the map definition</li></ul></dd></dl>
+</div>
+<ul><li> The <code>std::unordered_map&lt;&gt;</code> Bucket interface <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=20m00s">20:00</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Allows you to get information about the buckets in the hash table and access nodes</li>
+<li> The bucket iterator takes an index of the bucket and allows you to iterate over all the elements in that specific bucket</li></ul></dd></dl>
+</div>
+<ul><li> The <code>std::unordered_map&lt;&gt;</code> Hash policy interface <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=21m47s">21:47</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> Allows you to tune your hash table (and thus the growth behavior &amp; performance of the map)</li>
+<li> Load Factor = average number of elements per bucket. For performance, you typically want to keep this below 1</li>
+<li> You can set the maximum load factor above which the table gets rehashed</li>
+<li> When the load factor becomes too high, it will automaticall rehash the table and increase the number of buckets</li>
+<li> You can manually rehash to a number of buckets you define</li>
+<li> You can reserve space for max number of elements, is then derives (and manages) the required number of buckets</li></ul></dd></dl>
+</div>
+<ul><li> When to choose <code>std::map</code> over <code>std::unordered_map</code>? <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=24m15s">25:15</a></li></ul>
+<div class="mw-collapsible-content">
+<dl><dd><ul><li> For simplicity and when performance is not a critical issue, no need to define a hash function;</li>
+<li> If you want to iterate in order;</li>
+<li> When you want to be able to find keys that are close to a certain key (with <code>lower_bound</code> and <code>upper_bount</code></li></ul></dd></dl>
+</div>
+<ul><li> Homework assignment <a rel="nofollow" class="external text" href="https://youtu.be/LsjFAx-dG5I?t=26m04s">26:04</a></li></ul>
+</div>
+<h2><span class="mw-headline" id="Homework_Assignment">Homework Assignment</span></h2>
+<p>The homework for this video is to enable use of a custom datatype in <code>unordered_map</code> hashing over multiple (4) members of that datatype. The solution video is <a rel="nofollow" class="external text" href="https://youtu.be/9qiJytSz9iM">here</a>.
+</p>
+<h2><span class="mw-headline" id="Supplementary_Link">Supplementary Link</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://www.cs.usfca.edu/~galles/visualization/Algorithms.html">Data Structure / Algorithm Visualizations</a></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_25.html" title="Intermediate C++ Game Programming Tutorial 25">Next in series (Tutorial 25)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225215836
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.307 seconds
+Real time usage: 0.920 seconds
+Preprocessor visited node count: 86/1000000
+Preprocessor generated node count: 148/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:96-0!*!0!!en!*!* and timestamp 20231225215835 and revision id 2960
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;oldid=2960">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;oldid=2960</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+24" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_24.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_24.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_24.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_24" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_24" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;oldid=2960" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_24&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 2 February 2020, at 23:47.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":2259});
+} );</script>
+	</body>
+</html>

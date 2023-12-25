@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 18 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_18","wgTitle":"Intermediate C++ Game Programming Tutorial 18","wgCurRevisionId":2354,"wgRevisionId":2354,"wgArticleId":88,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_18","wgRelevantArticleId":88,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{
+"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_18 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 18</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_18.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_18.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Another two-parter here, and we got the real stuff now. Virtual functions allow you to unlock the true potential of inheritance in C++. You need to know this shit.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Part_1"><span class="tocnumber">1.1</span> <span class="toctext">Part 1</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Part_2"><span class="tocnumber">1.2</span> <span class="toctext">Part 2</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Source_Code"><span class="tocnumber">3</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#Errata"><span class="tocnumber">4</span> <span class="toctext">Errata</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<h3><span class="mw-headline" id="Part_1">Part 1</span></h3>
+<ul><li> How to create a virtual function</li>
+<li> Using the override keyword</li>
+<li> Creating a pure virtual function</li>
+<li> Using a container of pointers to manage a heterogeneous collection of objects</li>
+<li> virtual destructors</li></ul>
+<h3><span class="mw-headline" id="Part_2">Part 2</span></h3>
+<ul><li> Using inheritance and composition together</li>
+<li> Basic idea of a polymorphic state machine and its application to entity behavior</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://www.youtube.com/watch?v=4Vvc1YurUYA">Tutorial 18.1</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Creating a "Virtual Function" in the <code>MemeFighter</code> class <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=0m23s">0:23</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Create a free function <code>DoSpecials()</code> that calls <code>SpecialMove()</code> on the instances of the derived classes of MemeFighter</li>
+<li>  This requires the member function <code>SpecialMove()</code> to be added to the base class...</li>
+<li> ... and the signatures of these member functions in the derived classes to match up</li></ul></li></ul>
+</div>
+<ul><li> Enabling "Dynamic Dispatch" by using <code>virtual</code> on the member function in the base class <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=3m17s">3:17</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> This enables the overridden functions in the child classes to be called</li>
+<li> When you refer to a derived class object using a pointer or a reference to the base class, you can call a virtual function for that object and execute the derived class's version of the function</li></ul></li></ul>
+</div>
+<ul><li> Applying the <code>override</code> keyword to increase code safety <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=5m17s">5:17</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Tells the compiler that you are intending to override something virtual in a base class</li></ul></li></ul>
+</div>
+<ul><li> Making a base class member function "Pure Virtual" using <code>virtual void Func(...) = 0;</code> <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=7m08s">7:08</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> This makes the base class an Abstract Class which cannot be instantiated</li>
+<li> It enforces that the virtual function is overridden in all sub-classes</li>
+<li> Whether you make a pure virtual function or whether you supply a default implementation depends on your situation <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=8m47s">8:47</a></li></ul></li></ul>
+</div>
+<ul><li> We have now applied the concept of "Polymorphism" <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=9m16s">9:16</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> C++ polymorphism means that a call to a member function will cause a different function to be executed depending on the underlying type of object that invokes the function</li>
+<li> Polymorphism creates the power to manage different types in a single container</li></ul></li></ul>
+</div>
+<ul><li> Applying Polymorphism to a container of pointers to the shared base type of different derived class objects <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=9m46s">9:46</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> In this case, we create two <code>std::vector&lt;MemeFighter*&gt;</code>s to enable team fights</li>
+<li> These vectors contain pointers to the base type, this allows us to have a single vector that can manage objects of different types, as long as they all fall within the same hierarchy</li>
+<li> To manage gameplay, we <code>#include &lt;algorithm&gt;</code> </li>
+<li> Use <code>std::any_of()</code> with a predicate (Lambda function) that tests if team members are still alive <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=11m26s">11:26</a></li>
+<li> Use <code>std::random_shuffle()</code> to get different match-ups in every round of gameplay <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=11m46s">11:46</a></li>
+<li> Use <code>std::partition()</code> to ensure the maximum number of live matchups <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=11m57s">11:57</a></li>
+<li> Implementing the game battle loops <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=12m34s">12:34</a></li></ul></li></ul>
+</div>
+<ul><li> Applying Polymorphism to objects created on the heap (dynamic memory management) <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=13m46s">13:46</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Create vectors with pointers to dynamically created objects on the heap</li>
+<li> When done, free the memory by calling <code>delete</code> on the pointers in the containers <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=14m18s">14:18</a></li></ul></li></ul>
+</div>
+<ul><li> "Virtual Destructors": Managing destructors in base and derived classes <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=14m48s">14:48</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Making the destructor in the parent class <code>virtual</code> ensures that the destructors of the children objects are called (it enables dynamic dispatch so the appropriate child class destructor is called)</li>
+<li> The Construction and Destruction procedure and the order in which ojects are created/destroyed (RAII) <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=16m31s">16:31</a></li></ul></li></ul>
+</div>
+<ul><li> Review of termonology and concepts learned <a rel="nofollow" class="external text" href="https://youtu.be/4Vvc1YurUYA?t=19m49s">19:49</a></li></ul>
+</div>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM">Tutorial 18.2</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Design choices in class hierarchy: inheritance vs. composition <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=0m43s">0:43</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The MemeFighter game is expanded such that fighters can hold weapons</li>
+<li> Chili argues why this situation best lends itself to a composition relationship: the abstract fighter class can have a pointer to an abstract weapon class (which has derived classes for various types of weapons)</li></ul></li></ul>
+</div>
+<ul><li> Adjusting the MemeFighter code to include the <code>Weapon</code> class <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=4m20s">4:20</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Adding MemeFighter member functions GiveWeapon(), PilferWeapon() <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=8m03s">8:03</a></li>
+<li> Adding derived classes of the Weapon class to repepresent Fist, Knife, Bat <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=9m34s">9:34</a></li></ul></li></ul>
+</div>
+<ul><li> Add feature where one fighter can take the other fighter's weapon <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=11m36s">11:36</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> We add a free function <code>TakeWeaponIfDead()</code> that handles the weapon exchange</li></ul></li></ul>
+</div>
+<ul><li> Recap of advantage of the inheritance-composition construct <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=14m00s">14:00</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> It avoids having to change a fighter into a different type when exchanging weaponry</li></ul></li></ul>
+</div>
+<ul><li> One more real world example used in <a href="RPG_Project_Twin.html" title="RPG Project Twin">RPG Project Twin</a>: a finite "State Machine" for a Boss Battle <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=14m28s">14:28</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> A State Machine models patterns of behavior (like attack, evade, wander, find aid, etc.)</li>
+<li> You can use virtual functions that control the boss (depending on type of behavior) and transition from one behavior to another, based on some condition</li>
+<li> Very common pattern in game programming, e.g. using AI to model the behavior of enemies</li></ul></li></ul>
+</div>
+<ul><li> Presenting the template class <code>Behavior</code> within the class <code>Entity</code> <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=15m22s">15:22</a></li>
+<li> How to transition between behavioral states? <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=16m35s">16:35</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Associate each state with a stack of successor states that are consecutively called</li>
+<li> The last state on this stack can then lead into a new chain (fill up another stack)</li>
+<li> This again represents a combination of inheritance and composition: states are composed of other states as part of their "stack of states"...</li>
+<li> ... avoiding an explosion of (derived) classes that would be needed to define this behavior with just inheritance</li></ul></li></ul>
+</div>
+<ul><li> The performance impact of using Virtual Functions <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=19m36s">19:36</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The direct impact: If you use virtual functions in a class, all objects of that class will have to store a (hidden) pointer to a virtual function table ("vtable")</li>
+<li> The v-table holds pointers to code for each virtual function supported by the object. It is used as a lookup table to determine which functions are being called at runtime</li>
+<li> An indirect impact: because the compiler does not know which function will be called at runtime, it can't inline any virtual functions that are being dynamically bound</li>
+<li> The difference in performance is generally not problematic, except for specific (rare) cases</li></ul></li></ul>
+</div>
+<ul><li> An example of where performance actually matters: The SpriteEffect system <a rel="nofollow" class="external text" href="https://youtu.be/cdOB_gKnJOM?t=21m07s">21:07</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The SpriteEffect system (see <a href="Intermediate_C++_Game_Programming_Tutorial_14.html" title="Intermediate C++ Game Programming Tutorial 14">Intermediate Tutorial 14</a>) uses functors to define drawing behavior. These functors are called on heavily as they contain PutPixel calls</li>
+<li> In theory, virtual functions would be nicer, as you could swap out different effects dynamically at runtime (can't do that with a functor).</li>
+<li> However, in that scenario the use of virtual functions would introduce performance issues</li>
+<li> The choice depends on the estimated frequency of function calls (relevant when greater than O(1E6) calls/second)</li></ul></li></ul>
+</div>
+</div>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<p><a rel="nofollow" class="external text" href="https://github.com/planetchili/Inheritance">Inheritance Github Repository</a><br />
+</p>
+<h2><span class="mw-headline" id="Errata">Errata</span></h2>
+<ul><li> Forgot the virtual destructor for <code>class Weapon</code>! (this one hurts)</li>
+<li> In the children, the function signatures should be: <code>int CalculateDamage( const Attributes&amp; attr,Dice&amp; d ) const override</code></li>
+<li> Though not technically an error, it might have been a better decision to make <code>Weapon::GetName()</code> and <code>Weapon::GetRank()</code> (pure) virtual functions (this would reduce the amount of per-instance data to just the vtable ptr)</li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_19.html" title="Intermediate C++ Game Programming Tutorial 19">Next in series (Tutorial 19)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li>
+<li> <a href="RPG_Project_Twin.html" title="RPG Project Twin">RPG Project Twin</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222209
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 48/1000000
+Preprocessor generated node count: 74/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:88-0!*!0!!en!*!* and timestamp 20231224222209 and revision id 2354
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;oldid=2354">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;oldid=2354</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+18" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_18.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_18.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_18.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_18" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_18" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;oldid=2354" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_18&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 15 October 2019, at 03:55.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":2650});
+} );</script>
+	</body>
+</html>

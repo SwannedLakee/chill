@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 21 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_21","wgTitle":"Intermediate C++ Game Programming Tutorial 21","wgCurRevisionId":2619,"wgRevisionId":2619,"wgArticleId":92,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_21","wgRelevantArticleId":92,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{
+"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_21 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 21</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_21.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_21.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Smart pointers. I know pointers, I have the smartest pointers. In this video we learn about <code>std::unique_ptr&lt;&gt;</code>, which is by far the most frequently-used and important smart pointer. <code>std::shared_ptr&lt;&gt;</code> can go suck on an egg.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#Bonus_Video"><span class="tocnumber">3</span> <span class="toctext">Bonus Video</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#Notes"><span class="tocnumber">4</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#Source_Code"><span class="tocnumber">5</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> <code>std::unique_ptr&lt;&gt;</code></li>
+<li> How to pass (and not to pass) smart pointers</li>
+<li> Custom deleters</li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU">Tutorial 21</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Main risk factors for leaking memory when using pointers and (dynamically allocated) heap memory <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=0m30s">0:30</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Forgetting to delete memory</li>
+<li> Copy constructing objects that contain pointers to dynamically allocated memory: upon leaving scope, your program will try to delete the same memory twice, leading to an Access Violation exception</li>
+<li> Calling a function that returns a pointer to dynamically allocated memory without assigning it, i.e.  "dropping" that pointer (it is not being owned anymore)</li></ul></li></ul>
+</div>
+<ul><li> Smart pointers / unique pointers can help avert these inadvertant memory leaks <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=2m39s">2:39</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> They are RAII enabled, i.e. they take care of memory management (garbage collection) for you</li>
+<li> No need to call <code>delete</code> on them, they will free the memory of the objects that they own in their destructors, which get called when they go out of scope</li>
+<li> You <code>#include &lt;memory&gt;</code> and create a unique pointer through <code>std::unique_ptr&lt;T&gt; p( new T );</code>. However, from now on, we avoid the use of <code>new</code> in our code</li></ul></li></ul>
+</div>
+<ul><li> Creating  unique pointer in modern C++: <code>std::unique_ptr&lt;T&gt; p = std::make_unique&lt;T&gt;()</code> <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=3m57s">3:57</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> This can be shortened to <code>auto p = std::make_unique&lt;T&gt;()</code></li>
+<li> To create a unique pointer to an array of size n: <code>auto p = std::make_unique&lt;T[]&gt;( n )</code>. The unique pointer will auto destroy all objects of type T when leaving scope</li>
+<li> Unique pointers can be dereferenced <code>*p</code>, or dereferenced to access a member <code>p-&gt;someMember</code></li>
+<li> If you want to call a function by the underlying raw (/naked) pointer, use <code>SomeFunc( p.get() );</code>. Unique pointer does not implicitly convert to a raw pointer. This is to prevent you from accidently passing it to a function that might want to accept ownership of that pointer </li></ul></li></ul>
+</div>
+<ul><li> Example: functions in a class to transfer ownership of a resource through smart pointers <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=7m00s">7:00</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Instead of implementing the member function <code>T* Take()</code> and <code>void Give(T*)</code> </li>
+<li> We implement <code>std::unique_ptr&lt;T&gt; Take()</code> and <code>void Give( std::unique_ptr&lt;T&gt; )</code> and avoid the risk of unintended memory leaks</li>
+<li> When you are transferring an object via function, always pass unique pointers by value</li></ul></li></ul>
+</div>
+<ul><li> You control ownership of the resource object by using move semantics <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=9m12s">9:12</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> You cannot copy a unique pointer; you have to use <code>objectHolder.Give( std::move( p ) );</code> where <code>p</code> is a unique pointer to a resource. </li>
+<li> When implementing with smart pointers, you don't need to define destructors as this is taken care of by the smart pointer class: Rule-of-0</li>
+<li> If you use unique pointers correctly, you're not going to get memory leaks. It leads to: safer code, less code, and speed of execution (oh yeah, triple whammy)</li>
+<li> If you have a unique pointer in your class, the compiler won't let you copy construct (copy constructor is deleted) / shallow copy, as this would generate two pointers to the same memory block</li>
+<li> The default move constructor will still work</li></ul></li></ul>
+</div>
+<ul><li> Using a factory pattern (creating a factory function) to create unique pointers <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=11m47s">11:47</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Example: <code>std::unique_ptr&lt;T&gt; MakeT() { return std::make_unique&lt;T&gt;(); }</code></li>
+<li> As MakeT() will return an rvalue, you don't need to call <code>std::move</code> on it, and you can write <br /> <code>objectHolder.Give( MakeT() );</code></li></ul></li></ul>
+</div>
+<ul><li> Implementing smart pointers in the MemeFighter game <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=13m58s">13:58</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Use <code>std::vector&lt;std::unique_ptr&lt;MemeFighter&gt;&gt; team;</code> to represent the teams of MemeFighters</li>
+<li> Use <code>team.emplace_back(...)</code> to add elements to the vector, as you cannot use <code>= {.. , .. , ..}</code> to initialize a vector with unique pointers</li>
+<li> Rewrite the predicate function as <code>[](const std::unique_ptr&lt;MemeFighter&gt;&amp; mf){return mf-&gt;IsAlive();}</code></li>
+<li> Rewrite the ownership of a weapon to be represented by <code>std::unique_ptr&lt;Weapon&gt; pWeapon</code></li>
+<li> Remember to pass unique pointers by value when you want to transfer ownership inside a function</li></ul></li></ul>
+</div>
+<ul><li> When to pass smart pointers in function calls <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=17m47s">17:47</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Just because you work with smart pointers, doesn't mean that everything you pass into functions has to be passed in with a smart pointer</li>
+<li> The only time you should be passing in smart pointers is when you are transfering ownership inside the function</li>
+<li> Otherwise, just pass in with a normal reference to the object (or a normal pointer sometimes)</li>
+<li> One exception here are functors for std &lt;algorithm&gt;s, see above </li></ul></li></ul>
+</div>
+<ul><li> Implementing smart pointers in the Surface class used for sprite loading &amp; drawing <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=18m52s">18:52</a></li>
+<li> Going over the documentation for <code>unique_ptr</code> on cppreference.com <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=21m55s">21:55</a></li>
+<li> Review of main lessons <a rel="nofollow" class="external text" href="https://youtu.be/WCTiFVlQFZU?t=25m23s">25:23</a></li></ul>
+</div>
+<h2><span class="mw-headline" id="Bonus_Video">Bonus Video</span></h2>
+<p>The addition of smart pointers to <code>Surface</code> has allowed us to reduce the amount of code we need to write for <code>Surface</code>, making it simpler and correct by default. But we still need to write logic for those pesky copy operations... What if we used a container like <code>std::vector</code>! Then all that copying bullshit will be taken care of for us.
+</p><p>This is what we do in the bonus video. The only problem is, although adding <code>std::vector</code> will not make our release build any slower (the compiler optimizes out all of the extra abstraction for us), it does make the debug build slow. Usually, we don't worry about performance under debug, but for stuff like <code>PutPixel</code>, since we're calling it potentially millions of times per second, if our debug build is too slow it will become unusable for development and testing.
+</p><p>So the second goal of this bonus video is to optimize the debug build so that <code>PutPixel</code>-related operation run very fast, regardless of the fact that we are using <code>std::vector</code> to manage the array of pixels. The end result is that we can achieve rendering speeds which are over 100x faster than without the optimized debug configuration.
+</p>
+<ul><li> <a rel="nofollow" class="external text" href="https://youtu.be/8VrOe512YIw">Bonus Video Link</a></li></ul>
+<h2><span class="mw-headline" id="Notes">Notes</span></h2>
+<p>Although Chili uses <code>std::unique_ptr&lt;&gt;</code> in <code>Surface</code>, which allows us to <code>= default</code> the move members and leave the destructor undeclared, the astute student will realize that <code>Surface</code> should actually be setting the <code>width</code> and <code>height</code> of the donor surface to <code>0</code> when pilfering, so we actually still need to declare move members in this case. This is done in the Bonus Video where we perfect <code>Surface</code>.
+</p><p><span style="color:red">Also note one major mistake</span>: when we convert <code>MemeFighter</code> to use <code>std::unique_ptr</code> for owning its <code>Weapon</code>, we remove the destructor (because we no longer need to manually <code>delete</code> the heap <code>Weapon</code> object). However, we still need to mark the destructor as <code>virtual</code> so that the proper derived destructor gets called in polymorphic situations. The correct course should have been to change the destructor to <code>virtual ~MemeFighter() = default;</code> (a commit has been pushed after the fact that fixes this issue).
+</p>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/Inheritance">Inheritance (Memefighter) Github Repository</a><br /></li>
+<li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/Sprite">Sprite Github Repository (for <code>Surface</code> code)</a></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_22.html" title="Intermediate C++ Game Programming Tutorial 22">Next in series (Tutorial 22)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222212
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.005 seconds
+Real time usage: 0.010 seconds
+Preprocessor visited node count: 36/1000000
+Preprocessor generated node count: 54/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:92-0!*!0!!en!*!* and timestamp 20231224222212 and revision id 2619
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;oldid=2619">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;oldid=2619</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+21" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_21.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_21.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_21.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_21" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_21" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;oldid=2619" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_21&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 3 November 2019, at 05:02.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":1128});
+} );</script>
+	</body>
+</html>

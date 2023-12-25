@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Intermediate C++ Game Programming Tutorial 20 - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Intermediate_C++_Game_Programming_Tutorial_20","wgTitle":"Intermediate C++ Game Programming Tutorial 20","wgCurRevisionId":2596,"wgRevisionId":2596,"wgArticleId":90,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Intermediate_C++_Game_Programming_Tutorial_20","wgRelevantArticleId":90,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{
+"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Intermediate_C_Game_Programming_Tutorial_20 skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Intermediate C++ Game Programming Tutorial 20</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Intermediate_C++_Game_Programming_Tutorial_20.html#mw-head">navigation</a>, 					<a href="Intermediate_C++_Game_Programming_Tutorial_20.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>In this video we learn about r-value reference and move semantics, which is perhaps the most important feature that was added in the C++11 update. This is going to allow us to manage and transfer our resources in a precise and efficient manner. It is sexy as fuck and I love it.
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#Topics_Covered"><span class="tocnumber">1</span> <span class="toctext">Topics Covered</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#Video_Timestamp_Index"><span class="tocnumber">2</span> <span class="toctext">Video Timestamp Index</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#Note"><span class="tocnumber">3</span> <span class="toctext">Note</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#Source_Code"><span class="tocnumber">4</span> <span class="toctext">Source Code</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Topics_Covered">Topics Covered</span></h2>
+<ul><li> r-values and l-values</li>
+<li> r-value reference function overloading</li>
+<li> Move constructor and move assigment</li>
+<li> Rule of 5</li>
+<li> <code>std::move</code></li>
+<li> <code>std::make_move_iterator</code></li></ul>
+<h2><span class="mw-headline" id="Video_Timestamp_Index">Video Timestamp Index</span></h2>
+<p><a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk">Tutorial 20</a>
+</p>
+<div class="mw-collapsible mw-collapsed"><br />
+<ul><li> Why are move semantics important and required? <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=0m23s">0:23</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Example use case: adding objects to a container using <code>std::vector::emplace_back</code></li>
+<li> Instead of deep copying every element of the container when expanding the container capacity, move semantics allow you to direct pointers in the new container to existing blocks of memory</li></ul></li></ul>
+</div>
+<ul><li> What is an rvalue (simple definition) <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=2m48s">2:48</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> <u>rvalues</u> are values that can only appear on the right hand side of an assignment operation (=), such as:</li></ul>
+<dl><dd>- literals; <code>69 = 420;</code> is invalid</dd>
+<dd>- temporary return values of functions; <code>f() = 420;</code>, where the signature of <code>f</code> is <code>int f();</code>, is invalid</dd></dl>
+<ul><li> <u>lvalues</u> are values that can appear on the left hand side of assignments; they can be assigned to, for example: </li></ul>
+<dl><dd>- <code>x = 10;</code> if <code>x</code> has been declared as <code>int x;</code></dd>
+<dd>- <code>obj.Get() = 69;</code> if the member function <code>Get()</code> returns a reference to an integer member variable</dd>
+<dd>- <code>arr[3] = 10;</code> if <code>arr</code> has been declared as an array of integers</dd></dl></li></ul>
+</div>
+<ul><li> Why is the distinction between rvalues and lvalues useful? <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=4m57s">4:57</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The ability to detect whether a function is called with an rvalue (rather than with an lvalue) is useful, because the function can freely mangle an rvalue as it will be destoyed after the function call anyway</li></ul></li></ul>
+</div>
+<ul><li> Overloading a function to take an rvalue reference using <code>&amp;&amp;</code> <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=6m11s">6:11</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Using the <code>&amp;&amp;</code> declarator in a function signature, e.g. <code>void SomeFunc(SomeType&amp;&amp; donor)</code></li>
+<li> This makes the compiler dispatch a function call to the overloaded version when an rvalue is passed <br />(note: <code>&amp;&amp;</code> was added in c++11; <code>&amp;</code> is the familiar lvalue reference declarator)</li></ul></li></ul>
+</div>
+<ul><li> <code>std::move()</code>: Converting a variable into an rvalue reference <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=8m00s">8:00</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> This will allow the function to steal/use the resource(s) that are passed in</li>
+<li> This can be useful if you don't need those resources anymore</li>
+<li> <code>std::move(someVar)</code> is shorthand (from the STL) for the static cast <code>static_cast&lt;Type&amp;&amp;&gt;(someVar)</code></li>
+<li> All the STL containers are already wired up to be able to take advantage of "move semantics"</li></ul>
+<dl><dd>- For example: <code>std::string a = std::move(b)</code> will leave <code>b</code> (also a std::string) empty after execution</dd>
+<dd>- There is no magic to this call; all it does is pass <code>b</code> as an rvalue reference, calling the overloaded copy constructor (the "move constructor"), and the overloaded assignment operator ("move assignment") of <code>std::string</code> in which the contents of <code>b</code> are passed over to <code>a</code> and removed from <code>b</code>.</dd></dl></li></ul>
+</div>
+<ul><li>  Move constructor and Move assignment <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=10m07s">10:07</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The STL containers will try to use move semantics as much as possible</li>
+<li> To benefit from this, any custom classes (or rather: any Type) will need to define a move constructor and a move assignment operator</li>
+<li> <code>std::move</code> will default to the normal (lvalue reference) constructor and copy assignment operator if their move (rvalue reference) counterparts are not defined</li></ul></li></ul>
+</div>
+<ul><li> Implementing the move constructor and move assignment operator in the <code>Surface</code> class of the Sprite drawing project <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=11m09s">11:09</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Signature of the move constructor: <code>Surface(Surface&amp;&amp; donor) noexcept</code> that pilfers the data from the donor</li>
+<li> Signature of the move assignnment: <code>const Surface&amp; operator=(Surface&amp;&amp; rhs) noexcept</code></li></ul></li></ul>
+</div>
+<ul><li> The full story on implicit compiler definition of special member functions and the "Rule-of-5" <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=14m22s">14:22</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> If you implement any of the special member functions, you should implement all of them:</li></ul>
+<dl><dd>- Destructor</dd>
+<dd>- Copy constructor</dd>
+<dd>- Copy assignment</dd>
+<dd>- Move constructor</dd>
+<dd>- Move assignment</dd></dl></li></ul>
+</div>
+<ul><li> The behavior of the default move members and the "Rule-of-0" <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=15m17s">15:17</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> If a class only contain data members (Types) that handle their own RAII behavior (such as the STL containers), then you don't need to supply any move member functions</li>
+<li> If a function is called on an STL container, you don't need to specify move semantics, the container implementation takes care of it. </li></ul>
+<dl><dd>- No need for a function overload of <code>void SomeFunc(std::string&amp;&amp; donor)</code>.
+<dl><dd> if the default function is defined as <code>void SomeFunc(const std::string&amp; str)</code>, <br />just use a single <code>void SomeFunc(std::string str)</code> that takes (in this example) a string by value</dd></dl></dd>
+<dd>- If an lvalue is passed as the argument, the string will be copied into the local variable</dd>
+<dd>- If an rvalue is passed as the argument, the string will be moved into the local variable</dd></dl></li></ul>
+</div>
+<ul><li> Fix the <code>Surface</code> class to include the case (or: the state) where a surface is empty <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=19m09s">19:09</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li>  This has become necessary because the a move operation will leave the donor object empty</li></ul></li></ul>
+</div>
+<ul><li> Using a <code>std::make_move_iterator</code> to apply the <code>std::copy_if</code> algorithm to act as a "move-if" operator on containers <a rel="nofollow" class="external text" href="https://youtu.be/93mlQnWbyuk?t=21m00s">21:00</a></li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> The <code>make_move_iterator</code> is a convenience function that constructs a <code>std::move_iterator&lt;Iter&gt;(i)</code> which can be used to move out from the elements accessed through the input iterator <code>i</code></li>
+<li> Example code written to move strings from a vector of strings when they are larger than a certain threshold</li></ul></li></ul>
+</div>
+<ul><li> Recap: why move semantics are neat and lead into smart pointers</li></ul>
+<div class="mw-collapsible-content">
+<ul><li><ul><li> Move semantics: one of the most important additions that came with C++11. The functionality gives us finer control over how our resources are managed, and we can re-use resources of objects that would otherwise be discarded/deleted</li>
+<li> Elegant way of being able to move resources from one container into another</li>
+<li> Lets us create Types that cannot be copied, but that can still be moved: unique non-copyable types (no duplicates can exist), but that you can still have in a container, have that container grow, or move objects around from one container to the other</li>
+<li> Move semantics enable the concept of smart pointers (<code>unique_ptr</code>, the most important smart pointer, is a type that has the above characteristics (next up in Tutorial 21))</li></ul></li></ul>
+</div>
+</div>
+<h2><span class="mw-headline" id="Note">Note</span></h2>
+<p>If you are using Visual Studio 2017+, you might notice that our move members are not being used during <code>std::vector</code> growth even after we have 'properly' implemented them. This is expected, so don't pay it much mind at the moment.
+</p><p>The reason for this is that <code>std::vector</code> will only use the move members if they are guaranteed not to throw any exceptions (as per the standard). This issue will be dealt with in Intermediate 22 (tutorial on exceptions). For your interest, you can enable the move optimization by declaring your move ctor as <code>Surface( Surface&amp;&amp; ) noexcept</code>. The same should be done for the move assignment and the destructor.
+</p><p>You might wonder why Chili had no problems in the video. In the video, Chili was using Visual Studio 2015, which does not conform to the standard in this point, so it uses the move members regardless of whether or not they are marked <code>noexcept</code>.
+</p>
+<h2><span class="mw-headline" id="Source_Code">Source Code</span></h2>
+<ul><li> <a rel="nofollow" class="external text" href="https://github.com/planetchili/Sprite">Sprite Github Repository (for <code>Surface</code> code)</a><br /></li></ul>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> <a href="Intermediate_C++_Game_Programming_Tutorial_21.html" title="Intermediate C++ Game Programming Tutorial 21">Next in series (Tutorial 21)</a></li>
+<li> <a href="Intermediate_C++_Game_Programming_Series.html" title="Intermediate C++ Game Programming Series">Intermediate C++ Game Programming Series</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225125819
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.078 seconds
+Real time usage: 0.282 seconds
+Preprocessor visited node count: 36/1000000
+Preprocessor generated node count: 58/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:90-0!*!0!!en!*!* and timestamp 20231225125819 and revision id 2596
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;oldid=2596">https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;oldid=2596</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Intermediate+C%2B%2B+Game+Programming+Tutorial+20" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_20.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Intermediate_C++_Game_Programming_Tutorial_20.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Intermediate_C++_Game_Programming_Tutorial_20.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Intermediate_C%2B%2B_Game_Programming_Tutorial_20" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Intermediate_C%2B%2B_Game_Programming_Tutorial_20" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;oldid=2596" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Intermediate_C%2B%2B_Game_Programming_Tutorial_20&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 November 2019, at 05:49.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":3326});
+} );</script>
+	</body>
+</html>

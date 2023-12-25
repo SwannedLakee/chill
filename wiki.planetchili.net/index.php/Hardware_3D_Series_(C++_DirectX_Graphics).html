@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Hardware 3D Series (C++ DirectX Graphics) - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Hardware_3D_Series_(C++_DirectX_Graphics)","wgTitle":"Hardware 3D Series (C++ DirectX Graphics)","wgCurRevisionId":3321,"wgRevisionId":3321,"wgArticleId":120,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Hardware_3D_Series_(C++_DirectX_Graphics)","wgRelevantArticleId":120,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":
+!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Hardware_3D_Series_C_DirectX_Graphics skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Hardware 3D Series (C++ DirectX Graphics)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Hardware_3D_Series_(C++_DirectX_Graphics).html#mw-head">navigation</a>, 					<a href="Hardware_3D_Series_(C++_DirectX_Graphics).html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>The Hardware 3D series (HW3D) teaches the Direct3D 11 API and HLSL (High Level Shader Language). This includes basic instruction in the Windows API for the purposes of creating a window and processing input messages. The goal of this seriesis to give the student the skills necessary to create a basic 3D engine in Direct3D in C++ from scratch. This series builds upon the concepts introduced in previous series.
+</p>
+<h2><span class="mw-headline" id="List_of_Tutorials">List of Tutorials</span></h2>
+<table style="border:1px solid grey;border-collapse:collapse;width=100%;">
+
+<tr style="border:1px solid grey;background-color:#DDF;color:black;font-weight:bold;text-align:center;">
+<td style="width:10%;border:1px solid grey;">Tutorial Number
+</td>
+<td style="width:60%;border:1px solid grey;">Title
+</td>
+<td style="width:16%;border:1px solid grey;">Release Date
+</td>
+<td style="width:14%;border:1px solid grey;">Runtime
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">0
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_0.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 0">Hardware 3D [Introduction]</a>
+</td>
+<td style="border:1px solid grey;">December 16, 2018
+</td>
+<td style="border:1px solid grey;">7:48
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This video talks about the course syllabus for the Hardware 3D tutorial series (the shit we gonna learn) and the prerequisites for following this series (what you need to know, and what you need to have). Use it to get an idea of what this series is about, and whether you have what it takes to follow along. If you don't know this shit, it's okay to just come along for the ride if you interested; you'll learn something at least. But if you decide you wanna dig deep and master the material, check out the links on this page for my C++ series and the 3D Fundamentals series.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">1
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_1.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 1">Hardware 3D [WinMain]</a>
+</td>
+<td style="border:1px solid grey;">December 20, 2018
+</td>
+<td style="border:1px solid grey;">10:49
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> To start of our majickal journey of bullshit, we create a fresh, empty Visual Studio solution, configure that fucker to our liking, and write our Windows entry point. Also, some talking about how Windows do.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">2
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_2.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 2">Hardware 3D [Window Creation]</a>
+</td>
+<td style="border:1px solid grey;">December 22, 2018
+</td>
+<td style="border:1px solid grey;">18:42
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Registering a window class and creating our first window. Popping that MSDN cherry too.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">3
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_3.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 3">Hardware 3D [Message Loop / WndProc]</a>
+</td>
+<td style="border:1px solid grey;">December 27, 2018
+</td>
+<td style="border:1px solid grey;">17:18
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Windows message pump, window procedure, and event-driven programming in general. Getting messages, dispatching those bad boys, and processing them.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">4
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_4.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 4">Hardware 3D [Windows Messages]</a>
+</td>
+<td style="border:1px solid grey;">December 30, 2018
+</td>
+<td style="border:1px solid grey;">13:30
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We set out on an expedition into WM_LAND, surveying what messages are sent to our window and trying our hand at handling some keyboard messages.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">5
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_5.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 5">Hardware 3D [WM_CHAR / Mouse]</a>
+</td>
+<td style="border:1px solid grey;">January 5, 2019
+</td>
+<td style="border:1px solid grey;">10:28
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Concluding our exploration of window message bullshits with WM_CHAR and mouse messages.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">6
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_6.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 6">Hardware 3D [Window Framework]</a>
+</td>
+<td style="border:1px solid grey;">January 11, 2019
+</td>
+<td style="border:1px solid grey;">28:14
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video I go over the construction of our Window class framework. Of special interest is the mechanism by which a member function is hooked into the Windows message handling system via a static thunking function.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">7
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_7.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 7">Hardware 3D [Error Handling / Custom Icons]</a>
+</td>
+<td style="border:1px solid grey;">January 18, 2019
+</td>
+<td style="border:1px solid grey;">25:18
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> You gotta check your goddamn error codes. Also, adding custom icons for your apps is sexy shit.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">8
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_8.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 8">Hardware 3D [Keyboard / WM_SYSKEYDOWN]</a>
+</td>
+<td style="border:1px solid grey;">January 26, 2019
+</td>
+<td style="border:1px solid grey;">19:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> A nice little component to encapsulate access to the keyboard input.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">9
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_9.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 9">Hardware 3D [Mouse / Mouse Capture]</a>
+</td>
+<td style="border:1px solid grey;">January 31, 2019
+</td>
+<td style="border:1px solid grey;">18:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> A nice little component to encapsulate access to the mouse input.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">10
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_10.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 10">Hardware 3D [App class / PeekMessage]</a>
+</td>
+<td style="border:1px solid grey;">February 3, 2019
+</td>
+<td style="border:1px solid grey;">11:47
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We create a small <code>App</code> class which will act as the top level of our application object, owning the main window and top level game constructs.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">11
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_11.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 11">Hardware 3D [COM (Component Object Model)]</a>
+</td>
+<td style="border:1px solid grey;">February 8, 2019
+</td>
+<td style="border:1px solid grey;">37:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Direct3D 11 is mostly interfaced with as a collection of COM (Component Object Model) objects. In this tutorial we learn about the fundamental concepts and techniques of Microsoft COM.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">12
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_12.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 12">Hardware 3D [D3D Architecture / Swap Chain]</a>
+</td>
+<td style="border:1px solid grey;">February 16, 2019
+</td>
+<td style="border:1px solid grey;">17:45
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Before diving straight into the Direct3D 11 code, we take a video and look at the overall object architecture of D3D, the process of initializing the core objects, and some specific concepts such as the swap chain and feature level vs. API version.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">13
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_13.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 13">Hardware 3D [Device Init / Fill Screen / Present]</a>
+</td>
+<td style="border:1px solid grey;">February 22, 2019
+</td>
+<td style="border:1px solid grey;">19:06
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we create the mother of all D3D11 objects--the device. We also learn how to present the backbuffer (flip/swap) and how to fill the screen with a solid color, and we create a nifty little <code>class Graphics</code> to hold all this bullshit.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">14
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_14.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 14">Hardware 3D [Debug Layer Diagnostics]</a>
+</td>
+<td style="border:1px solid grey;">March 2, 2019
+</td>
+<td style="border:1px solid grey;">17:42
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Error reporting and rich diagnostics. These are what separate a professional engineer's approach to tackling a new API from the finger-up-butting of an amateur.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">15
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_15.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 15">Hardware 3D [ComPtr Smart Pointer]</a>
+</td>
+<td style="border:1px solid grey;">March 6, 2019
+</td>
+<td style="border:1px solid grey;">10:50
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Smart pointers make everything better. There is a smart pointer for COM interfaces called <code>ComPtr</code>. We are going to use the <i>fuck</i> out of this beautiful bastard.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">16
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_16.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 16">Hardware 3D [First Triangle]</a>
+</td>
+<td style="border:1px solid grey;">March 9, 2019
+</td>
+<td style="border:1px solid grey;">31:43+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Who knew it took so much goddamn code to draw a single freaking triangle?
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">17
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_17.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 17">Hardware 3D [Pipeline Exploration]</a>
+</td>
+<td style="border:1px solid grey;">March 23, 2019
+</td>
+<td style="border:1px solid grey;">24:23
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we get a little more familiar with the rendering pipeline as we fiddle with the various settings and try all sorts of variations out.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">18
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_18.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 18">Hardware 3D [Constant Buffers]</a>
+</td>
+<td style="border:1px solid grey;">March 30, 2019
+</td>
+<td style="border:1px solid grey;">15:56
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Constant buffers allow us to pass data along to our shaders that remain uniform across all vertices/pixels/etc. in a single draw call. Use them for stuff like binding your transformation matrices to your vertex shader.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">19
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_19.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 19">Hardware 3D [DirectXMath]</a>
+</td>
+<td style="border:1px solid grey;">April 6, 2019
+</td>
+<td style="border:1px solid grey;">18:57
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> The DirectXMath utility library gives you a buttload of ready-made routines for matrix and vector operations. SIMD support is the icing on the cake.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">20
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_20.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 20">Hardware 3D [3D Cube / Z-Buffer]</a>
+</td>
+<td style="border:1px solid grey;">April 13, 2019
+</td>
+<td style="border:1px solid grey;">23:03
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> First 3D cube, indexed solid color shader, and Z-buffer setup. Tons o fun to be had in this one bois.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">21
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_21.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 21">Hardware 3D [Bindable / Drawable System]</a>
+</td>
+<td style="border:1px solid grey;">April 20, 2019
+</td>
+<td style="border:1px solid grey;">24:32+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this three-part tutorial, we take a break from Direct3D api stuff to set up a better system for organizing Drawables and Bindables. Low coupling, high cohesion, and dynamic bullshits for the win.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">22
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_22.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 22">Hardware 3D [Texture Mapping]</a>
+</td>
+<td style="border:1px solid grey;">May 4, 2019
+</td>
+<td style="border:1px solid grey;">22:48
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we add texture mapping to our arsenal of <code>Bindable</code> abilities. It takes two (<code>Binable</code>s) to dance the texturing tango (you need a <code>Texture</code> (view) and a <code>Sampler</code>). We also add some code from previous tutorials for the loading of image files.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">23
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_23.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 23">Hardware 3D [Test GUI (imgui) / Camera]</a>
+</td>
+<td style="border:1px solid grey;">May 11, 2019
+</td>
+<td style="border:1px solid grey;">25:20
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Adding a GUI system (imgui) to the engine to better help us control our tests.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">24
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_24.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 24">Hardware 3D [Dynamic Lighting / Graphics Debugger]</a>
+</td>
+<td style="border:1px solid grey;">May 18, 2019
+</td>
+<td style="border:1px solid grey;">28:56+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this tutorial we write our first non-trivial shader program--basic point light pixel shading with specular highlights. We take this opportunity to check out the functionality of the Graphics Debugger (it's pretty dope).
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">25
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_25.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 25">Hardware 3D [Mesh Loading Assimp / Git History Fixing]</a>
+</td>
+<td style="border:1px solid grey;">June 8, 2019
+</td>
+<td style="border:1px solid grey;">23:12
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We incorporate the Assimp library into our engine, load a basic mesh, and we also get an impromptu lesson in Git manipulation.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">26
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_26.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 26">Hardware 3D [Dynamic Vertex / Template Metaprogramming Bullshit]</a>
+</td>
+<td style="border:1px solid grey;">June 16, 2019
+</td>
+<td style="border:1px solid grey;">43:48
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This video is a bit of a diversion from the graphics stuff to do a little bit of experimentation and brainstorming with data structure and meta-programming. The goal is to replace the functionality of what you can do with the <code>struct</code> keyword at compile time with a system that does the same things, but at runtime, and with reflection capabilities.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">27
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_27.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 27">Hardware 3D [Scene Graph]</a>
+</td>
+<td style="border:1px solid grey;">June 28, 2019
+</td>
+<td style="border:1px solid grey;">27:50
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Now it's time to use Assimp as more than just a glorified mesh loader. We're going to create a data structure to load a hierarchical tree of nodes with attached meshes, and the code needed to load that data from an Assimp scene.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">28
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_28.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 28">Hardware 3D [Node Tree / Transform Propagation]</a>
+</td>
+<td style="border:1px solid grey;">July 6, 2019
+</td>
+<td style="border:1px solid grey;">29:40
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we explore the tree structure of the hierarchy of nodes (using ImGui stuff), and we explore how transforms propagate down that tree. We also look into loading model file formats other than .obj (.gtlf), and we upgrade our Assimp dependency to a version that isn't COMPLETELY BROKEN.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">29
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_29.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 29">Hardware 3D [Cursor Hide / Cursor Confine]</a>
+</td>
+<td style="border:1px solid grey;">July 13, 2019
+</td>
+<td style="border:1px solid grey;">13:33
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We take the first step in creating a free mouse-look camera control by adding the ability to hide the Windows cursor as well as the ability to confine the cursor to our window.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">30
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_30.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 30">Hardware 3D [Raw Mouse Input]</a>
+</td>
+<td style="border:1px solid grey;">July 21, 2019
+</td>
+<td style="border:1px solid grey;">13:38
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Using Windows Raw Input to get that sweet-sweet relative mouse movement data directly from the device.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">31
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_31.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 31">Hardware 3D [First Person Camera]</a>
+</td>
+<td style="border:1px solid grey;">July 27, 2019
+</td>
+<td style="border:1px solid grey;">17:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> First person free mouse look camera using the DirectX Math LookAt matrix transformation function.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">32
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_32.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 32">Hardware 3D [Material Loading]</a>
+</td>
+<td style="border:1px solid grey;">August 4, 2019
+</td>
+<td style="border:1px solid grey;">26:50
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Oh my gawd look at how sexy nanoboi is. Materials are the bomb-diggity.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">33
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_33.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 33">Hardware 3D [Bindable Codex]</a>
+</td>
+<td style="border:1px solid grey;">August 12, 2019
+</td>
+<td style="border:1px solid grey;">32:53
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Time to take out the trash, i.e. clean up the <code>Drawable</code> / <code>Bindable</code> system. Going to create a central repository (<code>Codex</code> in chili parlance) to manage <code>Bindable</code>s to be shared between any <code>Drawable</code>.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">34
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_34.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 34">Hardware 3D [Normal Mapping Part 1]</a>
+</td>
+<td style="border:1px solid grey;">August 27, 2019
+</td>
+<td style="border:1px solid grey;">26:40+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Normal mapping is like what texture mapping would be if it actually lived up to its name. Time to learn about tangent space and other such weird things, I guess.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">35
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_35.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 35">Hardware 3D [Extreme Goblin Energy]</a>
+</td>
+<td style="border:1px solid grey;">September 21, 2019
+</td>
+<td style="border:1px solid grey;">33:45
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> GOBLINS CHEW AND GOBLINS BITE GOBLINS CUT AND GOBLINS FIGHT STAB THE DOG AND CUT THE HORSE GOBLINS EAT AND TAKE BY FORCE! GOBLINS RACE AND GOBLINS JUMP GOBLINS SLASH AND GOBLINS BUMP BURN THE SKIN AND MASH THE HEAD GOBLINS HERE AND YOU BE DEAD! CHASE THE BABY CATCH THE PUP BONK THE HEAD TO SHUT IT UP BONES BE CRACKED FLESH BE STEWED WE BE GOBLINS! YOU BE FOOD!
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">36
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_36.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 36">Hardware 3D [Renormalization]</a>
+</td>
+<td style="border:1px solid grey;">September 29, 2019
+</td>
+<td style="border:1px solid grey;">34:45
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This tutorial is really an assortment a various topics. The main one here is the shader accuracy issue of renormalizing normal vectors, particularly after interpolation. Also, organization of shader code with the HLSL preprocessor is featured prominently. And don't miss the part where we flex our Graphics Debugger muscles again.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">37
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_37.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 37">Hardware 3D [Sponza Test Map]</a>
+</td>
+<td style="border:1px solid grey;">October 12, 2019
+</td>
+<td style="border:1px solid grey;">32:26
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We load the Sponza test scene from Crytek, while also exploring more about materials and how to unscrew them. This scene will form the environment and motivation for several future tutorials.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">38
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_38.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 38">Hardware 3D [Mipmapping / Anisotropic Filtering]</a>
+</td>
+<td style="border:1px solid grey;">October 26, 2019
+</td>
+<td style="border:1px solid grey;">22:58
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Mipmapping and anisotropic filtering to make our textures look a lot sexier when scaled down.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">39
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_39.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 39">Hardware 3D [Alpha Blending / Transparency]</a>
+</td>
+<td style="border:1px solid grey;">November 17, 2019
+</td>
+<td style="border:1px solid grey;">37:06
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Blending things, see-through things. More than meets the eye.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">40
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_40.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 40">Hardware 3D [DirectXTex / JSON Batch]</a>
+</td>
+<td style="border:1px solid grey;">December 1, 2019
+</td>
+<td style="border:1px solid grey;">25:06
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Friendship ENDED with GDI+. Now DirectXTex is my new best friend. Also, JSON happens?
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">41
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_41.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 41">Hardware 3D [Dynamic Constant Buffer]</a>
+</td>
+<td style="border:1px solid grey;">December 13, 2019
+</td>
+<td style="border:1px solid grey;">1:18:02
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Crazy dynamic buffer system that allows you to define a nested data structure at runtime that stores its data contiguously. The self-imposed requirements of dynamism, data contiguity, and clean intuitive syntax add up to one ambitious system that took a lot of elbow grease to implement. Video is broken up into 3 section, you only need to watch to 1st section (16min) to understand enough to continue on with the tutorials without getting lost.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">42
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_42.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 42">Hardware 3D [Stencil Buffer Outline Effect]</a>
+</td>
+<td style="border:1px solid grey;">December 28, 2019
+</td>
+<td style="border:1px solid grey;">23:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Stencil buffer, multi-pass rendering, and outline special effect. Many 1st-time appearances in this video that will open up many avenues of inquiry and advancement.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">43
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_43.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 43">Hardware 3D [Render Queue System]</a>
+</td>
+<td style="border:1px solid grey;">January 18, 2020
+</td>
+<td style="border:1px solid grey;">36:10
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Introduction of a huge game-changer. The render queue system is going to allow us to decouple the concern of traversing the scene graph from the concern of issuing rending commands, making it easier and more efficient to group draw calls as required by effect, easier to optimize render commands, and easier to execute rendering on concurrent threads.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">44
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_44.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 44">Hardware 3D ["Visitor" Probe / Static Meta "Bridge"]</a>
+</td>
+<td style="border:1px solid grey;">February 1, 2020
+</td>
+<td style="border:1px solid grey;">21:43
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> First of two videos where we upgrade our current system with stuff we've been developing up until now (dynamic vertex/constant and Job/Pass). This video gets started by laying down the idea of a dynamic probe for constant buffers in Techniques and improving our dynamic vertex buffer code with a neat metaprogramming technique.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">45
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_45.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 45">Hardware 3D [Dynamic Technique Composition]</a>
+</td>
+<td style="border:1px solid grey;">February 16, 2020
+</td>
+<td style="border:1px solid grey;">30:00
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> The second of two videos where we upgrade our current system with stuff we've been developing up until now (dynamic vertex/constant and Job/Pass). This video is all about completing the dynamic composition of techniques, followed by an overhaul of the Model/Node/Mesh system, reinstatement of Sponza, and dynamic probing goodness.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">46
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_46.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 46">Hardware 3D [Fullscreen Filters (Blur)]</a>
+</td>
+<td style="border:1px solid grey;">February 29, 2020
+</td>
+<td style="border:1px solid grey;">31:18
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> In this video we explore the concept and theory of fullscreen (screen space) filter passes. We learn a little signal processing theory <i>vis-a-vis</i> convolutions, develop some code for managing offscreen render targets, and implement a couple of simple shaders for fullscreen filter effects.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">47
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_47.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 47">Hardware 3D [Separated Gaussian Filter]</a>
+</td>
+<td style="border:1px solid grey;">March 15, 2020
+</td>
+<td style="border:1px solid grey;">24:10+
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> This is a 2-part tutorial. Part 1 uses the blur filter from Tutorial 46 to create an improved outline filter, and then teaches the theory behind an better blur filter implementation (Gaussian filter), as well as the concept of separable filters. Part 2 implements a separated Gaussian filter, and goes on to show a resolution reduction optimization technique for said filter.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">48
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_48.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 48">Hardware 3D [Render Graph]</a>
+</td>
+<td style="border:1px solid grey;">March 28, 2020
+</td>
+<td style="border:1px solid grey;">51:39
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> We look at a render graph system for creating smart Pass objects that encapsulate and automate the different render passes in our scene, and for defining the connection between those passes and compiling them into a single render graph. Very THICC video.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">49
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_49.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 49">Hardware 3D [Input Layout Incredulity]</a>
+</td>
+<td style="border:1px solid grey;">April 5, 2020
+</td>
+<td style="border:1px solid grey;">25:10
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> A bit of a lighter tutorial to catch our breath. In this video we quickly go over some engine improvements / fixes, and cover a few interesting tidbits about how Direct3D works, including a crucial detail of InputLayout.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">50
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_50.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 50">Hardware 3D [Multi Camera Wireframe]</a>
+</td>
+<td style="border:1px solid grey;">April 18, 2020
+</td>
+<td style="border:1px solid grey;">29:10
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Lite tutorial in which we develop some visualization and flexibility with our camera system. Fun is had with line drawing and depth comparison settings.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">51
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_51.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 51">Hardware 3D [Shadow Mapping Theory]</a>
+</td>
+<td style="border:1px solid grey;">May 10, 2020
+</td>
+<td style="border:1px solid grey;">26:40
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> First part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video covers the fundamental theory behind the shadow mapping technique.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">52
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_52.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 52">Hardware 3D [Shadow Mapping Code]</a>
+</td>
+<td style="border:1px solid grey;">May 17, 2020
+</td>
+<td style="border:1px solid grey;">37:00
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Second part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video covers the basic implementation of the shadow mapping technique and its support code.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">53
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_53.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 53">Hardware 3D [Shadow Bias / Self Shadowing]</a>
+</td>
+<td style="border:1px solid grey;">May 31, 2020
+</td>
+<td style="border:1px solid grey;">28:50
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Third part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video covers goes into detail about the concept of self-shadowing (shadow acne) and shadow biasing. We get our shadow mapping shader code working for all of the models.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">54
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_54.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 54">Hardware 3D [Peter Panning / Shadow PCF]</a>
+</td>
+<td style="border:1px solid grey;">June 9, 2020
+</td>
+<td style="border:1px solid grey;">28:29
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Fourth part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video covers the concept of "peter panning" and self-shadowing due to sampling error in the depth map.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">55
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_55.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 55">Hardware 3D [Hardware PCF / Slope-scaling]</a>
+</td>
+<td style="border:1px solid grey;">June 15, 2020
+</td>
+<td style="border:1px solid grey;">27:33
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Fifth part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video implements hardware PCF comparison, discusses the concept of soft shadows, and introduces the theory behind an adaptive biasing technique called "slope-scaled depth biasing".
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">56
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_56.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 56">Hardware 3D [Slope-scaled Shadow Sandbox]</a>
+</td>
+<td style="border:1px solid grey;">June 27, 2020
+</td>
+<td style="border:1px solid grey;">33:14
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Sixth and final part in a mini-series on basic dynamic occlusion shadows with shadow mapping. This video implements slope-scaled depth biasing, makes a shadow effect that is fully runtime-configurable, and discusses some additional techniques.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">57
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_57.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 57">Hardware 3D [Cube Map Skybox]</a>
+</td>
+<td style="border:1px solid grey;">July 6, 2020
+</td>
+<td style="border:1px solid grey;">31:05
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Learning about the cube map texture resource and how to use it to implement a skybox.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">58
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_58.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 58">Hardware 3D [Cube Map Shadow Mapping]</a>
+</td>
+<td style="border:1px solid grey;">August 15, 2020
+</td>
+<td style="border:1px solid grey;">35:36
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Applying the cubemap technique to shadow mapping of a point light to capture an omni-directional shadow map.
+</td></tr>
+<tr style="border:1px solid grey;background-color:#667;color:#c1c1c1;text-align:center;">
+<td style="border:1px solid grey;">59
+</td>
+<td style="border:1px solid grey;text-align:left;"><a href="Hardware_3D_(C++_DirectX_Graphics)_Tutorial_59.html" title="Hardware 3D (C++ DirectX Graphics) Tutorial 59">Hardware 3D [Debugging Shadow Cube]</a>
+</td>
+<td style="border:1px solid grey;">Sept 13, 2020
+</td>
+<td style="border:1px solid grey;">38:22
+</td></tr>
+<tr style="background-color:#333;color:#c1c1c1;">
+<td style="border:1px solid grey;padding:8px;" colspan="4"> Diagnosing and fixing the issue with point-to-point distance shadow depth, with a little help from Python.
+</td></tr></table>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225023518
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.052 seconds
+Real time usage: 0.145 seconds
+Preprocessor visited node count: 183/1000000
+Preprocessor generated node count: 728/1000000
+Post‐expand include size: 11921/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:120-0!*!0!*!*!*!* and timestamp 20231225023518 and revision id 3321
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;oldid=3321">https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;oldid=3321</a>"					</div>
+				<div id='catlinks' class='catlinks catlinks-allhidden'></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Hardware+3D+Series+%28C%2B%2B+DirectX+Graphics%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Hardware_3D_Series_(C++_DirectX_Graphics).html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Hardware_3D_Series_(C++_DirectX_Graphics).html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Hardware_3D_Series_(C++_DirectX_Graphics).html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Hardware_3D_Series_(C++_DirectX_Graphics).html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;oldid=3321" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Hardware_3D_Series_(C%2B%2B_DirectX_Graphics)&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 25 September 2020, at 14:06.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":3059});
+} );</script>
+	</body>
+</html>

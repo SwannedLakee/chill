@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Keyboard (Chili Framework) - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Keyboard_(Chili_Framework)","wgTitle":"Keyboard (Chili Framework)","wgCurRevisionId":1187,"wgRevisionId":1187,"wgArticleId":12,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Keyboard_(Chili_Framework)","wgRelevantArticleId":12,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,
+"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Keyboard_Chili_Framework skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Keyboard (Chili Framework)</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Keyboard_(Chili_Framework).html#mw-head">navigation</a>, 					<a href="Keyboard_(Chili_Framework).html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>With <code>Keyboard</code>, you can get the current state of depressed keys (have a Valium mate), and you can pop key press and release events out of an <code>Event</code> queue contained in <code>Keyboard</code>. You can also turn autorepeat on/off. Whopee. (<i>Note: the </i><code>kbd</code><i> object lives in </i><code>MainWindow</code>'<i>s belly.</i>)
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Keyboard_(Chili_Framework).html#Example_of_Use"><span class="tocnumber">1</span> <span class="toctext">Example of Use</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="Keyboard_(Chili_Framework).html#Members"><span class="tocnumber">2</span> <span class="toctext">Members</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="Keyboard_(Chili_Framework).html#KeyIsPressed"><span class="tocnumber">2.1</span> <span class="toctext">KeyIsPressed</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="Keyboard_(Chili_Framework).html#ReadKey"><span class="tocnumber">2.2</span> <span class="toctext">ReadKey</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="Keyboard_(Chili_Framework).html#KeyIsEmpty"><span class="tocnumber">2.3</span> <span class="toctext">KeyIsEmpty</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="Keyboard_(Chili_Framework).html#ReadChar"><span class="tocnumber">2.4</span> <span class="toctext">ReadChar</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="Keyboard_(Chili_Framework).html#CharIsEmpty"><span class="tocnumber">2.5</span> <span class="toctext">CharIsEmpty</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="Keyboard_(Chili_Framework).html#Buffer_Flushing_Bullshit"><span class="tocnumber">2.6</span> <span class="toctext">Buffer Flushing Bullshit</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="Keyboard_(Chili_Framework).html#Autorepeat_Bullshit"><span class="tocnumber">2.7</span> <span class="toctext">Autorepeat Bullshit</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="Keyboard_(Chili_Framework).html#Event"><span class="tocnumber">3</span> <span class="toctext">Event</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="Keyboard_(Chili_Framework).html#IsPress"><span class="tocnumber">3.1</span> <span class="toctext">IsPress</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="Keyboard_(Chili_Framework).html#IsRelease"><span class="tocnumber">3.2</span> <span class="toctext">IsRelease</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="Keyboard_(Chili_Framework).html#IsValid"><span class="tocnumber">3.3</span> <span class="toctext">IsValid</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="Keyboard_(Chili_Framework).html#GetCode"><span class="tocnumber">3.4</span> <span class="toctext">GetCode</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-15"><a href="Keyboard_(Chili_Framework).html#Miscellaneous"><span class="tocnumber">4</span> <span class="toctext">Miscellaneous</span></a>
+<ul>
+<li class="toclevel-2 tocsection-16"><a href="Keyboard_(Chili_Framework).html#Virtual_Key_Codes"><span class="tocnumber">4.1</span> <span class="toctext">Virtual Key Codes</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="Keyboard_(Chili_Framework).html#ReadKey_vs._ReadChar"><span class="tocnumber">4.2</span> <span class="toctext">ReadKey vs. ReadChar</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="Keyboard_(Chili_Framework).html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Example_of_Use">Example of Use</span></h2>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// how to respond to key release event
+
+// keep processing events as long as queue contains them
+while( !wnd.kbd.KeyIsEmpty() )
+{
+	// get an event from the queue
+	const Keyboard::Event e = wnd.kbd.ReadKey();
+	// check if it is a release event
+	if( e.IsRelease() )
+	{
+		// check if the event was for the space key
+		if( e.GetCode() == VK_SPACE )
+		{
+			// respond to space key release event
+		}
+	}
+}</pre></div>
+<h2><span class="mw-headline" id="Members">Members</span></h2>
+<h3><span class="mw-headline" id="KeyIsPressed">KeyIsPressed</span></h3>
+<p><code>bool Keyboard::KeyIsPressed( unsigned char keycode ) const</code><br />
+Checks to see if a specific key is currently in the pressed state. The function parameter is the <a href="Keyboard_(Chili_Framework).html#Virtual_Key_Codes">virtual key code</a> of the key that you want to check.
+</p>
+<h3><span class="mw-headline" id="ReadKey">ReadKey</span></h3>
+<p><code>Event Keyboard::ReadKey()</code><br />
+Pull a fresh <code><a href="Keyboard_(Chili_Framework).html#Event">Event</a></code> object out of the key press/release event queue. Erases an event from the queue and returns a copy if there is a key press event in the queue. Returns an invalid Event object if the queue is empty.
+</p>
+<h3><span class="mw-headline" id="KeyIsEmpty">KeyIsEmpty</span></h3>
+<p><code>bool Keyboard::KeyIsEmpty() const</code><br />
+Returns <code>true</code> if the key event queue is empty.
+</p>
+<h3><span class="mw-headline" id="ReadChar">ReadChar</span></h3>
+<p><code>char Keyboard::ReadChar()</code><br />
+Pull a fresh character off of the character queue. Returns a <code>'\0'</code> (null) character if the queue is empty. See also: <a href="Keyboard_(Chili_Framework).html#ReadKey_vs._ReadChar">ReadKey vs. ReadChar</a>.
+</p>
+<h3><span class="mw-headline" id="CharIsEmpty">CharIsEmpty</span></h3>
+<p><code>bool Keyboard::CharIsEmpty() const</code><br />
+Returns <code>true</code> if the character queue is empty.
+</p>
+<h3><span class="mw-headline" id="Buffer_Flushing_Bullshit">Buffer Flushing Bullshit</span></h3>
+<p><code>void Keyboard::FlushKey()</code><br />
+<code>void Keyboard::FlushChar()</code><br />
+<code>void Keyboard::Flush()</code><br />
+These functions empty the respective queues. Flush() empties both in one fell swoop. It's like taking a pee and a poo at the same time.
+</p>
+<h3><span class="mw-headline" id="Autorepeat_Bullshit">Autorepeat Bullshit</span></h3>
+<p><code>void Keyboard::EnableAutorepeat()</code><br />
+<code>void Keyboard::DisableAutorepeat()</code><br />
+<code>bool Keyboard::AutorepeatIsEnabled() const</code><br />
+If you hhhhhhhhhhhhhhhhhold a key down for a while, it will start machine gunning events and characters into your queues like a motherfucker. You can disable that if it pisses you off.
+</p>
+<h2><span class="mw-headline" id="Event">Event</span></h2>
+<p><code>class Keyboard::Event</code><br />
+</p><p>Key press and release events are held in a queue in <code>Keyboard</code> in the order they occurred. These events are modeled with their own class because they're precious fucking little snowflakes. They store the type of event (press or release) and the <a href="Keyboard_(Chili_Framework).html#Virtual_Key_Codes">virtual key code</a> of the associated key. You pull them out of the buffer with <code>Keyboard::ReadKey()</code>.
+</p>
+<h3><span class="mw-headline" id="IsPress">IsPress</span></h3>
+<p><code>bool Keyboard::Event::IsPress() const</code><br />
+</p><p>Returns <code>true</code> if the event is a press event.
+</p>
+<h3><span class="mw-headline" id="IsRelease">IsRelease</span></h3>
+<p><code>bool Keyboard::Event::IsRelease() const</code><br />
+</p><p>Returns <code>true</code> if the event is a release event.
+</p>
+<h3><span class="mw-headline" id="IsValid">IsValid</span></h3>
+<p><code>bool Keyboard::Event::IsValid() const</code><br />
+</p><p>Returns <code>true</code> if the event is a valid event (reading from an empty buffer will return an invalid event object).
+</p>
+<h3><span class="mw-headline" id="GetCode">GetCode</span></h3>
+<p><code>char Keyboard::Event::GetCode() const</code><br />
+</p><p>Gets the virtual key code of the key associated with the <code>Event</code> object.
+</p>
+<h2><span class="mw-headline" id="Miscellaneous">Miscellaneous</span></h2>
+<h3><span class="mw-headline" id="Virtual_Key_Codes">Virtual Key Codes</span></h3>
+<p>The virtual key code for a standard alphanumeric key is just the <code>char</code> literal (capital if alphabetic), e.g. <code>'A'</code> or <code>'9'</code>. Virtual key codes for other keys are defined with <code>#define</code> macros included with <code>Windows.h</code>. Some common ones are:
+</p>
+<ul><li> <code>VK_SPACE</code></li>
+<li> <code>VK_SHIFT</code></li>
+<li> <code>VK_RETURN</code></li>
+<li> <code>VK_ESCAPE</code></li></ul>
+<p>See the Microsoft <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd375731(v=vs.85).aspx">documentation</a> for the full list of virtual key codes defined in the Windows headers.
+</p>
+<h3><span class="mw-headline" id="ReadKey_vs._ReadChar">ReadKey vs. ReadChar</span></h3>
+<p>There are two main differences between the events read with <code>ReadKey()</code> and the <code>char</code> values read with <code>ReadChar()</code>:
+</p>
+<ol><li> Each key press and release sequence puts two events (press event and release event) into the <code>ReadKey()</code> queue, but the same sequence only puts one <code>char</code> value into the <code>ReadChar()</code> queue.</li>
+<li> The <code>char</code> values read with <code>ReadChar()</code> have the shift modifier applied to them, whereas those read by <code>ReadKey()</code> are just the raw virtual key codes. For example, pressing the 'A' key puts <code>'a'</code> into the <code>ReadChar()</code> queue when the shift key is not pressed and <code>'A'</code> when it is pressed, but the virtual key code in either case is <code>'A'</code> for <code>ReadKey()</code>.</li></ol>
+<p>In general, you should use <code>ReadKey()</code> for controlling shit and <code>ReadChar()</code> for text input.
+</p>
+<h2><span class="mw-headline" id="See_also">See also</span></h2>
+<ul><li> The <a href="Chili_Framework.html" title="Chili Framework">Chili Framework</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231225031306
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.082 seconds
+Real time usage: 1.123 seconds
+Preprocessor visited node count: 96/1000000
+Preprocessor generated node count: 128/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:12-0!*!0!!en!*!* and timestamp 20231225031304 and revision id 1187
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;oldid=1187">https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;oldid=1187</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Keyboard+%28Chili+Framework%29" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Keyboard_(Chili_Framework).html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Keyboard_(Chili_Framework)&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Keyboard_(Chili_Framework).html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Keyboard_(Chili_Framework).html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Keyboard_(Chili_Framework).html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Keyboard_(Chili_Framework)" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Keyboard_(Chili_Framework)" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;oldid=1187" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Keyboard_(Chili_Framework)&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 13 October 2017, at 12:56.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":85});
+} );</script>
+	</body>
+</html>

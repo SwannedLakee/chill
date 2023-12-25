@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Arrays - Chilipedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":!1,"wgNamespaceNumber":0,"wgPageName":"Arrays","wgTitle":"Arrays","wgCurRevisionId":1481,"wgRevisionId":1481,"wgArticleId":110,"wgIsArticle":!0,"wgIsRedirect":!1,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Pages with syntax highlighting errors"],"wgBreakFrames":!1,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Arrays","wgRelevantArticleId":110,"wgIsProbablyEditable":!1,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wgWikiEditorEnabledModules":{"toolbar":!1,"dialogs":!1,"preview":!1,"publish":!1}});mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function($,jQuery){mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"});});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=ext.pygments|mediawiki.legacy.commonPrint,shared|mediawiki.sectionAnchor|mediawiki.skinning.interface|skins.vector.styles&amp;only=styles&amp;skin=vector.css" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="../load.php%3Fdebug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector.css" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="../load.php%3Fdebug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.26.3" />
+<link rel="shortcut icon" href="../favicon.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="https://wiki.planetchili.net/opensearch_desc.php" title="Chilipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.planetchili.net/api.php?action=rsd" />
+<link rel="alternate" type="application/atom+xml" title="Chilipedia Atom feed" href="https://wiki.planetchili.net/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Arrays skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Arrays</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Chilipedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="Arrays.html#mw-head">navigation</a>, 					<a href="Arrays.html#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><p>Arrays are a collection of elements usually of the same type grouped together and referenced using an index to a unique identifier. 
+</p><p>If you think of variables as boxes in which you can keep stuff and label them <code>box0</code>, <code>box1</code> ... arrays can be thought of as a large box with compartments in it, where the box can be called <code>box</code> and each compartment is labeled <code>box[0]</code>, <code>box[1]</code>, <code>box[2]</code> and so on.
+</p><p><br />
+</p>
+<div id="toc" class="toc"><div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="Arrays.html#Using_Arrays"><span class="tocnumber">1</span> <span class="toctext">Using Arrays</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="Arrays.html#Syntax"><span class="tocnumber">1.1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="Arrays.html#But_why_arrays_.3F"><span class="tocnumber">1.2</span> <span class="toctext">But why arrays&#160;?</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="Arrays.html#What.27s_really_going_on_here_tho"><span class="tocnumber">2</span> <span class="toctext">What's really going on here tho</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="Arrays.html#Planet_Chili_Tutorial_Video"><span class="tocnumber">3</span> <span class="toctext">Planet Chili Tutorial Video</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="Arrays.html#Other_Tutorials"><span class="tocnumber">4</span> <span class="toctext">Other Tutorials</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="Arrays.html#See_Also"><span class="tocnumber">5</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Using_Arrays">Using Arrays</span></h2>
+<h3><span class="mw-headline" id="Syntax">Syntax</span></h3>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// create a big box that stores integers with 10 compartments
+int box[10];
+
+// Now to put values in these compartments all we have to do is
+box[0] = 50;
+box[1] = 89;
+box[2] = 69;
+box[3] = 50;
+.
+.
+.
+box[9] = 30;
+
+// NOTE - There are 10 comparments in the box, so we start with compartment 0 
+//        and go all the way to compartment 9.</pre></div>
+<p>Notice how the array declaration follows the format: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// TypeOfBox NameOfBox[CompartmentsInBox]
+	int       box         [10]
+
+// To get access to a compartment use use the syntax  
+// NameOfBox[CompartmentNumber]
+	box[0] // Gives you access to the first compartment in the box. 
+	box[1] // Gives access to the second compartment
+   box[9] // Gives access to the last compartment</pre></div>
+<p>Other ways to declare an array: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// An array of 20 ints
+int box[20];
+
+// An array of 5 ints where the first three values are initialised, the other two have default values
+int box[5] = {50, -35, 69};
+
+// Create an array of ints and initialize all elements to zero
+int box[10] = {}
+
+// Both of these statements define an array of 3 ints initializes them with the values provided. 
+int box[] = {50, 23, 40};
+int box[]{50, 23, 40};</pre></div>
+<p>The size of the array should be known at compile time and the size cannot be changed throughout the lifetime of the program. This is because the space for your container needs to be known at compile time
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// FAIL 
+int size = 10;
+int box[size]; // Error: Here the variable value can be changed during the life of the program because it is not a constant
+
+// PASS
+constexp int size = 10; //  When using constexr it is guaranteed that size won't be changed and it will be known at complie time.
+int box[size];</pre></div>
+<p>Accessing compartments that don't exist is a common mistake, in debug mode you'll get an error but bad things will happen in release mode. Especially be careful while accessing the last compartment of the array. 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>box[20] = 69 // Gives an error as our box only has 10 compartments and we're trying to access the 21st compartment. 
+box[10] = 69 // Again gives an error as our box has 10 compartments starting at 0, and going upto 9</pre></div>
+<h3><span class="mw-headline" id="But_why_arrays_.3F">But why arrays&#160;?</span></h3>
+<p>Imagine you wanted to store the health of 10 enemies you could store them as enemyHealth0, enemyHealth1 and so on
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Store the health of 10 enemies 
+int enemyHealth0 = 44
+int enemyHealth1 = 35
+int enemyHealth2 = 45
+.
+.
+.
+int enemyHealth9 = 84</pre></div>
+<p>So far so good, now lets say you wanted to display the health of all 10 of your enemies
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>DisplayHealth(enemyHealth0);
+DisplayHealth(enemyHealth1);
+DisplayHealth(enemyHealth2);
+.
+.
+.
+DisplayHealth(enemyHealth9);</pre></div>
+<p>As you can probably see that you need to type DisplayHealth() repeatedly , what if we could do the same thing but with a lot less code&#160;? That's where arrays come in: 
+</p>
+<div class="mw-highlight mw-content-ltr" dir="ltr"><pre>// Declare an array of size 10 and set health variables to
+int enemyHealth[10] = {44, 35, 45 ... 84};
+
+// use a for loop to diplay enemy health
+for(int i = 0; i &lt; 10; i++)
+{
+	DisplayHealth(enemyHealth[i]);
+}</pre></div>
+<p>We could do the same if we wanted to kill off all enemies, just go through an array of all the enemies and kill them. 
+Arrays work really well with loops, in the above example we only had 10 values, but imagine if we had 100 values we could just loop over all of them with the same code by just changing the condition to <code>i &lt; 100 </code>.
+</p>
+<h2><span class="mw-headline" id="What.27s_really_going_on_here_tho">What's really going on here tho</span></h2>
+<p>When you create an array e.g. <code>int box[10]</code> your computer takes a portion of your memory and gives a name to that block i.e. <code>box</code>  in our case. The size of the block is decided by the type of the array. In our case int, a single int is <code>4 bytes</code>  in size <a rel="nofollow" class="external text" href="https://msdn.microsoft.com/en-us/library/s3f49ktz.aspx">MSDN Reference</a> and we need space to store 10 ints so your computer allocates <code>10 x 4 bytes</code> of memory i.e. <code>40 bytes</code> of memory where each int occupies 4 bytes one after the other. 
+</p><p><br />
+</p><p>Now when you access the third compartment in your array <code>box</code> and use the syntax <code>box[3]</code>. Your CPU says I am going to go to the starting point of box , you want the 3rd compartment? Ok, so each compartment is <code>4bytes</code> long (int) so to get to the third compartment I can take the starting point of block and move 3 times the size of each compartment, which in our case would be <code>3 * 4 = 12 bytes</code> . Now we are at the starting point of the third block. And because the type of the array is an <code>int</code> (size 4 bytes), your CPU knows that the next 4 bytes in the memory block are the contents of compartment 3. 
+</p><p><br />
+</p><p>If you're starting out with arrays, you don't need to know how arrays work under the hood; more gems will be revealed as you move on to the intermediate series. What's important is that you get a solid understanding of the concept of arrays as being big compartmentalized containers to store stuff that work really well with loops. 
+</p>
+<h2><span class="mw-headline" id="Planet_Chili_Tutorial_Video">Planet Chili Tutorial Video</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Tutorial_13.html" title="Beginner C++ Game Programming Tutorial 13">Beginner C++ Game Programming Tutorial 13</a></li></ul>
+<h2><span class="mw-headline" id="Other_Tutorials">Other Tutorials</span></h2>
+<ul><li> <a rel="nofollow" class="external free" href="http://www.cplusplus.com/reference/array/array/">http://www.cplusplus.com/reference/array/array/</a></li></ul>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.tutorialspoint.com/cplusplus/cpp_arrays.htm">https://www.tutorialspoint.com/cplusplus/cpp_arrays.htm</a></li></ul>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.programiz.com/cpp-programming/arrays">https://www.programiz.com/cpp-programming/arrays</a></li></ul>
+<ul><li> <a rel="nofollow" class="external free" href="https://www.geeksforgeeks.org/arrays-in-c-language-set-1-introduction/">https://www.geeksforgeeks.org/arrays-in-c-language-set-1-introduction/</a></li></ul>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li> <a href="Beginner_C++_Game_Programming_Series.html#Topics_Covered" title="Beginner C++ Game Programming Series">List of Beginner C++ Topics</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20231224222508
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.006 seconds
+Real time usage: 0.011 seconds
+Preprocessor visited node count: 99/1000000
+Preprocessor generated node count: 192/1000000
+Post‐expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Highest expansion depth: 2/40
+Expensive parser function count: 0/100
+-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%    0.000      1 - -total
+-->
+
+<!-- Saved in parser cache with key chilipedia:pcache:idhash:110-0!*!0!!en!*!* and timestamp 20231224222508 and revision id 1481
+ -->
+</div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.planetchili.net/index.php?title=Arrays&amp;oldid=1481">https://wiki.planetchili.net/index.php?title=Arrays&amp;oldid=1481</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="https://wiki.planetchili.net/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="https://wiki.planetchili.net/index.php?title=Category:Pages_with_syntax_highlighting_errors&amp;action=edit&amp;redlink=1" class="new" title="Category:Pages with syntax highlighting errors (page does not exist)">Pages with syntax highlighting errors</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-login"><a href="https://wiki.planetchili.net/index.php?title=Special:UserLogin&amp;returnto=Arrays" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="Arrays.html"  title="View the content page [c]" accesskey="c">Page</a></span></li>
+															<li  id="ca-talk" class="new"><span><a href="https://wiki.planetchili.net/index.php?title=Talk:Arrays&amp;action=edit&amp;redlink=1"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Discussion</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="Arrays.html#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="Arrays.html" >Read</a></span></li>
+															<li id="ca-viewsource"><span><a href="https://wiki.planetchili.net/index.php?title=Arrays&amp;action=edit"  title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="https://wiki.planetchili.net/index.php?title=Arrays&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="Arrays.html#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="https://wiki.planetchili.net/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Chilipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="Main_Page.html"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-recentchanges"><a href="https://wiki.planetchili.net/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-randompage"><a href="https://wiki.planetchili.net/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li><li id="n-help"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/Help:Contents" title="The place to find out">Help</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="https://wiki.planetchili.net/index.php/Special:WhatLinksHere/Arrays" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="https://wiki.planetchili.net/index.php/Special:RecentChangesLinked/Arrays" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="https://wiki.planetchili.net/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="https://wiki.planetchili.net/index.php?title=Arrays&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="https://wiki.planetchili.net/index.php?title=Arrays&amp;oldid=1481" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="https://wiki.planetchili.net/index.php?title=Arrays&amp;action=info" title="More information about this page">Page information</a></li>					</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 1 September 2018, at 18:55.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="https://wiki.planetchili.net/index.php/Chilipedia:Privacy_policy" title="Chilipedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="https://wiki.planetchili.net/index.php/Chilipedia:About" title="Chilipedia:About">About Chilipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="https://wiki.planetchili.net/index.php/Chilipedia:General_disclaimer" title="Chilipedia:General disclaimer">Disclaimers</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-poweredbyico">
+							<a href="https://www.mediawiki.org/"><img src="../resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="../resources/assets/poweredby_mediawiki_132x47.png 1.5x, ../resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"user":"ready","user.groups":"ready"});mw.loader.load(["mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":44});
+} );</script>
+	</body>
+</html>
